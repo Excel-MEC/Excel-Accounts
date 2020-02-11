@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "API": {
+    "Excel-Accounts-Backend": {
       "commandName": "Project",
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5000/",

@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace API.Migrations
+namespace ExcelAccountsBackend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200211085423_AddedFieldsToUsersTable")]
-    partial class AddedFieldsToUsersTable
+    [Migration("20200211104039_InitialMigrationAddedUserTable")]
+    partial class InitialMigrationAddedUserTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
