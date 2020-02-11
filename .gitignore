@@ -88,6 +88,9 @@ ipch/
 *.VC.db
 *.VC.VC.opendb
 
+# Database
+*.db.sqlite3
+
 # Visual Studio profiler
 *.psess
 *.vsp
