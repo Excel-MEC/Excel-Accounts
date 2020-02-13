@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Excel_Accounts_Backend.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Excel_Accounts_Backend.Data
+namespace Excel_Accounts_Backend.Data.AuthRepository
 {
     public class AuthRepository : IAuthRepository
     {

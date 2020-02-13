@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Excel_Accounts_Backend.Data;
+using Excel_Accounts_Backend.Data.AuthRepository;
+using Excel_Accounts_Backend.Data.ProfileRepository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -45,6 +47,9 @@ namespace Excel_Accounts_Backend
 
             // Add Authrepository
             services.AddScoped<IAuthRepository, AuthRepository>();
+
+            // Add Profile
+            services.AddScoped<IProfileRepository, ProfileRepository>();
 
             // Add Jwt Authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
