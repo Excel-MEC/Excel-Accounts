@@ -13,6 +13,12 @@ namespace Excel_Accounts_Backend.Data
             _context = context;
         }
 
+        public async Task<User> GetUser(string email)
+        {
+            User user = await _context.Users.FirstOrDefaultAsync(user => user.Email == email);
+            return user;
+        }
+
         public async Task<User> Register(User user)
         {
             await _context.Users.AddAsync(user);

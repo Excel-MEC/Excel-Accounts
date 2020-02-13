@@ -9,6 +9,6 @@ namespace Excel_Accounts_Backend.Models
         public string Name { get; set; }
         [Required]
         public string Email { get; set; }
-
+        public string Picture { get; set; }
     }
 }

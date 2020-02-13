@@ -7,5 +7,6 @@ namespace Excel_Accounts_Backend.Data
     {
         Task<User> Register(User user);
         Task<bool> UserExists(string email);
+        Task<User> GetUser(string email);
     }
 }

@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Excel_Accounts_Backend.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Excel_Accounts_Backend
 {
@@ -30,15 +33,33 @@ namespace Excel_Accounts_Backend
         {
             // Adding Controller as service
             services.AddControllers();
+
             // Adding HttpClient service for fetching external Apis
             services.AddHttpClient();
+
             // Add Database to the Services
             services.AddDbContext<DataContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
             // Add Automapper to map objects of different types
             services.AddAutoMapper();
+
             // Add Authrepository
             services.AddScoped<IAuthRepository, AuthRepository>();
+
+            // Add Jwt Authentication
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
         }
+
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -56,6 +77,9 @@ namespace Excel_Accounts_Backend
 
             // Use Routing
             app.UseRouting();
+
+            // Use Authentication
+            app.UseAuthentication();
 
             // User authorization
             app.UseAuthorization();

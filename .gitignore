@@ -89,7 +89,10 @@ ipch/
 *.VC.VC.opendb
 
 # Database
-*.db.sqlite3
+*.db.sqlite3*
+
+# Docker
+core
 
 # Visual Studio profiler
 *.psess
