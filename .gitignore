@@ -88,6 +88,12 @@ ipch/
 *.VC.db
 *.VC.VC.opendb
 
+# Database
+*.db.sqlite3*
+
+# Docker
+core
+
 # Visual Studio profiler
 *.psess
 *.vsp
@@ -272,7 +278,7 @@ __pycache__/
 # tools/
 
 ### VisualStudioCode ###
-.vscode/*
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json

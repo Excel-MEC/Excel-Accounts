@@ -6,25 +6,19 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace DatingApp.API.Controllers
+
+namespace Excel_Accounts_Backend.Controllers
 {
-    // [Authorize]
+    [Authorize]
     [Route("[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // GET api/values
+        // POST api/values
         [HttpGet]
-        public ActionResult<string> Get()
+        public IActionResult Get()
         {
-            return Ok("values");
-        }
-
-        [AllowAnonymous]
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return Ok(id);
+            return Ok(new { Response = "Success" });
         }
     }
 }
