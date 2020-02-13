@@ -7,7 +7,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using Excel_Accounts_Backend.Data;
+using Excel_Accounts_Backend.Data.AuthRepository;
 using Excel_Accounts_Backend.Dtos.Auth;
 using Excel_Accounts_Backend.Models;
 using Microsoft.AspNetCore.Mvc;

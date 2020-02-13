@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Excel_Accounts_Backend.Models;
 
-namespace Excel_Accounts_Backend.Data
+namespace Excel_Accounts_Backend.Data.AuthRepository
 {
     public interface IAuthRepository
     {
