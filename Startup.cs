@@ -40,7 +40,10 @@ namespace Excel_Accounts_Backend
             services.AddHttpClient();
 
             // Add Database to the Services
-            services.AddDbContext<DataContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<DataContext>(options =>
+            {
+                options.UseNpgsql(Configuration.GetSection("DatabaseConfig")["PostgresDb"]);
+            });
 
             // Add Automapper to map objects of different types
             services.AddAutoMapper();
@@ -67,7 +70,7 @@ namespace Excel_Accounts_Backend
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DataContext dataContext)
         {
             if (env.IsDevelopment())
             {
@@ -76,6 +79,9 @@ namespace Excel_Accounts_Backend
 
             // Uncomment following line when having https
             // app.UseHttpsRedirection();
+
+            // Automatic database update
+            dataContext.Database.Migrate();
 
             // Allow Cross origin requests
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
