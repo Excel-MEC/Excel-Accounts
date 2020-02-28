@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Excel_Accounts_Backend.Data;
 using Excel_Accounts_Backend.Data.AuthRepository;
+using Excel_Accounts_Backend.Data.CloudStorage;
 using Excel_Accounts_Backend.Data.ProfileRepository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -53,6 +54,9 @@ namespace Excel_Accounts_Backend
 
             // Add Profile
             services.AddScoped<IProfileRepository, ProfileRepository>();
+
+            // Add Google Cloud Storage
+            services.AddSingleton<ICloudStorage, GoogleCloudStorage>();
 
             // Add Jwt Authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
