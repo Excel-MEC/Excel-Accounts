@@ -7,6 +7,12 @@ namespace Excel_Accounts_Backend.Data
     {
         public DataContext(DbContextOptions options) : base(options) { }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>()
+                .Property(user => user.Id)
+                .HasIdentityOptions(startValue: 12246);
+        }
         public DbSet<User> Users { get; set; }
     }
 }

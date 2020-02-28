@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Excel_Accounts_Backend.Data;
 using Excel_Accounts_Backend.Data.AuthRepository;
+using Excel_Accounts_Backend.Data.CloudStorage;
 using Excel_Accounts_Backend.Data.ProfileRepository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -18,6 +19,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace Excel_Accounts_Backend
 {
@@ -54,6 +56,9 @@ namespace Excel_Accounts_Backend
             // Add Profile
             services.AddScoped<IProfileRepository, ProfileRepository>();
 
+            // Add Google Cloud Storage
+            services.AddSingleton<ICloudStorage, GoogleCloudStorage>();
+
             // Add Jwt Authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
@@ -64,6 +69,12 @@ namespace Excel_Accounts_Backend
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
+            });
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Excel-Accounts-Backend", Version = "v1" });
             });
         }
 
@@ -79,6 +90,16 @@ namespace Excel_Accounts_Backend
 
             // Uncomment following line when having https
             // app.UseHttpsRedirection();
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "Excel-Accounts-Backend");
+            });
 
             // Automatic database update
             dataContext.Database.Migrate();
