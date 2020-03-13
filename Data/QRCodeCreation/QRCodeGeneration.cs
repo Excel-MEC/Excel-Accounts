@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using System.Drawing;
 using System.Drawing.Imaging;
 using QRCoder;
+using Microsoft.AspNetCore.Http;
 
 namespace Excel_Accounts_Backend.Data.QRCodeCreation
 {
@@ -25,7 +26,7 @@ namespace Excel_Accounts_Backend.Data.QRCodeCreation
             _cloudStorage = cloudStorage;
         }
 
-        public async Task<IActionResult> CreateQrCode([FromForm]string ExcelId)
+        public async Task<string> CreateQrCode([FromForm]string ExcelId)
         {
             DataForFileUploadDto qrCodeDto = new DataForFileUploadDto();
             qrCodeDto.Name = ExcelId;
@@ -34,7 +35,7 @@ namespace Excel_Accounts_Backend.Data.QRCodeCreation
 
             await UploadFile(qrCodeDto);
             string ImageUrl = _configuration.GetValue<string>("CloudStorageUrl") + qrCodeDto.ImageStorageName;
-            return Ok(new { Response = ImageUrl });
+            return ImageUrl;
         }
 
         // Generates Bitmap image of the string

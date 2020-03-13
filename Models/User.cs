@@ -10,5 +10,6 @@ namespace Excel_Accounts_Backend.Models
         [Required]
         public string Email { get; set; }
         public string Picture { get; set; }
+        public string QRCodeUrl { get; set; }
     }
 }
