@@ -65,10 +65,12 @@ namespace Excel_Accounts_Backend.Controllers
         }
 
         [HttpPost("qrcode")]
+
         public async Task<string> CreateQrCode([FromForm]string ExcelId)
         {
             string qRCodeUrl = await _qRCodeGeneration.CreateQrCode(ExcelId);
             return qRCodeUrl;
+
         }
     }
 }
