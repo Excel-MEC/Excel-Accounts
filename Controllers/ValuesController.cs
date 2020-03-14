@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Excel_Accounts_Backend.Data.CloudStorage;
+using Excel_Accounts_Backend.Data.QRCodeCreation;
 using Excel_Accounts_Backend.Dtos.Values;
 using Excel_Accounts_Backend.Models;
 using Excel_Accounts_Backend.Data.AuthRepository;
@@ -11,9 +12,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System.Drawing;
-using System.Drawing.Imaging;
-using QRCoder;
+// using System.Drawing;
+// using System.Drawing.Imaging;
+// using QRCoder;
 using Microsoft.AspNetCore.Http;
 
 namespace Excel_Accounts_Backend.Controllers
@@ -26,8 +27,10 @@ namespace Excel_Accounts_Backend.Controllers
         private readonly ICloudStorage _cloudStorage;
         private readonly IConfiguration _configuration;
         private readonly IAuthRepository _authRepository;
-        public ValuesController(ICloudStorage cloudStorage, IConfiguration configuration, IAuthRepository authRepository)
+        private readonly IQRCodeGeneration _qRCodeGeneration;
+        public ValuesController(ICloudStorage cloudStorage, IConfiguration configuration, IAuthRepository authRepository, IQRCodeGeneration qRCodeGeneration)
         {
+            _qRCodeGeneration = qRCodeGeneration;
             _authRepository = authRepository;
             _cloudStorage = cloudStorage;
             _configuration = configuration;
@@ -62,10 +65,10 @@ namespace Excel_Accounts_Backend.Controllers
         }
 
         [HttpPost("qrcode")]
-        public async Task<User> CreateQrCode([FromForm]User user)
+        public async Task<string> CreateQrCode([FromForm]string ExcelId)
         {
-            User newUser = await _authRepository.Register(user);
-            return newUser;
+            string qRCodeUrl = await _qRCodeGeneration.CreateQrCode(ExcelId);
+            return qRCodeUrl;
         }
     }
 }
