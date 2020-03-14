@@ -8,6 +8,7 @@ using Excel_Accounts_Backend.Data;
 using Excel_Accounts_Backend.Data.AuthRepository;
 using Excel_Accounts_Backend.Data.CloudStorage;
 using Excel_Accounts_Backend.Data.ProfileRepository;
+using Excel_Accounts_Backend.Data.QRCodeCreation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -57,7 +58,10 @@ namespace Excel_Accounts_Backend
             services.AddScoped<IProfileRepository, ProfileRepository>();
 
             // Add Google Cloud Storage
-            services.AddSingleton<ICloudStorage, GoogleCloudStorage>();
+            services.AddScoped<ICloudStorage, GoogleCloudStorage>();
+
+            //Adding QRCode Creation to the service
+            services.AddScoped<IQRCodeGeneration, QRCodeGeneration>();
 
             // Add Jwt Authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
