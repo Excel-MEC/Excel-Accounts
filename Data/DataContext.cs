@@ -12,7 +12,12 @@ namespace Excel_Accounts_Backend.Data
             modelBuilder.Entity<User>()
                 .Property(user => user.Id)
                 .HasIdentityOptions(startValue: 12246);
+            modelBuilder.Entity<College>()
+                .Property(college => college.Id)
+                .HasIdentityOptions(startValue: 208);    
         }
         public DbSet<User> Users { get; set; }
+        public DbSet<College> Colleges { get; set; }
     }
+
 }

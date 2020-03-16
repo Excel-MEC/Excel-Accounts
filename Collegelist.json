@@ -1,0 +1,832 @@
+﻿{
+    "College": [
+        {
+            "Name": "ER&DCI Institute of Technology, Trivandrum",
+            "Id": "1"
+        },
+        {
+            "Name": "National Institute of Electronics &amp; Information Technology, Calicut",
+            "Id": "2"
+        },
+        {
+            "Name": "Indian Institute of Space Science and Technology, Trivandrum",
+            "Id": "3"
+        },
+        {
+            "Name": "Indian Institute of Information Technology Kottayam",
+            "Id": "4"
+        },
+        {
+            "Name": "Government Engineering College, Sreekrishnapuram",
+            "Id": "5"
+        },
+        {
+            "Name": "Government Engineering College, Thrissur",
+            "Id": "6"
+        },
+        {
+            "Name": "Thangal Kunju Musaliar College of Engineering, Kollam",
+            "Id": "7"
+        },
+        {
+            "Name": "NSS College of Engineering, Palakkad",
+            "Id": "8"
+        },
+        {
+            "Name": "Mar Athanasius College of Engineering, Kothamangalam",
+            "Id": "9"
+        },
+        {
+            "Name": "Government College of Engineering, Kannur",
+            "Id": "10"
+        },
+        {
+            "Name": "Rajiv Gandhi Institute of Technology, Kottayam",
+            "Id": "11"
+        },
+        {
+            "Name": "Government Engineering College, Trivandrum",
+            "Id": "12"
+        },
+        {
+            "Name": "Government Engineering College, Kozhikode",
+            "Id": "13"
+        },
+        {
+            "Name": "College of Engineering, Trivandrum",
+            "Id": "14"
+        },
+        {
+            "Name": "Government Engineering College, Wayanad",
+            "Id": "15"
+        },
+        {
+            "Name": "Government Engineering College, Idukki",
+            "Id": "16"
+        },
+        {
+            "Name": "Government Model Engineering College, Cochin",
+            "Id": "17"
+        },
+        {
+            "Name": "College of Engineering Chengannur",
+            "Id": "18"
+        },
+        {
+            "Name": "College of Engineering, Adoor",
+            "Id": "19"
+        },
+        {
+            "Name": "College of Engineering Attingal",
+            "Id": "20"
+        },
+        {
+            "Name": "College of Engineering, Cherthala",
+            "Id": "21"
+        },
+        {
+            "Name": "College of Engineering, Kallooppara",
+            "Id": "22"
+        },
+        {
+            "Name": "College of Engineering, Karunagappally",
+            "Id": "23"
+        },
+        {
+            "Name": "College of Engineering, Kottarakkara",
+            "Id": "24"
+        },
+        {
+            "Name": "College of Engineering, Poonjar",
+            "Id": "25"
+        },
+        {
+            "Name": "College of Engineering, Aranmula",
+            "Id": "26"
+        },
+        {
+            "Name": "College of Engineering, Kidangoor",
+            "Id": "27"
+        },
+        {
+            "Name": "College of Engineering &amp; Management, Punnapra",
+            "Id": "28"
+        },
+        {
+            "Name": "College of Engineering, Pathanapuram",
+            "Id": "29"
+        },
+        {
+            "Name": "College of Engineering, Perumon",
+            "Id": "30"
+        },
+        {
+            "Name": "College of Engineering, Thalassery",
+            "Id": "31"
+        },
+        {
+            "Name": "College of Engineering, Thrikaripur",
+            "Id": "32"
+        },
+        {
+            "Name": "College of Engineering, Vatakara, Calicut",
+            "Id": "33"
+        },
+        {
+            "Name": "College of Engineering Muttathara",
+            "Id": "34"
+        },
+        {
+            "Name": "College of Engineering Munnar",
+            "Id": "35"
+        },
+        {
+            "Name": "LBS College of Engineering, Muliyar, Kasaragod",
+            "Id": "36"
+        },
+        {
+            "Name": "L B S Institute of Technology for Women, Poojappura, Trivandrum",
+            "Id": "37"
+        },
+        {
+            "Name": "School of Engineering, CUSAT",
+            "Id": "38"
+        },
+        {
+            "Name": "Calicut University Institute of Engineering &amp; Technology, Tenchipalam",
+            "Id": "39"
+        },
+        {
+            "Name": "University College of Engineering, Kariavattom",
+            "Id": "40"
+        },
+        {
+            "Name": "University College of Engineering, Thodupuzha",
+            "Id": "41"
+        },
+        {
+            "Name": "Kelappaji College of Agricultural Engineering and Technology",
+            "Id": "42"
+        },
+        {
+            "Name": "Government Engineering College, Sreekrishnapuram",
+            "Id": "43"
+        },
+        {
+            "Name": "ACE College of Engineering, Thiruvallam, Trivandrum",
+            "Id": "44"
+        },
+        {
+            "Name": "Adi Shankara Institute of Engineering Technology, Kalady, Ernakulam",
+            "Id": "45"
+        },
+        {
+            "Name": "Ahalia School of Engineering and Technology, Kozhippara, Palakkad",
+            "Id": "46"
+        },
+        {
+            "Name": "Al Azhar College of Engineering and Technology, Thodupuzha, Ernakulam",
+            "Id": "47"
+        },
+        {
+            "Name": "Al-Ameen Engineering College, Shoranur, Palakkad",
+            "Id": "48"
+        },
+        {
+            "Name": "Albertian Institute of Science and Technology, Kalamassery, Ernakulam",
+            "Id": "49"
+        },
+        {
+            "Name": "Amal Jyothi College of Engineering, Koovappally, Kottayam",
+            "Id": "50"
+        },
+        {
+            "Name": "Ammini College of Engineering, Kannampariyaram, Palakkad",
+            "Id": "51"
+        },
+        {
+            "Name": "Archana College of Engineering, Nooranad, Alappuzha",
+            "Id": "52"
+        },
+        {
+            "Name": "Aryanet Institute of Technology, Velikkad, Palakkad",
+            "Id": "53"
+        },
+        {
+            "Name": "AWH Engineering College, Kuttikkattoor, Calicut",
+            "Id": "54"
+        },
+        {
+            "Name": "Axis College of Engineering and Technology, Murikkingal, Thrissur",
+            "Id": "55"
+        },
+        {
+            "Name": "Baselios Mathews Ii College of Engineering, Sasthamcotta, Kollam",
+            "Id": "56"
+        },
+        {
+            "Name": "Baselios Thomas I Catholicose College of Engineering and Technology, Koothattukulam, Ernakulam",
+            "Id": "57"
+        },
+        {
+            "Name": "Believers Church Caarmel Engineering College, Perunad, Pathanamthitta",
+            "Id": "58"
+        },
+        {
+            "Name": "Bishop Jerome Institute, Fatima College Road, Kollam",
+            "Id": "59"
+        },
+        {
+            "Name": "Carmel College of Engineering and Technology, Punnapra, Alappuzha",
+            "Id": "60"
+        },
+        {
+            "Name": "ACE College of Engineering[2]",
+            "Id": "61"
+        },
+        {
+            "Name": "ER&amp;DCI Institute of Technology, Trivandrum",
+            "Id": "62"
+        },
+        {
+            "Name": "National Institute of Electronics &amp; Information Technology, Calicut",
+            "Id": "63"
+        },
+        {
+            "Name": "Indian Institute of Space Science and Technology, Trivandrum",
+            "Id": "64"
+        },
+        {
+            "Name": "Indian Institute of Information Technology Kottayam",
+            "Id": "65"
+        },
+        {
+            "Name": "Government Engineering College, Thrissur",
+            "Id": "66"
+        },
+        {
+            "Name": "Thangal Kunju Musaliar College of Engineering, Kollam",
+            "Id": "67"
+        },
+        {
+            "Name": "NSS College of Engineering, Palakkad",
+            "Id": "68"
+        },
+        {
+            "Name": "Mar Athanasius College of Engineering, Kothamangalam",
+            "Id": "69"
+        },
+        {
+            "Name": "Government College of Engineering, Kannur",
+            "Id": "70"
+        },
+        {
+            "Name": "Rajiv Gandhi Institute of Technology, Kottayam",
+            "Id": "71"
+        },
+        {
+            "Name": "Government Engineering College, Trivandrum",
+            "Id": "72"
+        },
+        {
+            "Name": "Government Engineering College, Kozhikode",
+            "Id": "73"
+        },
+        {
+            "Name": "College of Engineering, Trivandrum",
+            "Id": "74"
+        },
+        {
+            "Name": "Government Engineering College, Wayanad",
+            "Id": "75"
+        },
+        {
+            "Name": "College of Engineering Chengannur",
+            "Id": "76"
+        },
+        {
+            "Name": "College of Engineering, Adoor",
+            "Id": "77"
+        },
+        {
+            "Name": "College of Engineering Attingal",
+            "Id": "78"
+        },
+        {
+            "Name": "College of Engineering, Cherthala",
+            "Id": "79"
+        },
+        {
+            "Name": "College of Engineering, Kallooppara",
+            "Id": "80"
+        },
+        {
+            "Name": "College of Engineering, Karunagappally",
+            "Id": "81"
+        },
+        {
+            "Name": "College of Engineering, Kottarakkara",
+            "Id": "82"
+        },
+        {
+            "Name": "College of Engineering, Poonjar",
+            "Id": "83"
+        },
+        {
+            "Name": "College of Engineering, Aranmula",
+            "Id": "84"
+        },
+        {
+            "Name": "College of Engineering, Kidangoor",
+            "Id": "85"
+        },
+        {
+            "Name": "College of Engineering &amp; Management, Punnapra",
+            "Id": "86"
+        },
+        {
+            "Name": "College of Engineering, Pathanapuram",
+            "Id": "87"
+        },
+        {
+            "Name": "College of Engineering, Perumon",
+            "Id": "88"
+        },
+        {
+            "Name": "College of Engineering, Thalassery",
+            "Id": "89"
+        },
+        {
+            "Name": "College of Engineering, Thrikaripur",
+            "Id": "90"
+        },
+        {
+            "Name": "College of Engineering, Vatakara, Calicut",
+            "Id": "91"
+        },
+        {
+            "Name": "College of Engineering Muttathara",
+            "Id": "92"
+        },
+        {
+            "Name": "College of Engineering Munnar",
+            "Id": "93"
+        },
+        {
+            "Name": "LBS College of Engineering, Muliyar, Kasaragod",
+            "Id": "94"
+        },
+        {
+            "Name": "L B S Institute of Technology for Women, Poojappura, Trivandrum",
+            "Id": "95"
+        },
+        {
+            "Name": "College of Dairy Science and Technology",
+            "Id": "96"
+        },
+        {
+            "Name": "College of Dairy Science and Technology, Mannuthy, Thrissur",
+            "Id": "97"
+        },
+        {
+            "Name": "College of dairy science and technology",
+            "Id": "98"
+        },
+        {
+            "Name": "College of Food Technology",
+            "Id": "99"
+        },
+        {
+            "Name": "College of Veterinary and Animal Sciences",
+            "Id": "100"
+        },
+        {
+            "Name": "Adi Shankara Institute of Engineering Technology",
+            "Id": "101"
+        },
+        {
+            "Name": "Ahalia School of Engineering and Technology",
+            "Id": "102"
+        },
+        {
+            "Name": "Al Azhar College of Engineering and Technology",
+            "Id": "103"
+        },
+        {
+            "Name": "Al-Ameen Engineering College",
+            "Id": "104"
+        },
+        {
+            "Name": "Albertian Institute of Science and Technology",
+            "Id": "105"
+        },
+        {
+            "Name": "Amal Jyothi College of Engineering",
+            "Id": "106"
+        },
+        {
+            "Name": "Ammini College of Engineering",
+            "Id": "107"
+        },
+        {
+            "Name": "Archana College of Engineering",
+            "Id": "108"
+        },
+        {
+            "Name": "Aryanet Institute of Technology",
+            "Id": "109"
+        },
+        {
+            "Name": "AWH Engineering College",
+            "Id": "110"
+        },
+        {
+            "Name": "Axis College of Engineering and Technology",
+            "Id": "111"
+        },
+        {
+            "Name": "Baselios Mathews Ii College of Engineering",
+            "Id": "112"
+        },
+        {
+            "Name": "Baselios Thomas I Catholicose College of Engineering and Technology",
+            "Id": "113"
+        },
+        {
+            "Name": "Believers Church Caarmel Engineering College",
+            "Id": "114"
+        },
+        {
+            "Name": "Bishop Jerome Institute",
+            "Id": "115"
+        },
+        {
+            "Name": "Carmel College of Engineering and Technology",
+            "Id": "116"
+        },
+        {
+            "Name": "Cochin College of Engineering and Technology",
+            "Id": "117"
+        },
+        {
+            "Name": "Cochin Institute of Science and Technology",
+            "Id": "118"
+        },
+        {
+            "Name": "College of Engineering and Technology",
+            "Id": "119"
+        },
+        {
+            "Name": "Eranad Knowledge City Technical Campus",
+            "Id": "120"
+        },
+        {
+            "Name": "Federal Institute of Science and Technology",
+            "Id": "121"
+        },
+        {
+            "Name": "Focus Institute of Science and Technology",
+            "Id": "122"
+        },
+        {
+            "Name": "Gurudeva Institute of Science And Technology",
+            "Id": "123"
+        },
+        {
+            "Name": "Heera College of Engineering and Technology",
+            "Id": "124"
+        },
+        {
+            "Name": "Hindustan College of Engineering",
+            "Id": "125"
+        },
+        {
+            "Name": "Holy Grace Academy of Engineering",
+            "Id": "126"
+        },
+        {
+            "Name": "MGM College of Engineering &amp; Technology (Holy Kings College of Engineering and Technology)",
+            "Id": "127"
+        },
+        {
+            "Name": "I E S College of Engineering",
+            "Id": "128"
+        },
+        {
+            "Name": "Ilahia College of Engineering Technology",
+            "Id": "129"
+        },
+        {
+            "Name": "Ilahia School of Science and Technology",
+            "Id": "130"
+        },
+        {
+            "Name": "ILM College of Engineering and Technology",
+            "Id": "131"
+        },
+        {
+            "Name": "Jai Bharath College of Management and Engineering Technology",
+            "Id": "132"
+        },
+        {
+            "Name": "Jawaharlal College of Engineering and Technology",
+            "Id": "133"
+        },
+        {
+            "Name": "John Cox Memorial C S I Institute of Technology",
+            "Id": "134"
+        },
+        {
+            "Name": "Jyothi Engineering College",
+            "Id": "135"
+        },
+        {
+            "Name": "K M E A Engineering College",
+            "Id": "136"
+        },
+        {
+            "Name": "K R Gouri Amma College of Engineering For Women",
+            "Id": "137"
+        },
+        {
+            "Name": "KMCT College of Engineering",
+            "Id": "138"
+        },
+        {
+            "Name": "KMCT College of Engineering For Women",
+            "Id": "139"
+        },
+        {
+            "Name": "KMP College of Engineering",
+            "Id": "140"
+        },
+        {
+            "Name": "Kottayam Institute of Technology and Science",
+            "Id": "141"
+        },
+        {
+            "Name": "KVM College of Engineering and Information Technology",
+            "Id": "142"
+        },
+        {
+            "Name": "Lourdes Matha College of Science and Technology",
+            "Id": "143"
+        },
+        {
+            "Name": "MEA Engineering College",
+            "Id": "144"
+        },
+        {
+            "Name": "MES College of Engineering",
+            "Id": "145"
+        },
+        {
+            "Name": "M G College of Engineering",
+            "Id": "146"
+        },
+        {
+            "Name": "Malabar Institute of Technology",
+            "Id": "147"
+        },
+        {
+            "Name": "Mangalam College of Engineering",
+            "Id": "148"
+        },
+        {
+            "Name": "Mar Baselios Christian College of Engineering and Technology",
+            "Id": "149"
+        },
+        {
+            "Name": "Mar Baselios College of Engineering and Technology",
+            "Id": "150"
+        },
+        {
+            "Name": "Mar Baselios Institute of Technology and Science",
+            "Id": "151"
+        },
+        {
+            "Name": "Marian Engineering College",
+            "Id": "152"
+        },
+        {
+            "Name": "Matha College of Technology",
+            "Id": "153"
+        },
+        {
+            "Name": "MES College of Engineering and Technology",
+            "Id": "154"
+        },
+        {
+            "Name": "MES Institute of Technology and Management",
+            "Id": "155"
+        },
+        {
+            "Name": "MET&apos;S School of Engineering",
+            "Id": "156"
+        },
+        {
+            "Name": "Mohandas College of Engineering and Technology",
+            "Id": "157"
+        },
+        {
+            "Name": "Mookambika Technical Campus",
+            "Id": "158"
+        },
+        {
+            "Name": "Mount Zion College of Engineering",
+            "Id": "159"
+        },
+        {
+            "Name": "Mount Zion College of Engineering For Women",
+            "Id": "160"
+        },
+        {
+            "Name": "Musaliar College of Engineering",
+            "Id": "161"
+        },
+        {
+            "Name": "Musaliar College of Engineering and Technology",
+            "Id": "162"
+        },
+        {
+            "Name": "Nehru College of Engineering and Research Centre",
+            "Id": "163"
+        },
+        {
+            "Name": "Nirmala College of Engineering",
+            "Id": "164"
+        },
+        {
+            "Name": "North Malabar Institute of Technology",
+            "Id": "165"
+        },
+        {
+            "Name": "Pinnacle School of Engineering and Technology",
+            "Id": "166"
+        },
+        {
+            "Name": "Prime College of Engineering",
+            "Id": "167"
+        },
+        {
+            "Name": "Providence College of Engineering",
+            "Id": "168"
+        },
+        {
+            "Name": "Prs College of Engineering and Technology",
+            "Id": "169"
+        },
+        {
+            "Name": "Rajadhani Institute of Engineering and Technology",
+            "Id": "170"
+        },
+        {
+            "Name": "Rajagiri School of Engineering and Technology",
+            "Id": "171"
+        },
+        {
+            "Name": "Royal College of Engineering and Technology",
+            "Id": "172"
+        },
+        {
+            "Name": "Sadguru Swami Nithyananda Insititute of Technology",
+            "Id": "173"
+        },
+        {
+            "Name": "Sahrdaya College of Engineering and Technology",
+            "Id": "174"
+        },
+        {
+            "Name": "Saintgits College of Engineering",
+            "Id": "175"
+        },
+        {
+            "Name": "Sarabhai Institute of Science and Technology",
+            "Id": "176"
+        },
+        {
+            "Name": "SCMS School of Engineering and Technology",
+            "Id": "177"
+        },
+        {
+            "Name": "Sree Buddha College of Engineering",
+            "Id": "178"
+        },
+        {
+            "Name": "Sree Buddha College of Engineering For Women",
+            "Id": "179"
+        },
+        {
+            "Name": "Sree Ernakulathappan College of Engineering and Management",
+            "Id": "180"
+        },
+        {
+            "Name": "Sree Narayana Guru College of Engineering and Technology",
+            "Id": "181"
+        },
+        {
+            "Name": "Sree Narayana Guru Institute of Science and Technology",
+            "Id": "182"
+        },
+        {
+            "Name": "Sree Narayana Gurukulam College of Engineering",
+            "Id": "183"
+        },
+        {
+            "Name": "Sree Narayana Institute of Technology",
+            "Id": "184"
+        },
+        {
+            "Name": "Sreepathy Institute of Management and Technology",
+            "Id": "185"
+        },
+        {
+            "Name": "Sri Vellappally Natesan College of Engineering",
+            "Id": "186"
+        },
+        {
+            "Name": "St. Gregorios College of Engineering",
+            "Id": "187"
+        },
+        {
+            "Name": "St. Joseph&apos;s College of Engineering and Technology",
+            "Id": "188"
+        },
+        {
+            "Name": "St. Thomas College of Engineering and Technology",
+            "Id": "189"
+        },
+        {
+            "Name": "St. Thomas College of Engineering and Technology",
+            "Id": "190"
+        },
+        {
+            "Name": "St.Thomas Institute for Science and Technology",
+            "Id": "191"
+        },
+        {
+            "Name": "TKM Institute of Technology",
+            "Id": "192"
+        },
+        {
+            "Name": "Thejus Engineering College",
+            "Id": "193"
+        },
+        {
+            "Name": "Toms College of Engineering For Startups",
+            "Id": "194"
+        },
+        {
+            "Name": "Travancore Engineering College",
+            "Id": "195"
+        },
+        {
+            "Name": "Trinity College of Engineering",
+            "Id": "196"
+        },
+        {
+            "Name": "UKF College of Engineering and Technology",
+            "Id": "197"
+        },
+        {
+            "Name": "Universal Engineering College",
+            "Id": "198"
+        },
+        {
+            "Name": "Valia Koonambaikulathamma College of Engineering and Technology",
+            "Id": "199"
+        },
+        {
+            "Name": "VedaVyasa Institute of Technology",
+            "Id": "200"
+        },
+        {
+            "Name": "Vidya Academy of Science and Technology",
+            "Id": "201"
+        },
+        {
+            "Name": "Vidya Academy of Science and Technology Technical Campus",
+            "Id": "202"
+        },
+        {
+            "Name": "Vignan Institute of Technology and Science (VISAT)",
+            "Id": "203"
+        },
+        {
+            "Name": "Vimal Jyothi Engineering College",
+            "Id": "204"
+        },
+        {
+            "Name": "Viswajyothi College of Engineering and Technology",
+            "Id": "205"
+        },
+        {
+            "Name": "Younus College of Engineering",
+            "Id": "206"
+        },
+        {
+            "Name": "Younus College of Engineering &amp; Technology",
+            "Id": "207"
+        }
+    ]
+}
