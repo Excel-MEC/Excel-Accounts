@@ -1,0 +1,5668 @@
+﻿{
+    "School": [
+	    {
+            "Name": "GOVT.HSS, BHARATHANNUR, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT VHSS, KARAKULAM, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT HSS, THONNAKKAL, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "PSNPM GOVT HSS, PEROORKADA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT GIRLS HSS, KARAMANA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT GIRLS HSS, MALAYINKIL, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT HSS, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT HSS, NEEYYARDAM, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "KULATHUMMAL GOVT HSS, KATTAKKADA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT BOYS HSS, CHALAI, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT VHSS, VELLANAD, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT HSS, MARAYAMUTTAM, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT TAMIL HSS, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT VHSS, KULATHOOR,UCHAKKADA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "NKM GOVT HSS, DHANUVACHAPURAM, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "CONCORDIA LUTHERAN HSS, PEROORKADA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "S.S.V HSS, CHIRAYINKIL, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "LEO XIII HSS, PULLUVILA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "SIVAGIRI HSS, VARKALA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "ST.JOSEPH’ S HSS, ANCHENGO, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "R.R.V.GIRLS HSS, KILLIMANOOR, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "JANATHA HSS, THEMBAMOOD, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "M.V HSS, THUNDATHIL, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "PALLITHURA HSS, PALLITHURA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "S HSS, VALIATHURA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "ST. MARY’ S HSS, VETTUKAD, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "R.K.D.N.S.S HSS, SASTHAMANGALAM, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "L.M.S.HSS, CHEMBOOR, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "NEW HSS, NELLIMOODU, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "S.N G. HSS, CHEMPAZHANTHY, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "S.N.V. HSS, ANAD, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "ST JOHNS MODEL HSS,NALANCHIRA,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "NSS HSS,PALKULANGARA,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "SN HSS,UZHAMALAKKAL,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "ST THOMAS HSS,POONTHURA,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "MUSLIM GIRLS HSS,KANIYAPURAM,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "MCHSS,KOTTUKALKONAM,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "SALVATION ARMY HSS,KOWDIAR,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "PKS HSS,KANJIRAMKULAM,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "LMS HSS,VATTAPPARA,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "ST MARY’ S HSS,VIZHINJAM,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "MUSLIM HSS,EDAVA,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "JANARDHANAPURAM HSS,OTTASEKHARAMANGALAM, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": " HSS,MARANALLUR,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "VTMNSS GIRLS HSS,DHANUVACHAPURAM, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "ST.THOMAS HSS,AMBOORI,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "ST XAVIER’ S HSS,PEYAD,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "AM HSS,THIRUMALA,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "BNVV HSS,THIRUVALLAM,TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "MULAVANA TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "AL- UTH-AMAN ENGLISH MEDIUM HSS,KAZHAKKOOTTAM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "TECHNICAL HSS, Muttada P.O, Thiruvananthapuram-695025",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "BEEM MAHEEM HSS, BEEMAPALLY, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "CHRIST NAGAR EM HSS, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "ST.THERESA* S CONVENT GHSS, NEYYATTINKARA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "CARMEL GIRLS HSS, VAZHUTHACAD, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "S HSS, NALANCHIRA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "SSM HSS, KOCHALUMOODU, MUDAPURAM, CHIRAYINKIL",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "IVANS HSS, PARASALA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "NSS HSS, PERUNTHANNI, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "ST. CHRISOSTEM EM HSS, NELLIMMOODU, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "SHREE VIDYADHI RAJA VIDYAMANDIR HSS,VELLAYAMBALAM,",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "Sr. ELIZEBETH JOEL CSI EM HSS, ATTINGAL, TRIVANDRU",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "CHINMAYA HSS, VAZHUTHACAUD, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "JYOTHI NILAYAM HSS, KAZHAKKOOTTAM, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "LITTLE FLOWER EM HSS, EDAVA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "OUR LADY OF MERCY HSS, PUTHUKURISSI, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "FR. PHILIP’ HSS, NELLIKODU, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "SREENEELAKANTA VIDYAPITOM, CHENKOTTUKONAM, TRIVAND",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "HOLY TRINITY HSS, ALTHARA, SREEKARYAM, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "PTM HSS, MARUTHURKONAM, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "ST. HELEN’ S HSS, LOURDUPURAM, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "ROSAMISTICA HSS, PULIMKUDY, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "SAMUEL HSS PARASSALA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "VICTORY GIRLS HSS, NEMOM, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "MANARUL HUDA HSS, PAZHAKUTTY, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "TECHNICAL HSS, SARKARA,CHIRAYINKEEZHU.P.O, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "P.R.WILLIAM HSS, KATTAKADA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT. HSS, VAKKOM, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "SNV GOVT. HSS, KADAKKAVOOR, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT. GHSS, PEROORKADA, TRIVANDRUM",
+            "District": "TRIVANDRUM"
+        },
+        {
+            "Name": "GOVT MODEL HSS,VETTIKKAVALA,KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "GOVT GIRLS HSS,THAZHAVA,KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "GOVT HSS,CHATHANNOOR,KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "GOVT HSS,PUTHUR,KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "GOVT HSS,PARAVUR,KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "GUHANANDAPURAM HSS, CHAVARA SOUTH, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "AAMRUTHA SANSKRIT HSS, PARIPPALLY, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "MILADE SHERIF HSS, MYNAGAPPALLY, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "ODANAVATTOM GIRLS HSS, ODANAVATTOM, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "VV HSS POREDAM, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "SN HSS CHITHARA, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "ST. GREGORIOUS HSS, KOTTARAKKARA, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "S.M HSS, KOTTARA, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "S.M HSS, PATHARAM, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "B.J.S.M MADATHIL HSS, THAZHAVA, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "S.V HSS, CLAPPANA, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "AT. ANTONY’ S HSS, KANJIRAKODE, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "S.N.D.P.Y HSS, NEERAVIL, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "M.S.M HSS, CHATHINAMKULAM, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "N.S.S HSS, CHATHANNOR, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "S.N.S.M HSS, ELAMPALLOOR,KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "M.K.L.M. HSS, KANNANALLOOR, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "CP HSS KUTTIKKADU, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "CHEMPAKASSERY HSS, POOTHAKULAM, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "IRUMPANANGADU HSS, IRUMPANANGADU, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "KRIST RAJ HSS, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "ST.STEPHEN’ S HSS, PATHANAPURAM, KOLLAM",
+            "District": "KOLLAM"
+        },
+        {
+            "Name": "S N V HSS, ANGADICAL SOUTH, PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "S N D P HSS, CHENNEERKKARA, PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "ABRAHAM M M HSS, EDAYARANMULA,",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "NSS HSS,KAVIYOOR,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "DBHSS,PARUMALA,KADAPRA,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "ST JOHNS HSS,ERAVIPEROOR,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "SNDP HSS,MUTTATHUKONAM, PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "ST S HSS,VENNIKKULAM,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "NSS BOYS HSS,PANDALAM,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "MG HSS,THUMPAMON,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "HSS,SEETHATHODE,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "PSVPM HSS,AYRAVON,KONNI,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "SNDP HSS,KARAMVELI,ELANTHOOR,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "ST THOMAS HSS,ERUVALLIPRA,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "MT HSS,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "CMS HSS,KUZHIKKALA,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "NSS HSS,CHOORAKODE,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "MANAKKALA HSS(DEAF&amp;DUMB),PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "SV GV HSS, KIDANGANNOOR, PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "TECHNICAL HSS,KALLOOPPARA,PATHANAMTHITTA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "HOLY ANGELS EM HSS, ADOOR",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "GOOD SHEPHERD EM HSS, PERUMALA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "NICHOLSON SYRIAN GHSS, MENJADI",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "ST. MARY’ S HSS, MULLASSERY",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "BETHANY ST. MARY’ S HSS, PERINAD, RANNI",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "SH HSS, MYLAPRA",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "KADAMPANADU HSS, KADAMPANADU",
+            "District": "PATHANAMTHITTA"
+        },
+        {
+            "Name": "GOVT HSS, ALA, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT MHSS, AMBALAPPUZHA, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "S N M GOVT BHSS, CHERTHALA, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT MBHSS, HARIPPAD, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT HSS, KALAVOOR, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT BOYS HSS, KAYAMKULAM, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT HSS, KIDANGARA, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT HSS, KUNNAM, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT HSS, PERUMPALAM, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT HSS, CHANDIROOR, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT DVHSS, CHARAMANGALAM, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT MUHAMADEN’ S HSS, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT GHSS, MAVELIKKARA, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT HSS, THIRUVANVANDOOR, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT HSS, BUDHANOOR, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "KKM GOVT HSS, ELIPPAKKULAM, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT HSS, ANGADIKKAL SOUTH, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT VHSS,CHUNAKKARA,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT HSS,MANGALAM,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT HSS,AYAPARAMBU,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT HSS,SL PURAM,KANJIKKUZHI,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT GIRLS HSS,CHERTHALA,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "TD HSS, THURAVOOR, ALAPPUZHA ",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "VADUTHALA  JUMA HATH HSS, NAVADUVATHU NAGAR",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT GIRLS HSS,KAYAMKULAM",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT SCU VHSS,PATTANAKKAD,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT VHSS,MULAKKUZHA,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT GIRLS HSS,HARIPPAD,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "ST. JOSEPH’ S GHSS, ALLAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "AGRM HSS, VALLIKKUNNAM, ALLAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "N S HSS, NEDUMUDI, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "ST. MARY’ S HSS, CHAMPAKKULAM, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "ARAVUKAD HSS, PUNNAPPRA, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "SN DPHSS , KUTTAMANGALAM, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "ST. ALOSIOUS HSS, EDATHUA, ALLAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "NS S HSS, RAMANKARI, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "NS S HSS, KARUVATTA, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "MS M HSS, KAYAMKULAM, ALLAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "BISHOP HODGES HSS, MAVELIKKARA, ALLAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "POPE PIOUS XI HSS, BHARANIKKAVU, ALLAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "V V HSS, THAMARAKKULAM , ALLAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "NS BHSS, MANNAR, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "LEO XIII HSS, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "S N M HSS, PURAKKAD, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "S N HSS, POOCHACKAL, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "ST. FRANCIS ASSISSI HSS, ARTHINKAL, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "ST. JOSEPH’ S HSS, PULINKUNNU, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "LM HSS,PACHA,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "ST JOHNS HSS,MATTOM,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "TD HSS,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "SD VB HSS,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "PADANILAM HSS,NOORANAD,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "DBHSS,THAKAZHI,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "RVSM HSS,PRAYAR,OCHIRA,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "NRPM HSS,KAYAMKULAM,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "NSS HSS,KAVALAM,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "ST GEORGE HSS,MUTTAR,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "HOLY FAMILY HSS,KATTOOR,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "KV SANSKRIT HSS,MUTHUKULAM,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "PKKSM HSS,KAYAMKULAM,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "SN TRUST HSS,MARARIKULAM NORTH,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "SAMAJAM HSS,MUTHUKULAM ,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "SREE BHUVANESWARI EM HSS, MANNAR",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "OUR LADY OF MERCY HSS, AROOR",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "ST. THOMAS HSS, NEERETTUPURAM",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "BISHOP MOORE HSS, AKANATTUKARA, MAVELIKARA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "CARMEL ACADEMY EM HSS, PAZHAVANGADY, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "BETHANY BALIKAMATOM HSS, NANGIARKULANGARA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "ST. MARY’ S GHSS, KAYAMKULAM",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "SREE VITOBHA HSS, KAYAMKULAM",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "VHSS, CHATHIYARA, THAMARAKULAM",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "KKKVM HSS, POOTHAPPALLY SOUTH, HARIPPAD",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "ST. ANNE*S GHSS, ANGADIKKAL, CHENGANNUR",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "NADUVATTOM HSS, PALLIPADU",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "SDA HSS, MAVELIKKARA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "TECHNICAL HSS, PERISSERY, CHENGANNUR",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT. HSS, THIRUNELOOR, CHERTHALA, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT. HSS, CHERTHALA SOUTH, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "VAYALAR RAMA VARMA GOVT. HSS, VAYALAR, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT. VVHSS, KODENTHURUTHU, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "GOVT. HSS, RAMAPURAM, KEERIKKAD, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "SN TRUST HSS, CHERIYANAD, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "SN TRUST HSS, PALLIPPAD, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "TECHNICAL HSS, IHRD,PALLIPURAM P.O,CHERTHALA,ALAPP",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "CBM HSS, NOORANAD, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "CHAKKALAKKAL HSS, PADANILAM, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "MODEL RESIDENTIAL SCHOOL, PUNNAPRA, ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "MAHATMA HIGHER SECONDARY SCHOOL FOR BOYS, CHENNITHALA,ALAPPUZHA",
+            "District": "ALAPPUZHA"
+        },
+        {
+            "Name": "ST JOSEPH’ S GHSS,CHANGANACHERRY,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "SH MOUNT HSS,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "CMS HSS,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ST THERESAS GHSS,VAZHAPPALLI,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "NSS HSS,ANICKAD,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "NSS HSS,KARAPPUZHA,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "NSS HSS,KIDANGORE,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "HOLY FAMILY HSS,MUTTAMBALAM,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "CCMHSS,KARIKKATTOOR,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ST AUGUSTINES HSS,RAMAPURAM,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ST JOHN NEPHUSIANS* S HSS,KOZHUVANAL,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "EMMANUEL’ S HSS,KOTHANALLOOR,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ST MICHEAL* S HSS,KUDAVACHOOR,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ST MARY* S HSS,KIDANGOOR,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "SMSN HSS,VAIKOM,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ST MARY* S HSS,PALA,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ST ANNE*S HSS,KURIYANAD,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "MUSLIM GIRLS HSS,KANGAZHA,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "AM HSS,KALAKKETTY,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ST THOMAS HSS,ERUMELY,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ST GEORGE HSS,ARUVITHURA,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ST ANTONY’ S HSS,POONJAR,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "SVR NSS HSS,VAZHOOR,KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "MODEL TECHNICAL HSS,PUTHUPPALLYKOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "HOLY CROSS HSS, THELLAKAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "AKIJIM EM HSS, KANJIRAPALLY",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ST. JOSEPH’ S EM HSS, KANJIRAPALLY",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "INFANT JESUS B.C.G HSS, MANARKADU",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "REV. FR. GMHSS, KARIKKODE",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "K.E.E.M HSS, MANNANAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "MANGALAM EM HSS, VETTIMUKAL, ETTUMANUR",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "VINCENT DE- PAUL HSS, PALA",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "BASELIOUS EM HSS, KANGHAZHA",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "SHEM HSS, PERUNNA, CHANGANASSERY",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "CMS HSS, PALLOM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ST. JOSEPH CONVENT HSS, KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ST. ANTONOY’ S HSS, CHENGALAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "DE PAUL HSS, NAZRETH HILL, KURAVILANGADU",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "DEAF HSS NEERPARA, THALAYOLAPARAMBU",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "ITHITHANAM HSS, MALAKUNNAM, CHANGANACHERRY",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "GOVT. HSS, THOTTAKKAD, KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "GOVT. VHSS, VAYALA, KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "GHSS, PUTHUVELI, PALA, KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "GHSS, PAIPPAD, KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "GHSS CHENGALAM, KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "PTM GHSS, VELLOOR, PAMPADY, KOTTAYAM",
+            "District": "KOTTAYAM"
+        },
+        {
+            "Name": "Govt. HSS, Bison Valley,Idukki",
+            "District": "IDUKKI"
+        },
+        {
+            "Name": "Govt. Tribal HSS, Idukki",
+            "District": "IDUKKI"
+        },
+        {
+            "Name": "Govt. HSS, Vagamon,Idukki",
+            "District": "IDUKKI"
+        },
+        {
+            "Name": "Govt. HSS, Anakkara,Idukki",
+            "District": "IDUKKI"
+        },
+        {
+            "Name": "Govt. HSS, Vattavada,Idukki",
+            "District": "IDUKKI"
+        },
+        {
+            "Name": "GOVT. MODEL RSIDENTIAL SCHOOL, PEERUMEDU, IDUKKI",
+            "District": "IDUKKI"
+        },
+        {
+            "Name": "GOVT HSS,POOTHRIKA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "GOVT SANSKRIT HSS,THRIPOONITHURA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "PUTHENTHODE GOVT HSS,CHELLANAM,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "GOVT GIRLS HSS,PALAKKUZHA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SRV HSS,KOCHI,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "NERIYAMANGALAM GVHSS,KOTHAMANGALAM-1",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SNDP HSS,UDAYAMPERUR,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SDPY HSS,PALLURUTHY,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "JAYAKERALAM HSS,PULLUVAZHI,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "MAR ELIAS HSS,KOTTAPPADY,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SNM HSS, MOOTHAKUNNAM, ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "VCS HSS,PUTHENVELIKKARA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST MARY* S HSS,MORAKKALA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST SEBASTIANS HSS,GOTHURUTHY,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SM HSS,CHERAI,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "HSS OF JESUS,KOTHAD,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "CARDINAL HSS,THRIKKAKKARA, ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST PHILOMINA’ S HSS,KOONAMAVU,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "NSS BHSS,MANICKAMANGALAM,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST THOMASS HSS,KEEZHILLAM,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST AUGUSTINE* S HSS,KALLOORKKAD,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST MARY’ S HSS,ARAKKUZHA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "FR JOSEPH S HSS,PUTHUPPADI,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SNDP HSS,MUVATTUPUZHA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "TT HSS,KAVUMKARA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST GEORGE HSS,KOTHAMANGALAM,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST STEPHEN’ S HSS,KEERAMPARA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "MAR BASIL HSS,KOTHAMANGALAM,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST IGNATIUS HSS,KANJIRAMATTOM,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST MARY* S HSS,THALAKKODE,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SACRED HEART HSS,THEVARA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST ALBERTS HSS,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SN HSS,OKKAL,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SN HSS,TRIKKANARVATTOM,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "MGM HSS,KURUPPUMPADI,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "NSS HSS,VARAPPEETTY,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SNVSKT HSS,N PARUR,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST PETER’ S HSS,KUMBALANGI,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "KPM HSS,POOTHOTTA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST THERESAS CGHSS,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST SEBASTIANS HSS,PALLURUTHY,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "DARUL ULOOM HSS,PULLAPPADI,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST FRANCIS GIRLS HSS,ALUVA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST MARY’ S GHSS,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST ANTONY’ S HSS,KACHERIPPADI,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST PETERES HSS,ELANJI,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "MAR COORLOSE MHSS,PATTIMATTOM,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST JOHN* S HSS,VADAKARA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ASRAMAM HSS,PERUMBAVOOR,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST AUGUSTINES CG HSS,KOTHAMANGALAM,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "MAR KAUMA HSS,VENGOOR,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "RAJARSHI MEMORIAL HSS,VADEVUCODE,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SN HSS,N PARAVOOR,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "HMY HSS,KOTTUVALIKAD,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "NSS HSS,PARAKADAVU,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SNDP HSS,ALUVA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST THOMAS HSS,MALAYATTOOR,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "BRAHMANANDODAYA HSS,KALADI,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "HOLY GHOST GIRLS HSS,THOTTAKKATTUKARA,",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST PETER’ S HSS,KOLENCHERY,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST AUGUSTINE* S GHSS,MOOVATTUPUZHA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "MKM HSS,PIRAVAM,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "HIDAYATHUL ISLAM HSS,EDAVANKKAD,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "RAJAGIRI HSS KALAMASSERY",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST.JOSEPH’ S HSS THRUPPUNITHURA",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "HM TRUST HSS RANDARKARA",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "NIRMALA EM HSS, MUVATTUPUZHA,",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "NIRMALA EM HSS ALUVA",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "MARY MATHA EM HSS, THRIKKAKARA",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "PANANGAD HSS, PANANGAD, KOCHI",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SDPY GHSS, PALLURUTHY",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "LMC HSS, PACHALAM, ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "MA HSS, KODANADU, PERUMBAVOOR",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "O.L.C.GHSS, PALLURUTHY",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "NIV HSS, MARAPPALLY, ALUVA",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST. JOSEPH’ S HSS, CHENGAL, KALADY",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SNDP HSS, NEELESWARAM, KALADY",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST. JUDE EM HSS, KARNAKODAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "STAR JESUS HSS, KARUKUTTY",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST. JOSEPH S HSS PIRAVAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "HILL VALLEY HSS, THRIKKAKARA",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "CHRISTAVA MAHILALAYAM HSS, ALUVA, THOTTUMUGHAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ABBDULLA HAJI AHAMED SAIT MEMORIAL KMEA AL-MANAR HIGHER",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "SECONDARY SCHOOL,KUZHIVELIPPADY,EDATHALA,ERNAKULAM",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST. ANNE’ S HSS, ELOOR",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "MAM HSS, PUTHEN KURISSU",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ISLAMIC HSS, ALUVA",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ST. JOSEPH’ S HSS, KOONAMAVU",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ANITA VIDYALAYA HSS, TANNIPUZHA, OKKAL",
+            "District": "ERNAKULAM"
+        },
+        {
+            "Name": "ASIA BAI HSS, MATTANCHERY",
+            "District": "ERNAKULAM"
+        },
+	    {
+            "Name": "GOVT SMT HSS,CHELAKKARA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,CHERPU,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT MODEL GHSS,IRINJALAKKUDA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,KANDASSANKADAVU,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,KODAKARA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,KODUNGALLUR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,MACHAD,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "KERALA VARMA MEMORIAL GHSS,ERIYAD,KODUNGALLOOR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT FISHERIES HSS,NATTIKA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,PEECHI,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,PERINGOTTUKARA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT MODEL HSS FOR BOYS,THRISSUR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,VETTILAPPARA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,CHERUTHURUTHY,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "MODEL BOYS VHSS,KUNNAMKULAM,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,PATTIKKADU,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT MODEL BOYS HSS,CHALAKKUDI,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT MODEL BOYS HSS,IRINJALAKKUDA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,VILLEDOM,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "MODEL BOY`S HSS,VADAKKANCHERY,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,CHAVAKKAD,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT MHSS,NADAVARAMBU,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT GIRL`S HSS,KODUNGALLUR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,IRANIKKULAM,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,CHAIPANKUZHI,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,KARUPADANNA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,NANDIKARA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT SAMITHY HSS,MELADOOR,MALA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,EDAVILANGU,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT NALANDA HSS,KIZHUPPILAKKARA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,MANALOOR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,KATTILAPOOVAM,THRISUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT VHSS,AYYANTHOLE,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT SRVHSS,VELUR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,KOCHANNUR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,MULLASSERY,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GVHSS,THALIKKULAM,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,ERUMAPETTY,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,VARAVOOR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS,PAZHAYANNOOR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT MODEL GIRLS HSS,KUNNAMKULAM,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "SEETHI SAHIB MV HSS,EDAKKAZHIYOOR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "UNION HSS,MAMBRA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "SN HSS,IRINJALAKKUDA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "AKM HSS,POOCHATTY,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "SANTHA HSS,AVANOOR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "VIVEKODAYAM BHSS,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "NHSS,IRINJALAKKUDA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST ANTONY`S HSS,AMMADAM,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "SH CONVENT GHSS,CHALAKKUDY,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST CLARAS GHSS,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "SNDP HSS,PALLISSERY,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "RM HSS,ALOOR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "CHALDEAN SYRIAN HSS,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "MASM VHSS,VENMANAD,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST ANTONY`S HSS,MALA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "SREE KRISHNA HSS,GURUVAYOOR,THRISUUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "SACRED HEART CONVENT GHSS,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "SRKGVM HSS,PURANATTUKARA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "VPM SNDP HSS,KAZHIMBRAM,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST ANTONY`S HSS,PUDUCAUD,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "HSS,PANANGAD,MATHILAKAM,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST MARY`S HSS,KUZHIKKATTUSSERY,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "SOCCRASO HSS,MALA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST SEBASTIANS HSS,KUTTIKKAD,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST MARY`S HSS,IRINJALAKKUADA",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "HDP HSS,EDATHIRINJI,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "LBS HSS,AVITTATHUR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "CMS HSS,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST JOSEPH`S CG HSS,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST RAPHEL`S CGHSS,OLLUR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "CJMA HSS,VARANTHARAPALLI,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "SREE SARADA GHS,PURANATTUKARA,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST ALOSIOUS HSS,ELTHURUTH",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST THOMAS COLLEGE HSS,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST THOMAS LHSS,THOPE,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST JOSEPH`S HSS,PAVARATTY,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "NHSS,ENGANDIYOOR,TRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "LITTLE FLOWER CGHSS,GURUVAYOOR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST FRANCIS BHS,MATTOM,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "NSS VHSS,MUNDATHICODE,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "AI HSS, PADOOR,THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "SN TRUST HSS, NATTIKA,THRISUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "I.C.A.E. HSS, VADAKKEKAD, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "BETHANY ST. JOHNS HSS, KUNNAMKULAM, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "NSS EM HSS, WEST FORT, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "VIVEKODAYAM GHSS, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "PERPECTUAL SUCCESS HSS, THUMUDIKUNNU",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "KAMALA NEHRU MVHSS, VATANAPALLY, THRITHALLOOR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "DON BOSCO HSS, MULLAKKARA, MANNUTHY, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "FOCUS EM HSS, THOTTAPPU",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "DE- PAUL EM HSS, CHOONDAL, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST. JOSEPH`S MHSS, KURIACHIRA, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST. PAULS CONVENT EHSS KURIACHIRA, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "LITTLE FLOWER CONVENT HSS, KORATTY",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "VIMALA HSS, VELLIKKULANGARA",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "CARMEL HSS, CHALAKKUDI",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "BETHANY CONVENT GHSS, KUNNAMKULAM",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "DEEPTHI HSS, THALORE",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "JPE HSS, KOORKKENCHERY",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "CNN HSS, CHERPPU",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "LITTLE FLOWER CONVENT HSS, IRINGALAKKUDA",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST.JOSEPH`S EMHSS, ERAVU, ARIMPUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST. JOSEPH`S EM HSS ALOOR, KALLETTINKARA",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "HOLY CHILD CONVENT EMHSS, SNEHA GIRI, MALA",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "SN GHSS, KANIMANGALAM",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "CHENTRAPPINI HSS, CHENTRAPPINNI",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "RAHMATH EM HSS, THOZHIYOOR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "DON BOSCO HSS, IRINJALAKKUDA.",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "MALIK DINAR HSS, DESAMANGALAM",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "TMV HSS, PERUMPILAVU",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "HOLY ANGEL`S HSS, OLLUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "SWAMI BHOOTHANANDA HSS, KURUMPILAVU",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "S.N GUPTA SAMAJAM HSS, KARAMUKKU, KANDASSAMKADAVU",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GANDHSMARAKA HSS, ASHTAMICHIRA",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "TECHNICAL HSS, CHETTUVA, KUNDALIYUR, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "TECHNICAL HSS, VARADIAM, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. HSS, MANATHALA, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "KADAPPURAM GOVT. HSS, CHAVAKKAD, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. FISHERIES HSS, KAIPAMANGALAM, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. MAPPILA HSS, CHAMAKKALA, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. HSS, THANNYAM, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. CMHSS, KUTTOOR, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. HSS, KATTOOR, IRINJALAKUDA, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "MARMHSS, SANTHIPURAM, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. HSS, MUPPILIYAM, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. HSS, ANCHERY, OLLUR, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. HSS, VADANAPPALLY, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. HSS, VALAPPAD, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. VHSS, PUTHENCHIRA, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. HSS, KADIKKAD, PUNNAYOORKULAM PANCHAYAT, THR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. HSS, KADAVALLUR, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "PANJAL GOVT. HSS, PANJAL, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. FISHERIES TECHNICAL HSS, CHAVAKKAD, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. HSS, CHEMBUCHIRA, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. MODEL VHSS FOR GIRLS, THRISSUR TOWN, THRISSU",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT. HSS, POOKUNNAM, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "MES HSS, SREEMARAMAPURAM, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "HOLY FAMILY CONVENT GIRLS HSS, CHEMPUKAVU, THRISSU",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST. ANNE`S GIRLS HSS, EDATHIRUTHY, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "VIDYAJYOTHI EM PUBLIC HSS, MATHILAKOM, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "VIDHYA JYOTHI HSS, MATHILAKOM, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "FOCUS ISLAMIC HSS, KADAPPURAM",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "VIMALA HSS, VELLIKULANGARA, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "POOMALA HSS, MULANKUNNATHKAVU, CHETTUPARA, THRISSU",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "RM VHSS, PERINJANAM, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "CONCORD ENGLISH HSS, CHIRAMANENGAD, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GURU SREE HSS, PULLUT, KODUNGALLUR, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "St. Thomas HSS, Engandiyoor Post, Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "MODEL RESIDENTIAL SCHOOL, CHALAKKUDY, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Thrikkur Panchayat Sarvodaya HSS,Trikkur,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GHS, Marathancode,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Alagappanagar Panchayath HSS, Alagappanaagar,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Govt. HSS, Elavally,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GHSS Pambady, Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GHSS Pullut (V. K. Rajan Memorial),,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "St. Joseph’s HS S,Meloor,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "St. Thomas HSS, Mayannur,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "NSS HSS, Mulloorkara,,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ST. Joseph’s HSS, Avinissery,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "St.Thomas HSS,Vallachira,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Sreekrishna HSS,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "BVMHSS, Kalaprambu.P.O Aripalam ,Thrissur- 680 688",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Sree Durga Vilasam HSS, Peramangalam,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Deepthi HSS, Thalore,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "AKM HSS, Poyya,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "St. Joseph’s &amp; St. Cyril’s HSS, West Mangad,,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "St. John’s HSS, Parappur,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "St.Antonys HSS,Puthenpeedika,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "H S S Arimpur, Arimpur P O ,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "St. Antony’s HSS, Pazhuvil,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "MIC Al Ameen HSS, Kechery,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Union HSS, Annanad,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "MAM HSS, Koratty,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "St.Joseph HSS, Mathilakam,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Poomala HSS, Poomala,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "St. Antony’s HSS, Moorkanad,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "V.R.Appu Master Memorial HSS, Thaikkad,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Podujana Vidhyabyasa Samithy HSS, Parappukkara,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "St. Anne’s HSS, Kottappuram,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Marthoma Girls HSS, Thrissur,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "LFGHSS, Chelakkara,Thrissur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Appunni Memorial HSS, Chemmannur,Thrissur-680 517",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ASHA BHAVAN H.S.S FOR DEAF, PADAVARATT. P.O, OLLUR,",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "LITTLE FLOWER CONVENT HSS, KORATTI, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "ISLAMIC VHSS , ORUMANAYUR, THRISSUR",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Lourde Matha EM HSS, Cherpu",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Theqwa Residential Girls HSS, Andathode",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "Assissi EM Higher Secondary School,",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "JMJEM HSS, Athani",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "IDCE HSS, Orumanayur",
+            "District": "THRISSUR"
+        },
+        {
+            "Name": "GOVT HSS, CHALISSERY, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT BHSS , CHITTUR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS , EDATHANATTUKARA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS KIZHKKENCHERRY, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS, KODUVAYUR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS KOTTAYI, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT JANATHA HSS, NADUVATTOM, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "PMG MGHSS, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GMM GOVT HSS , PALAKKAD, PALAKKD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT ORIENTAL HSS , PATTAMBI, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "MNKM GOVT HSS, PULAPATTA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS, VELLINAZHY, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS MANKARA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS, CHATHANNUR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS, BIG BAZAAR , PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS , MUNNOORKODE, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS, PATTAMBI, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS , POTTASSERY, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS, KANJIKODE, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS, VATANAMKURISSI, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS, KUMARANALLOOR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT BOYS HSS, NEMMARA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GHSS, KOZHIPARA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. VICTORIA GHSS , CHITTOOR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT HSS, MUTHALAMADA , PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GHSS, MEZHATHUR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, GANESHGIRI, SHORANUR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GHSS, PERINGOTTUKURISSI, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT AP HSS, ELAPPULLY, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GHSS, KADAMBUR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "PANCHAYAT HSS, PERUMATTY, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GHSS, AGALY, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, CHERPULASSERRY, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GVHSS , PATHIRIPPALA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "ASM HSS, ALATHUR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "KKMHSS VANDITHAVALAM, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "C G HSS, VADAKKENCHERRY, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "P T M YATHIMKHANA HSS, EDAPPALAM, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "ST. THERESE HSS SHORANUR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "KANNADI HSS, KANNADI, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "BRAHMANADASWAMI SIVAYOGI HSS KOLLENGODE",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "K C P HSS, KAVASSERRY, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "T.R.K. HSS, VANIYAMKULAM, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "CHALAVARA HSS, CHALAVARA .P.O., PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "ST PAUL`S HSS, KOZHINJAMPARA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "KALLADI HSS, KUMARAMPATHOOR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "L S N HSS, OTTAPPALAM, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "HSS, SREEKRISHNAPURAM, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "KARIMPUZHA HSS, THOTTARA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "MNK M S HSS, CHITTILENCHERRY, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "HSS, VALLAPPUZHA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "B E M HSS.,PALAKKAD, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "PULIYANPARA HSS, KODUMTHIRAPPALLY, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "C B K M GOVT. HSS, PUTHUPARIYARAM, PALAKAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "MES HSS, MANNARKKAD, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "KANIKKAMATHA CONVENT EM HSS, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "PARADUR HSS, KARIMBATHOOR, PATTAMBI",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "KTM HSS, MANNARCAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "ST. THOMAS GHSS, KALLEKULANGARA",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "ASSISSI EM HSS, KANJIKODE",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "BHARATH MATHA HSS, CHANDRANAGAR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "BSS GURUKULAM HSS, ALATHUR",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "SDA HSS, KANIYAMPURAM",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "MUJAHIDEEN HSS, PARALI",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GRACE HSS, KODUMATHIRAPPALLY, ALATHUR",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "RAILWAY HSS, OLVAKKODE",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "KALLADI ABDU HAJI HSS, KOTTAPPADAM, MANNARKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "AROGYAMATHA HSS, KOTTATHARA",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "DARU JANA HSS, NELLIPPUZHA, MANNARKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "VIJAYA MATHA CONVENTT HSS, CHITTOOR",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "MET HSS, MANNARKADU",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "AL HUDA EM HSS, ONGALLOR",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "MES KTM EMHSS, VATTAMANNAPURAM, EDATHANATTUKARA, P",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, KUMARAPURAM, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, KARIMBA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, MALAMPUZHA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. TRIBAL HSS, SHOLLAYAR, MANNARKKAD, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, ALANNALLOOR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "BHAGAVATHI GOVT. HSS, VANNAMADA, CHITTUR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, ERUMAYOOR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. GIRLS HSS, NENMARA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, OTTAPPALAM, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, MARAYAMANGALAM, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, CHUNDANPETTAH, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "PUTHUR TRIBAL GOVT. HSS, PUTHUR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, KARAKURISSI, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, ANAKKARA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, THOLANNUR, KUZHALMANDAM, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. HSS, THATHAMANGALAM, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. GIRLS HSS, ALATHOOR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "KUMANANELLOOR GOKHALE GOVT. HSS, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "SN TRUST HSS, SHORNUR, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "TECHNICAL HSS,AYILOOR.P.O,VIA NEMMARA,PALAKKD-6785",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "SKDI ORPHANAGE HSS, VALLAPPUZHA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "HSS KATAMPAZHIPURAM, OTTAPPALAM, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "MES ENGLISH MEDIUM HSS, OLAVAKODE, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "KARUNA HSS, OTTAPPALAM, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "SRAVANA SAMSARA HSS, WEST YAKKARU, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "MES TRUST PUBLIC HSS, KARIMPARA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "IES ENGLISH HSS, THRITHALA, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "PALLIKURUP HSS, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "KPRP HSS, KONGAD, PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT.HSS, KUNISSERI,PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT.HSS, KODUMUNDA,PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT.HSS, THENKURISSI,PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "MODEL RESIDENTIAL HSS,THRITHALA,PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Sarvajana HSs Puthukkode,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "PGP HSS, Popully,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "CA HSS, Coyalmannam, Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "CA HSS, Ayakkad. P. O, Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "SKHSS ,Nallepilly,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Prali HSS ,Parali ,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "SMM HSS, Pazhambalacode. P. O, Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "CA HSS, Peruvemba,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Kalladi Abdu Haji HSS,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Darunnajath HSS, Nellipuzha,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "SM HSS, Ayalur,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "RPM HSS, Panangattiri,Palakkad - 678 506",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Polachirackal HSS, Padagiri, Nelliampathy ,Palakkad- 678 509",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "VIM HSS, Pallassana,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Velayudhan Memorial HSS, Vadavannur,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Sree Sankara Oriental HSS, Lakkidi,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Mundur HSS, Mundur PO, Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "P.T.M HSS, Thrikkatiri,,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "HSS, Keralassery,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "KPRP HSS, Kongad,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Desabandhu HSS, Thachampara,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "HSS, Peringode,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Paradur HSS, Pallippuram,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "NSS HSS, Akathethara,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "P.K.HSS, Mannapra,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "TSNM HSSl, Kundurkunnu,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "CVM HSS,P.O. Vandazhy, Palakkad,Pin:678706.",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "HSS,Kuthanur,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "AKNM - MA Memorial HSS, Kattukulam,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Dr. KB Menon Memorial HSS Thrithala, Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Sabari PTB Smaraka HSS, Adakkaputhur,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Lourde Matha HSS, Mangalam Dam,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Anangannadi HSS, PO Panamanna,Palakkad",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "KPSMM VHSS, VARODE, OTTAPPALAM,PALAKKAD",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "CGM English Medium HSS, Kalldipatta, Pattambi",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "Carmel HSS School, Palakkayam",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "St. Pauls English HSS, Kollengode",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "INIC HSS, Nattukkal",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "St. Johns HSS, Akapadam",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GOVT. VHSS FOR THE DEAF, OTTAPALAM - 4",
+            "District": "PALAKKAD"
+        },
+        {
+            "Name": "GANAPATH GGHSS,CHALAPPURAM,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,EAST HILL,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,KODUVALLI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,KOKKALLUR,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,KOYILANDI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT MHSS,KOZHIKKODE,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,KUTTIADI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT VHSS,MADAPPALLI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,MAVOOR,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT VHSS,MEPPAYUR,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,KAYANNA,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT JNM HSS,PUTHUPPANAM,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT SANSKRIT HSS,MEPPAYIL,VADAKARA",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,VALAYAM,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT BT HSS,VADAKARA,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,AZHIYOOR,KOZHOKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. MOPLA HSS,KOYILANDY,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,POONUR,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS. MEDICAL COLLEGE CAMPUS,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,BEYPORE,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "REC GOVT HSS,CHATHAMANGALAM,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,KUTTIKKATTUR,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT VHSS,PAYYOLI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,KALLACHI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT VHSS,NADAKKAVU,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT GHSS,BALUSSERY,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,KOLATHUR,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,CHORODI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,ORKATTERI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,VELLIYODE,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "HSS,PAVANDOOR,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "PERAMBRA HSS,PERAMBRA,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "TIM GHSS,NADAPPURAM,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "RAC HSS,KATAMERI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "NADUVANNUR HSS,VAKAYAD,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "HSS,NANMINDA,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "RAHMANIA HSS FOR HANDICAPPED,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "MARKEZ HSS,KARANTHOOR,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "ST SEBASTIANS HSS,KOODARANJI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "BEM GIRLS HSS,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "NOCHAT HSS,NOCHATH,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "ST.JOSEPH`S BOYS HSS,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "ZAMORIN`S HSS,TALI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "CHENNAMANGALLUR HSS,MUKKAM,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "FEROK`S HSS,FEROKE COLLEGE P O,KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "ST JOSEPH`S A I GHSS,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "MALABAR X`IAN COLLEGE HSS,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "SAVIO HSS,DEVAGIRY,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "SRM HSS,KALLAI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "JDT ISLAM HSS,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "CALICUT GIRLS HSS,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "MM BOYS HSS,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "MIM HSS,PERODE,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "MEMUNDA HSS,VILIAPPALLI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "IRINGANNUR HSS,IRINGANNUR,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "ST JOSEPH`S HSS,KODENCHERY,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "SACRED HSS,THIRUVAMPADI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "UMBICHI HAJI HSS,CHALIYAM,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "CALICUT SCHOOL FOR HANDICAPPED,KULATHUR",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "PALORA HSS,ULIYERY,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "THIRUVANGOOR HSS,KOILANDY,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "ST GEORGE HSS,KULATHUVAYAL,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "KUNNAMANGALAM HSS,KUNJIMANGALAM,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "HIMAYATHUL ISLAM HSS,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "AKKR HSS FOR GIRLS,CHELLANNUR,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "PROVIDENCE HSS,KOZHIKKODE-2",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "MOHAMMED ALI JOHA HSS,ELETTIL,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "VATTOLI NATIONAL HSS,VATTOLI,KOZHIKKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "SALAFI HSS, MEPPAYUR",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "PRESENTATION HSS, CHEVAYUR",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "SREE NARAYANA HSS, VADAKARA",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "VANERENI EM HSS, FAROOK",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "CALICUT ISLAMIC HSS, MATHARA",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "CHINMAYA VIDYALAYA HSS, NELLIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "KMO HSS, KODUVALLY",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "KUTTAMBOORE HSS, PUNNASSEERY, NARIKKUNNU",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "CHACKALACKAL HSS, PADANILAM, MADAVOOR, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "MUM HSS, VADAKARA",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "ILAHIYA HSS, KAPPADU",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "KPES HSS, KAYAKKODI",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "SH HSS, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "SHRI GUJARATHI VIDYALAYA HSS, KOZIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "CRESENT HSS, VANIMEL",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "NSS EM HSS, MEENCHANTHA",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "JDT ISLAM HSS, MARYKUNNU",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "ISLAMIC ACADEMY HSS, KOTTAKKAL",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "KM HSS, IRINJAL",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "AUXILIAM NAV JYOTHI HSS KUNNAMANGALAM",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "PTM HSS, KODIYATHOOR, MOKKAM",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "MKHMMO HSS, MANNASSERY, Mukkam,KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "SIA COLLEGE HSS, UMMATHUR, PARAKKADAVU",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "TECHNICAL HSS, KODUVALLY",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. BOYS HSS, KOYILANDY, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. HSS, PUTHUPPADY, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. HSS, THAMARASSERY, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. FISHERIES HSS, MADAPPALLY, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. HSS, AZCHAVATTOM, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. VHSS, KUTTICHIRA, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. HSS, NARIKUNI, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. HSS, PAYIMBRA, KUNNAMANGALAM, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. HSS, KARUVAMPOYIL, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. HSS, KAKKODY, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. HSS, PANNUR, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. HSS, SIVAPURAM, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. ACHUTHAN GIRLS HSS, CALICUT, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. KALLAI GANAPATHY HSS, KALLAI P.O. KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. NGO QUARTERS HSS, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. VHSS, ATHOLI, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "NEELESWARAM GOVT. HSS, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. HSS, PERINGALAM, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. FISHERIES HSS, PUTHIYAPPA, ELANTHOOR, KOZHIK",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. GANAPATH VHSS, FAROKE, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. HSS, AVALA, KUTTOTH, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "MANIYOOR PANCHAYATH HSS, MANIYOOR, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "NEDUVANNUR GOVT. HSS, NEDUVANNUR, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. HSS, AVITTANALLUR, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. VHSS, CHERUVANNUR, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. HSS, KOYILANDI, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "SN TRUST HSS, CHELANNUR, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "TECHNICAL HSS, IHRD,CHUNGAM,THAMARASSERY,KOZHOKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "VELOM HS, VELOM, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT. VOCATIONAL HS, BALUSSERY, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "MKHNNO HSS FOR GIRLS, MUKKOM, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "VALIYAPALLY MJ HSS, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "MGM HSS, ENGAPUZHA, PUDUPPADI, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "TECHNICAL HSS,THURUTHIYAD,KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "NASRETH ISLAMIC RESIDENTIAL HSS, PARAPPANPOYIL, TH",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "SWAMI BODHANANDA HSS, PERUMANNA, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "MARKAZ EM HSS, KARANTHUR, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "IPC EM HSS, MELADI, PAYYOLI, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "DARUL HUDA EM HSS, NADAPURAM, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "JDT Islam IQRAA HSS, Marikunnu Post, Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,PERINGOLAM,KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,NAYARKUZHI,KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,PRAMBIL,KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,IRINGALLUR,KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS, KUNDUAPARAMBU, IDAKKAD, KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT HSS,KARAPARAMBU,KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT BHSS,PARAYANCHERY,KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GHSS FOR GIRLS, PARAYANCHARY,PUTHIYARA,KOZHIKODE",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "CMM High School,Thalakkulathur,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "Holy Family hss, Kattippara,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "CKG Memorial HSS,Chingapuram,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "Kunhali Marakkar HSS,Iringal, Kottakkal,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "Bafakhy Thangal Memmorial HSS, Thurayur,Payyoli, Angadi",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "Poikav HSS, Edakkulam,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "Velom HSS, Cherapuram P O,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "A J John Memmorial HSS,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "KPES HSS, Kayakkodi,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "St. Mary’s HSS, Maruthomkara. P. O, Maruthomkara, ,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "KPM SM HSS, Arikkulam,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "VMHM HSS Anayamkunnu, Mukkam, Kozhikoe",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "Vadakkumpad HSS, Paleri. P. O, Paleri Town,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "St.Mary’s High School, Kallanode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "Chakkalakkal HSS, Madavoor, Padanilam,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "St. Marry’s H SS, Koodathai,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "AMHSS,Poovambayi, Kinalur. P. O,,Kozhikode - 673621",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "C.M HSS,Mannur North,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "Fathimabi Memmorial HSS, Koombara, Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "Markaz Girls HSS, Karanthur, Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "SevaMandir HSS,Ramanattukara,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "PVS HSS, Eranhikkal",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "St, Vincent Colony Girls HSS Calicut - 673 006",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "ST. Michel’s Girls HSS ,Westhill, Kozhikode - 5",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "St. Joseph’s HSS, Pullurampara,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "S.I HSS, Ummathur,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "RNM SS, Narippatta,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "KRHSS, Purameri,Kozhikode",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "Sree Vasudeva Ashramam HSS, Naduvathoor, Koilandi",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "Hi-Tech Higher Secondary School, Vattoli Post,Calicut",
+            "District": "KOZHIKKODE"
+        },
+        {
+            "Name": "GOVT GHSS,MALAPPURAM,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,PANDIKKAD,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT MHSS,PERINTHALMANNA,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "DEVDHAR GOVT HSS,THANUR,MALAPPUARM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT BOYS HSS,TIRUR,TIRUR P O, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,THIRURANGADI,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT VMC HSS,WANDOOR,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,PULLENGODE,MALAPPPUARM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,MUTHEDATHU,MALAPPUARM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT BOYS HSS,MANJERY,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT RAJAH`S HSS, KOTTAKKAL, MALAPPUARAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS, KOKKUR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,VAZHAKKAD,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,KUNNAKKAVU,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,THIRUVALI,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,PULAMANTHOLE,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS, POOKKOTTUMPADAM, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS, MARANCHERY, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,AREACODE,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT MODEL HSS,CALICUT UNIVERSITY,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,EDAPPAL,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,OTHUKKUNGAL,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,KOTTAPPURAM,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,MANKADA,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,KUZHIMANNA,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT GIRLS HSS,MANJERY,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,KARUVARAKUNDU,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,POOKKOTTOOR,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,ANAMANGADU,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT MANAVEDAN HSS, NILAMBUR,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,PANG,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,KATTILANGADI,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,KADANCHERY,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,KUTTIPURAM,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PCN GHSS, MOOKKUTHALA,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS,VETTATHUR,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MMM HSS,KUTTAI,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "IKT HSS,CHERUKULAMBA,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MSM HSS,KALLINGALPARAMBA,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "S V HSS,PALEMED,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "NNM HSS,CHELAMBRA,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "NIRMALA HSS,ERUMAMUDNDA,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "VALANCHERY HSS, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "NM HSS,THIRUNAVAYA,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "ST MARY`S HSS,PARIYAPURAM,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "DU HSS,THOOTHA ,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MV HSS,ARIYALLUR,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "KM HSS,KUTTOOR NORTH, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "CB HSS,VALLIKKUNNU,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "HMY HSS,MANJERY,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "EMEA HSS,KONDOTTY,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MI HSS,PONNANI,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "DH ORPHANAGE HSS,EDAPPAL,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "ORIENTAL HSS,THIRURANGADI,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "SS HSS,MOORKANAD,URANGATTIRI P O, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MI HSS FOR GIRLS, PUDUPPONNANI,",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PPM HSS,KOTTUKKARA,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PMSAPT HSS,KAKKOVE,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PPTMY HSS VENGARA,CHEROOR,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "SNM HSS,PARAPPANANGADI,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PTM HSS,THAZHEKKODE,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PKMM HSS,EDARIKKODE,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "SSM HSS,THEYYALINKAL,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "VPK MM HSS,PUTHUR,PALLIKKAL,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "CATHOLICATE HSS,POTHUKAL,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "VHM HSS,MORAYOOR,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "BROTHER`S HSS,MAVANADIYOOR,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "BYK VHSS,VALAVANNUR,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "ST GEMMA`S GIRLS HSS,MALAPPUARM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MSP HSS,MALAPPURAM,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PANTHALLOOR HSS,KADAMODE,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MES HSS,PONNANI,TIRUR,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MES HSS,MAMPAD,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MARTHOMA HSS,CHUNGATHARA,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "D.H.R.HSS FOR WOMEN, EDAPPAL, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "A.R.HSS FOR GIRLS, PAVITTAPURAM, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "J.S.R.HSS FOR GIRLS, MANJERI, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "E.M.O.R.GIRLS HSS, PALAD,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "J.N.R. HSS, SALAH NAGAR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "ASM HSS, VELLIYENCHERRY, (VIA) MANJERI",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "TECHNICAL HSS, VATTAMKULAM, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "TECHNICAL HSS, VAZHAKKAD, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "THSS, PERINTALMANNA",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MARKEZ HSS, ATHAVANAD, KARTHALA, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "THARAGAN HSS, ANGADIPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MPM HSS, CHUNAGATHARA, NILAMPUR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "ALMANAR HSS, WADIMANAR, RANDATHANI",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "AMS HSS, PAZHAMKULANGARA, THIRUR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MAJLIS HSS, VENGAD, VALANCHERY",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "FATHIMA MATHA HSS, POOKAYIL, TIRUR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "DARUNNAJATH HSS, KARUVARAKKUNDU, (VIA) MANJERI",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "ISLAHIYA EM HSS, DOWN HILL, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "LITTLE FLOWER HSS, NILAMBUR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "NSS EM HSS, MANJERI, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "CRESCENT HSS, ADAKKAKKUNDU, KALIKKAVU, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "IU HSS, PARAPPUR, KOTTAKKAL, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "KHIDAMATUL ISLAM HSS, EDAKKULAM, THIRUNAVAYA",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MVM HSS, VALAYAMKULAM, KOKKUR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "JM HSS, PARNEKKADU, THIRUR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "CRESCENT RHSS, VELLIMUKKU SOUTH, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "CHERURAL HSS, KURUMBATHUR, ANANTHAVOOR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "FAROOK EM HSS PARAPPUR, KOTTAKKAL",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "DARUL HIDAYA HSS, EDAPPAL, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "THANGAL`S HSS, VADAKKANGARA",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PONNANI GIRLS HSS, PONNANI",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "UNITY HSS, WANDOOR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PES HSS, PARAPPANADU",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PRESENTATION HSS PERINTHALMANNA",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "FAZPHARI ORPHANAGE HSS, PADINJATTUMURI, KOOTTILANG",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "ST. PAUL`S HSS, THENJIPALAM, KOHINOOR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "NATIONAL HSS, KOLATHOOR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "KM NSS UNION HSS, ATHALUR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "NSS K HSS, PUTHOOR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "S.O HSS, ARECODE",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "RM HSS, MELATTOOR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MTI HSS, THALAKADATHUR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "TECHNICAL HSS, MUTHUVALLUR, KONDOTTY",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "KY HSS, KATTILANGADI, ATHAVANAD, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, CHERIYAMUNDAM, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. BOYS HSS, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, IRUMBUZHI, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, PATTIKKAD, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. GIRLS HSS, PERINTHALMANNA, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, NIRAMARUTHOOR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, CHETTIYANKINAR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, KADUNGAPURAM, PUZHAKKATTIRI, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. SEETHI HAJI MEMORIAL HSS, EDAVANNA, MALAPPUR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, VELIANCODE, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. VHSS, OMANNOOR, CHEEKODE, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. VHSS, KIZHUPARAMBA, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. VHSS, KONDOTTY, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. VHSS, PULLANNOOR, VALLUVAMBRAM, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, PERUVALLUR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, PURATHOOR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, EZHUR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, EDAKKARA, NILAMBOOR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, ALIPARAMBA, PERINTHALMANNA, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, KAVANUR, ELAYOOR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GHSS, NELLIKUTH, MANJERI, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. VHSS, ARIMBRA, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. GIRLS HSS, B.P.ANGADI, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GVHSS, PARAVANNA, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, THADATHILPARAMBA, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. GIRLS HSS, WANDOOR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, PORUR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, THUVOOR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, PALAPPETTY, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, MANKADA, PALLIPPURAM, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. VHSS,KALPAKANCHERRY, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, ERANHIMANGAD, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, IRIMBILIYAM, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. VHSS, MAMPAD, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, MATTUMMAL, ATHAVANAD, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. VHSS, VENGARA, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. GIRLS VHSS, VENGARA, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, VANIYAMBALAM, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, KARAKUNNU, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. VHSS, MAKKARAPARAMBA, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, PUTHUPARAMBA, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, CHELARI, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, PERASSANNOOR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. REGIONAL FISHERIES TECHNICAL VHSS, THANUR, M",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT. HSS, THRIKKAV, PONNANI, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "KELAPPAN MEMORIAL GOVT. VHSS, THAVANNOOR, MALAPPUR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MES HSS, IRIMBILIYAM, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "AL-HUDA HSS, KARIYANKALLU, KARIPPUR.P.O, MALAPPURA",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MIC HSS, ATHANIKKAL, VALLUVAMBRAM, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "ISS HSS, EZHUVATHIRUTHY, PONNANI, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "AL-FURQAN ENGLISH HSS, SANTHIVAYAL, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MA HSS, KODINHI, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "NAJMUL HUDA HSS, KOTTAKKAL, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "NOORUL ISLAMIC HSS, NELLIKUNNU, VELAYAPPURAM, VENG",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MARKAZU SSAKHAFATHIL ISLAMIYYA HSS, KUNDOOR, MALAP",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GARDEN VALLEY EM HSS, KUTTIPPALA, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "ANVAR ENGLISH HSS, THIRURKAD, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "NAJATH ISLAMIC CENTRE, PERUVALLUR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MAMBAUL HUDA HSS KUZHICHENA,P.O.KANNATTIPADI",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "AL-IHSAN ENGLISH HSS VENGARA,O.K.MURI.P.O",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "CRESCENT HSS POTTUR MUDUR.P.O",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "IDEAL ENGLISH HSS KADAKASSERY,AYANKALAM.PO.MALAPPU",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "RAHMATH PUBLIC HSS, PULLUR, KARUVAMBRAM.P.O, MANJE",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GUIDANCE HSS, KATTUPPARA, CHELAKKAD.P.O, PULAMANTH",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "HSM ENGLISH &amp; MALAYALAM MEDIUM HSS, THANUR, MALAPP",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "AZHAR ENGLISH MEDIUM HSS, MARANCHERY, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "WOMEN`S ISLAMIYA COLLEGE HSS, ERIYAD, WANDOOR, MAL",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "RAHMANIYA COLLEGE HSS, MAMPAD, MEMPADAM.P.O, MALAP",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "POOKOYA THANGAL MEMORIAL HSS, VELLILA, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "NATIONAL ENGLISH MEDIUM HSS, WANDINOOR, CHEMMAD, T",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "HMS HSS, THURACKAL, MANJERI, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MALABAR ENGLISH HSS, PARAPPUR, KOTTAKKAL, MALAPPUR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "NATIONAL PUBLIC HSS, KILINAKODE, CHERUR, MALAPPURA",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "JAMIYA ISLAMIA HSS, MANJERI, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PSMA PTM HSS, VETTICHIRA.P.O, PUNNATHALA, MALAPPUR",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "IET HSS, MARAVANTHA, KAVANCHERY.P.O, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "ISLAMIYA COLLEGE HSS, SANTHAPURAM, PUTTIKAD, MALAP",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "CRESCENT HSS, ADAKKAKUNDU, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "EDAVANNA JAMIA HSS, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "IDEAL HSS, DHARMAGIRI, CHELAKKAD, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "HI ORPHANAGE HSS, OLAVATTUR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Ramanattukara HSS, Ramanattukara,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "VVM HSS Marakkara, Marakkara PO, Via Kadampuzha,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PMSAM HSS, Chemmeenkadavu, Kodur,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Chekkutty Haji Memorial HSS, Pookolothur,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "National HSS, Kolathur, Kolathur. P. O, Malappuram - 679 338",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Cresent HS S,Adakkakundu,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Mannam Smaraka NSS HSS, Chakkalakkuth,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MPM HSS, Chungathara,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "KM HSS, Karulai,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "ASM HSS Velliyanchery, Vellliyanchery PO, Malappuram",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "CPPMHSS ,Ozhur,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Kunhimon Haji Memorial HSS, Alathiyur,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Abdurahiman Nagar HSS,Chendappuraya, Abdurahiman Nagar.P.O,",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Kunhahammad Haji Memorial HSS, Valakulam ,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Moonniyur HSS,,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "IUHSS Parappur, Kottakkal, Malappuram",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "RM HSS, Melattur, P. O,Malappuram. 679 326",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Narokkavu HSS. Narokkavu,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Islahiya Oriental HSS, Edavanna ,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "BEM HSS,Parappanangadi,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PMSA HSS,Elankur,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Tharakan HSS, Angadipuram,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Darul Uloom HSS, Panakkad,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "A.V HSS, Ponnani,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "SMM HSS, Rayirimangalam,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GHSS ,Muthuvallur,Malappuram.",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "AKM HSS, KOTTOOR,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Izzathu Islam HSS, Kuzhimanna",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Majma U Higher Secondary School, Therattummal",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Malabar Higher Secondary School, Alathiyoor, Tirur",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Majma U HSS, Vettichira",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Ummul Qura HSS, Mongam PO, Malappuram",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Madin Higher Secondary School, Swalath Nagar, Melmuri",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Islamic Residential HSS, Pookattiri, Edayur",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MAO Higher Secondary School, Elayur",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Al-Irshad Public School, Trippanachi",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "Vijayamatha EM HSS, Ponnani",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "MARKAZ HSS, KARATHUR,THIRUNAVAYA,MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "ASSISI SCHOOL FOR THE DEAF , MALAPARAMBU, PALACHODE P O",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "PEEVEES HIGHER SEC. SCHOOL, NILAMBUR, MALAPPURAM",
+            "District": "MALAPPURAM"
+        },
+        {
+            "Name": "GOVT HSS, KANIYAMBETTA, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS, MENANGADI, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "DR. AMBEDKAR M.M. HSS, NALLOORNAD, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS, PANAMARAM, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS, THARIODE, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS, THALAPOYA, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS, VELLAMUNDA, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS, PADINJARATHARA, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS, CHEERAL, SULTHAN BATHERY, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GHSS, MEPPADI, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GV HSS, MANANTHAVADI, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS, VALAT, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT VHSS, AMBALAVAYAL, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "ST.MARY`S HSS, MULLENKOLLY P.O., WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "ST. CATHERINE`S HSS, PAYYAMPALLY, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "VIJAYA HSS, PULPALLY, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "W.O.HSS, PINANGODE, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "SREE NARAYANA HSS, POOTHADI, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "ST. JOSEPH`S GIRLS HSS, MEPADI, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "S K M J HSS, KALPETTA NORTH, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "JAYASREE HSS , KALLUVAYAL, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "ST. JOSEPH`S HSS, KALLADI, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "SACRED HEART HSS, DWARAKA, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "ST MARY`S COLLEGE HSS, SULTHAN BATHERY, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "NSS EM HSS KALPATTA",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "ST. JOSEPH`S EM HSS, SULTHAN BATHERI",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "WO VHSS, MUTTIL, MANDAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "ST.PETER`S &amp; ST. PAUL`S HSS,MEENANGADI",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "MGM HSS AMBUKUTTY",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT. HSS, MULANKAV, NOOLPUZHA, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT. HSS, THRISSILERY, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "KATTIKKULAM GOVT. HSS, THIVUNELLY, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT. HSS, KAKKAVAYAL, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT. HSS, PANANKADI, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT. HSS, VADUVANCHAL, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT. HSS, KOLERY, POOTHADI, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS ,ANAPPARA, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS ,PERINGALLUR, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS ,VYTHIRI, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS ,Koyilery,Payyampally P.O,Wayanad",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS ,NIRAVARAM, WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "RAJIVE GANDHI MRS,NOOLPUZHA,WAYANAD",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GHSS, Achoor,Wayanad",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "Govt. hss, Kalloor,Wayanad",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "Govt. Sarvajana Higher Secondary School, Sulthan Bathery,Wayanad",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "CMS HSS, Arrapetta,Wayanad",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "MTDM HSS, Thondarnad, Thondarnadu.P.O, Wayanad",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "St. Thomas HSS, Nadavayal,Wayanad",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "Sarvodaya High School, Eachome, P O Eachome, Via",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "Govt. Higher Secondary School, Kalpetta,Wayanad",
+            "District": "WAYANAD"
+        },
+        {
+            "Name": "GOVT HSS,CHAVASSERY,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,CHUNDANGA POIL,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT BRENNEN HSS,THALASSERY,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,IRIKKUR,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT VHSS,KALLIASSERY,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT AVS HSS,KARIVELLUR,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,MANATHANA,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "C.P.NARAYANAN SMARAKA GOVT.HSS,MATHAMANGALAM,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,MAYYIL,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,PALAYAD,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,PALLIKKUNNU,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "AKG SM GHSS,PERLASSERY,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "AKGM GOVT HSS,PINARAYI,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,THOTTADA,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,VENGAD,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,KUNJIMANGALAM,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS, KOZHICHAL, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,KOTTILA,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,MATTOOL,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT TOWN HSS,KANNUR,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,CHALA,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,MORAZHA,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,SREEKANDAPURAM,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,CHITTARIPPARAMBA,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,VAYAKKARA,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,MATHIL,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,PATTIAM,PATTIAYAMKUNNU P O,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "TAGORE VIDYANIKETHAM GVHSS,THALIPARAMBA",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "AKSGHSS,MALAPPATTOM,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,MUZHAPPILANGAD,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,CHELLORA,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS FOR BOYS, MADAI, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS, CHUZHALI, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GVHSS, CHERUKUNNU, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS, MUNDERI, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS, SREEPURAM, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS, VELLUR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "CGHSS, THIRUVANGAD, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS, VADAKKUMPAD, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS, KOOTHUPARAMBA, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS, ARALAM, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS, PALA, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GVHSS, KATHIRUR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "MUNICIPAL HSS,PAYYANNUR,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "PANCHAYATH HSS,PAPPINASSERY,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "PANOOR HSS,PANOOR,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "NIRMALA HSS,CHEMPERI,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "D I SABHA HSS,KANNUR,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "KKV MEMORIAL HSS,PANOOR,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "KOLAVALLUR HSS,THUVAKKUNNU,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "SANTHOME HSS,KOLAKKAD,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "ST MARYS HSS,EDOOR,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "RAMAVILASOM HSS,CHOKLI,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "MAMBRAM HSS,MAMBRAM,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "NSS HSS,ALAKKODE,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "ST. MICHAEL`S AI BHSS, KANNUR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "ST. THERESS AI GHSS, KANNUR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "ST. JOSEPH`S HSS, VAYATTUPARAMBA, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "ANJRAKANDI HSS, ANJARAKANDI, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "TAGORE MEMORIAL HSS, VELLORA, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "CHOVVA HSS, CHOVVA, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "SEETHI SAHIB HSS, THALIPARAMBA, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "KPC HSS, PATTANUR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "KADAMBUR HSS, EDAKKAD, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "ST. SEBASTIAN`S HSS,VELIMANOM, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "NAM MEMORIAL HSS, PERINGATHUR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "ST. JOSEPH`S HSS, THALASSERY, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "MATTANNUR HSS, MATTANNUR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "I.J.M HSS, KOTTIYOOR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "M.M. HSS, TEMPLE GATE, THALASSERY, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "SN TRUST HSS, ELAYAVOOR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "NAJATH GIRLS HSS, MATTOOL NORTH",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "RANI JAI HSS, NIRMALAGIRI",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "DEENUL ISLAM SABHA HSS, CHIRAKULAM",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "CHM HSS, ILAYAVOOR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "CHM HSS, VADAKKUMPAD, RAMANTHALI",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "RAHMANIYA ORPHANAGE HSS, IRRIKKUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "ST. JOHNS BAPTIST HSS, KADATHUMKADAVU, IRITTI",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "PARASSINIKKADAVU HSS, PARASSINIKKADAVU",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "JAMA ATH HSS, PUTHIYANGADI, MADAYI",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "CHERUPUSHPAM HSS, CHANDANAKKAMPARA",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "SABTM HSS, THAYINERI, PAYYANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "DEVA MATHA HSS, PAISAKKARY, PAYYAVOOR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "KHAYIDE MILLATH HSS, KAVVAYI, PAYYANNUR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "CRESCENT HSS, MOTTAMBRIM, MADAI",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "RAJIV MHSS, PILATHARA",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "MOOTHERDATH HSS, THALIPARAMBU",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "AZHEKKODU HSS, AZHEKKODE",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "ST.JOSEPH`S HSS, VIDYANAGAR, CHERUPUZHA, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "ST. JOSEPH`S HSS, KUNNOTH, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. HSS, KANNUR CITY, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. HSS, PUZHATHI, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. HSS, CHIRAKKARA, THALASSERY, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. HSS, ULIKKAL.P.O, KANNUR-670 705",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. HSS, RAMANTHALY, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. HSS, CHERUTHAZHAM, KANNUR.",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. HSS, KANNADIPPARAMB, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. HSS, VALAPATTANAM, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. HSS, MAMBRAM, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. HSS, CHATTUKAPARA, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. VHSS, EDAYANUR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. WELFARE HSS, CHERUKUNNU, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "MALUR GHSS, KOOTHUPARAMBA, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. GIRLS HSS, PAYYANNUR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. HSS, KADANNAPPALLY, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "KANIANCHAL GOVT. HSS, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. GIRLS HSS, THALASSERY, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT. HSSS, KAVUMBHAGAM, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "KOROM GOVT. HSS, PAYYANNOOR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "THAJUL ULOOM EM HSS, VALAPATTANAM, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "ZAHRA HSS, THANGALPEEDIKA, MOKERI, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "SACRED HEART HSS, PAYYAVOOR, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "KOODALI HSS, KOODALI, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "ST. JOSEPH`S HSS, PULIKURUMBA, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "VALAPATTANAM MUSLIM WELFARE ASSOCIATION HSS, KANNU",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "MARY QUEENS HSS, KODIYANMALA, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "WADIHUDA HSS, PAYANGADI, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,NEDUNGOME,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,PRAPOYIL,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,AZHIKODE,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,PERINGOME,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,PATTUVAM,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,KOTTAYAM,MALABAR,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "MODEL RESIDENTIAL SCHOOL,PATTUVAM,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "MASS GOVT HSS,ETTIKULAM,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,KOYYAM,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,MADAYI,KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Patyam Gopalan Memorial Govt. HSS, Cheruvanchery,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Govt. HSS, Thirumeni,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Rajas HSS, Chirakkal,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "CHM HSS, Elayaoor,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Kariyad Nambiar’s HSS,Poothady,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "ST. Cornelius HSS, Kolayad. P.O, Chittariparamba, Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Rajeev Gandhi Memmorial HSS, Mokeri,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "C H Muhammed Koya Memmorial H SS Kavumpady,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "MM HSS, New mahe, ,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Chothavoor HSS, Pulliyode, Kadirur,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Chapparapadava HSS, Chapparapadava. P. O, Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "B.V.J.M HSS, Perumpadave,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Kambil Mopla High school",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Sacred Heart HSS, Angadikadavu,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "St.Thomas HSS, Kelakam,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "St. Thomas HSS, Kilianthara,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Sacred Heart HSS, Payyavoor,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Chembilode HSS,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Iritty HSS,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Puthiyangadi Jama-Ath HSS, Madayi.P.O,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Kadachira HSS,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Sivapuram HSS,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Naduvil HSS, Naduvil,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Parassinikadavu HSS,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Moothedath HSS, Thaliparamba,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Sacred Heart HSS,Thalassery, Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "B E M P HSS,Thalasserry,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Koodali HSS,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Govt HSS, Padiyoor, P.O, Kannur - 670 703",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "Govt HSS, Aroli, Papinassery,Kannur",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "SIR SYED HSS TALIPARAMBA, KANNUR",
+            "District": "KANNUR"
+        },
+        {
+            "Name": "GOVT HSS,CHEEMENI,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS,KAMBALLUR,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS,KUMBLA,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS,KUNDANKUZHI,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS,MOGRALPUTHUR,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "CKNS GOVT HSS,PILICODE,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS,KAKKAD,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS,UDINUR,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS,MADIKKAI,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS,MALOTH KASBA,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS,KUTTAMATH,,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS, CHERKALA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS, PADRA, ENKANJE, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS, PAIVALIKA NAGAR, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "AMBEDKAR HSS, KODOTH, HOSDURG, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS, CHAYOTH, HOSDURG, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS, UDUMA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS, PADNEKADAPPURAM, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS, BALANTHODE, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "IQBAL HSS,AJANUR,,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "DURGA HSS,KANJANGAD,,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "HHSIBS HSS,EDNEER,,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "CHATTANCHAL HSS,THEKKIL, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "SS HSS,KATTUKUKKE,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "CHEMNAD JAMA ATH HSS,,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "ST THOMAS HSS,THOMAPURAM,,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "TI. HSS, NAIMARMOOLA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "B.A.R HSS, BOVIKANA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "HOLY FAMILY HSS, RAJAPURAM, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "ST. JUD`S HSS, VELLARIKUNDU, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "CH MKS HSS, MUTTAMMAL, ELAMBACHI",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "JAMA-ATH HSS, CHITHARI",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "NA GIRLS HSS, ERATHUMKADAVU, CHENKALA",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "LITTLE FLOWER HSS, KANJANGADU",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "DHAKKEERATH EM HSS, THALANGARA, KASARAGOD",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "UDAYA EMHSS, MANJESWARAM",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "AMBEDKAR VIDYANIKETHAN HSS, PERIYA, PALLIKKARA",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, BANGARA MANJESHWARAM, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, UPPALA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. VHSS, THALANGARA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. VHSS FOR GIRLS, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, SOUTH THRIKKARIPPOOR, ELAPZCHY.P.O, KAS",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, EDANEER, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. VHSS, MULLERIYA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, BELLERU, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, PADLA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. VHSS, ERIYANNI, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, HOSDURG (KANJANGAD), KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, PARAPPA (HOSDURG), KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, ANGADIMUGAR, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, BETHOOPPARA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS, ADOOR, URDOOR P.O., DELAMPADY PANCHAYATH,",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, PALLIKKARA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, CHANDRAGIRI, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, CHEMMANAD, PARAVANADUKKAM, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, ALAMPADY, CHENGALA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, ADHOOR, KARADUKKA PANCHAYATH, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, PERIYA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, BELLA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "G.F.HSS, CHERUVATHOOR, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "G.V.HSS, MOGRAL, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, BEKKOOR, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, BANDADUKKA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, KALLIYOD, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "MODEL RESIDENTIAL HSS, UDUMA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, SHIRIYA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "G.F. HSS, BEKKAL, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT. HSS, MANGALPADY, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "TECHNICAL HSS, CHEEMENI,KASARGODE.",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "MARTHOMA HSS FOR DEAF,KASARGODE.",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "KUNIL EDUCATION TRUST HSS, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "P. BEERAN MEMORIAL EM HSS, NETTIKKADA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "MALABAR ISLAMIC COMPLEX HSS, CHATTANCHAL, KASARGOD",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "PALLIKKARA ISLAMIC ENGLISH MEDIUM HSS, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "ST. JOSEPH`S HSS, CHERUPUZHA, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "KALANAD HYDROSE JAMA ATH HSS, KALANAD, KASARGOD",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS,THAYANNOOR,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS,RAVANEESWARAM,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS,KOTTODI,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GOVT HSS,PAIVALIK,KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "Govt HSS,Pakkam,Kasargode",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GHSS Uppilikai,Kasargode",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GHSS Attenganam,Kasargode",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GVHSS Kayyoor,Kasargode",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "Sri Annapurneshwari HSS, Agalapay,Kasargode",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "Sri Vidya Vardhaka HSS, Miyappadvie. P. O , Kasargode",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "Varakkad HSS, Kottamala.P.O,Kasargode",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "Rajah’s HSS Nileswar, Kasaragod",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "Navajeevana HSS, Perdla,Kasargode",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GHSS, Belal,Kasargode",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "BEM HSS, Kasaragod",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "GHSS, Pandi,Kasargode",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "N.A.MODEL HIGHER SECONDARY SCHOOL, CHENGALA,",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "NAIMARMOOLA, VIDYANAGAR, KASARGODE",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "ESSA HIGHER SECONDARY SCHOOL, KUMBLA, KASARGOD",
+            "District": "KASARGODE"
+        },
+        {
+            "Name": "MUHIMMATH HIGHER SECONDARY SCHOOL, MUHIMMATH NAGAR,",
+            "District": "KASARGODE"
+        }
+    ]
+}

@@ -14,10 +14,15 @@ namespace Excel_Accounts_Backend.Data
                 .HasIdentityOptions(startValue: 12246);
             modelBuilder.Entity<College>()
                 .Property(college => college.Id)
-                .HasIdentityOptions(startValue: 208);    
+                .HasIdentityOptions(startValue: 208);
+            modelBuilder.Entity<School>()
+                .Property(college => college.Id)
+                .HasIdentityOptions(startValue: 2833);
+
         }
         public DbSet<User> Users { get; set; }
         public DbSet<College> Colleges { get; set; }
+        public DbSet<School> Schools { get; set; }
     }
 
 }

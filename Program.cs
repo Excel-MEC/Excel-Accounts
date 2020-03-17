@@ -27,6 +27,7 @@ namespace Excel_Accounts_Backend
                     var context = services.GetRequiredService<DataContext>();
                     context.Database.Migrate();
                     SeedCollege.SeedData(context);
+                    SeedSchools.SeedData(context);
                 }
                 catch (Exception ex)
                 {
