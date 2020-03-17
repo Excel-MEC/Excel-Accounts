@@ -1,21 +1,13 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using Excel_Accounts_Backend.Data.CloudStorage;
 using Excel_Accounts_Backend.Data.QRCodeCreation;
 using Excel_Accounts_Backend.Dtos.Values;
-using Excel_Accounts_Backend.Models;
 using Excel_Accounts_Backend.Data.AuthRepository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-// using System.Drawing;
-// using System.Drawing.Imaging;
-// using QRCoder;
-using Microsoft.AspNetCore.Http;
 
 namespace Excel_Accounts_Backend.Controllers
 {
@@ -63,7 +55,7 @@ namespace Excel_Accounts_Backend.Controllers
             var fileNameForStorage = $"{title}-{DateTime.Now.ToString("yyyyMMddHHmmss")}{fileExtension}";
             return fileNameForStorage;
         }
-
+        //To generate the qrcode
         [HttpPost("qrcode")]
 
         public async Task<string> CreateQrCode([FromForm]string ExcelId)
@@ -72,5 +64,6 @@ namespace Excel_Accounts_Backend.Controllers
             return qRCodeUrl;
 
         }
+
     }
 }
