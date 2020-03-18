@@ -1,0 +1,35 @@
+
+image: gitlab/dind:latest
+services:
+  - docker:dind
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+stages:
+  - build
+  - deploy
+build:
+  stage: build
+  script:
+    - docker build -t $DOCKER_IMAGE_NAME:latest -f $DOCKER_FILE_PATH
+    - docker push $DOCKER_IMAGE_NAME:latest
+  tags:
+    - docker 
+deploy:
+  stage: development
+  script:
+    ###### Login to development server using SSH #####
+    - mkdir -p ~/.ssh
+    - echo "$DEVELOPMENT_SERVER_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/id_rsa
+    - ssh-keyscan -H $DEVELOPMENT_SERVER_IP >> ~/.ssh/known_hosts  
+    ###### Pull the registry to development server and recereate the docker service #####    
+    - ssh $DEVELOPMENT_SERVER_USERNAME@$DEVELOPMENT_SERVER_IP docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY 
+    - ssh $DEVELOPMENT_SERVER_USERNAME@$DEVELOPMENT_SERVER_IP docker pull $DOCKER_IMAGE_NAME:latest
+    - ssh $DEVELOPMENT_SERVER_USERNAME@$DEVELOPMENT_SERVER_IP docker-compose -f $DOCKER_COMPOSE_FILE_PATH/$DOCKER_COMPOSE_FILE_NAME up -d
+  only:
+    - master
+  tags:
+    - docker
