@@ -16,8 +16,8 @@ namespace Excel_Accounts_Backend.Data
                 .Property(college => college.Id)
                 .HasIdentityOptions(startValue: 208);
             modelBuilder.Entity<School>()
-                .Property(college => college.Id)
-                .HasIdentityOptions(startValue: 2833);
+                .Property(school => school.Id)
+                .HasIdentityOptions(startValue: 1575);
 
         }
         public DbSet<User> Users { get; set; }

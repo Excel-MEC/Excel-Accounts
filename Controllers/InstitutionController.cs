@@ -61,7 +61,6 @@ namespace Excel_Accounts_Backend.Controllers
 
             var newschool = new School();
             newschool.Name = school.Name;
-            newschool.District = school.District;
             await _context.Schools.AddAsync(newschool);
             var success = await _context.SaveChangesAsync() > 0;
 
