@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Excel_Accounts_Backend.Data;
-using Excel_Accounts_Backend.Dtos.Institution;
 using Excel_Accounts_Backend.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -56,11 +55,11 @@ namespace Excel_Accounts_Backend.Controllers
 
         //To add a School
         [HttpPost("school")]
-        public async Task<ActionResult> AddSchool([FromForm]SchoolDto school)
+        public async Task<ActionResult> AddSchool([FromForm]string Name)
         {
 
             var newschool = new School();
-            newschool.Name = school.Name;
+            newschool.Name = Name;
             await _context.Schools.AddAsync(newschool);
             var success = await _context.SaveChangesAsync() > 0;
 
