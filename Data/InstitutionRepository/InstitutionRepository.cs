@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Excel_Accounts_Backend.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Excel_Accounts_Backend.Data.InstitutionRepository
 {
@@ -27,6 +29,18 @@ namespace Excel_Accounts_Backend.Data.InstitutionRepository
             await _context.Schools.AddAsync(newschool);
             var success = await _context.SaveChangesAsync() > 0;
             return success;
-        }   
+        }
+
+        public async Task<List<College>> CollegeList()
+        {
+            var colleges = await _context.Colleges.ToListAsync();
+            return colleges;
+        }
+
+        public async Task<List<School>> SchoolList()
+        {
+            var schools = await _context.Schools.ToListAsync();
+            return schools;
+        }
     }
 }

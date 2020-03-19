@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Excel_Accounts_Backend.Data;
 using Excel_Accounts_Backend.Data.InstitutionRepository;
 using Excel_Accounts_Backend.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Excel_Accounts_Backend.Controllers
 {
@@ -15,12 +13,10 @@ namespace Excel_Accounts_Backend.Controllers
     [ApiController]
     public class InstitutionController : ControllerBase
     {
-        private readonly DataContext _context;
         private readonly IInstitutionRepository _institution;
-        public InstitutionController(DataContext context, IInstitutionRepository institution)
+        public InstitutionController(IInstitutionRepository institution)
         {
             _institution = institution;
-            _context = context;
         }
 
         //To retrieve the list of colleges
@@ -28,13 +24,13 @@ namespace Excel_Accounts_Backend.Controllers
 
         public async Task<ActionResult<List<College>>> CollegeList()
         {
-            var colleges = await _context.Colleges.ToListAsync();
+            var colleges = await _institution.CollegeList();
             return Ok(new { Response = colleges });
         }
 
         //To add a college
         [HttpPost("college")]
-        public async Task<ActionResult> College([FromForm]string Name)
+        public async Task<ActionResult> AddCollege([FromForm]string Name)
         {
             var success = await _institution.AddCollege(Name);
             if (success) return Ok(new { Response = "Success" });
@@ -47,13 +43,13 @@ namespace Excel_Accounts_Backend.Controllers
 
         public async Task<ActionResult<List<School>>> SchoolList()
         {
-            var schools = await _context.Schools.ToListAsync();
+            var schools = await _institution.SchoolList();
             return Ok(new { Response = schools });
         }
 
         //To add a School
         [HttpPost("school")]
-        public async Task<ActionResult> School([FromForm]string Name)
+        public async Task<ActionResult> AddSchool([FromForm]string Name)
         {
             var success = await _institution.AddSchool(Name);
             if (success) return Ok(new { Response = "Success" });
