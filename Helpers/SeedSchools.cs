@@ -8,7 +8,7 @@ namespace Excel_Accounts_Backend.Helpers
 {
     public class RootObj
     {
-        public List<School> School { get; set; }
+        public List<School> Schools { get; set; }
     }
     public class SeedSchools
     {
@@ -20,12 +20,10 @@ namespace Excel_Accounts_Backend.Helpers
             {
                 string jsonStirng = File.ReadAllText("Schoollist.json");
                 var root = Newtonsoft.Json.JsonConvert.DeserializeObject<RootObj>(jsonStirng);
-                foreach (var item in root.School)
+                foreach (var item in root.Schools)
                 {
                     var school = new School();
-                    school.Id = item.Id;
-                    school.Name = item.Name;
-                    school.District = item.District;                    
+                    school.Name = item.Name;                   
                     context.Schools.Add(school);
                     context.SaveChanges();
                 }
