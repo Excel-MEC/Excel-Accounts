@@ -9,7 +9,7 @@ stages:
 build:
   stage: build
   script:
-    - docker build -t $DOCKER_IMAGE_NAME:latest -f $DOCKER_FILE_PATH
+    - docker build -t $DOCKER_IMAGE_NAME:latest -f $DOCKER_FILE_PATH .
     - docker push $DOCKER_IMAGE_NAME:latest
   tags:
     - docker 
