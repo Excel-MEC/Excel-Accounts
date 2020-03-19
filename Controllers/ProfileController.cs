@@ -24,7 +24,7 @@ namespace Excel_Accounts_Backend.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            int id = int.Parse(this.User.Claims.First(i => i.Type == "Id").Value);
+            int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
             return Ok(user);
         }
