@@ -67,7 +67,8 @@ namespace Excel_Accounts_Backend
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
-                    ValidateIssuer = false,
+                    ValidateIssuer = true,
+                    ValidIssuer = Configuration.GetSection("AppSettings:Issuer").Value,
                     ValidateAudience = false
                 };
             });

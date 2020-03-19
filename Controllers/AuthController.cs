@@ -71,10 +71,10 @@ namespace Excel_Accounts_Backend.Controllers
             }
             User user = await _repo.GetUser(userFromAuth0.email);
             var claims = new[] {
-                new Claim("Id", user.Id.ToString()),
-                new Claim("Name", user.Name),
-                new Claim("Email", user.Email),
-                new Claim("Picture", user.Picture)
+                new Claim("user_id", user.Id.ToString()),
+                new Claim("name", user.Name),
+                new Claim("email", user.Email),
+                new Claim("profile_picture", user.Picture)
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
 
@@ -84,7 +84,8 @@ namespace Excel_Accounts_Backend.Controllers
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.Now.AddDays(30),
-                SigningCredentials = creds
+                SigningCredentials = creds,
+                Issuer = _config.GetSection("AppSettings:Issuer").Value
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
