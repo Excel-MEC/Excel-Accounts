@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Excel_Accounts_Backend.Data;
+using Excel_Accounts_Backend.Data.InstitutionRepository;
 using Excel_Accounts_Backend.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,8 +16,10 @@ namespace Excel_Accounts_Backend.Controllers
     public class InstitutionController : ControllerBase
     {
         private readonly DataContext _context;
-        public InstitutionController(DataContext context)
+        private readonly IInstitutionRepository _institution;
+        public InstitutionController(DataContext context, IInstitutionRepository institution)
         {
+            _institution = institution;
             _context = context;
         }
 
@@ -31,14 +34,9 @@ namespace Excel_Accounts_Backend.Controllers
 
         //To add a college
         [HttpPost("college")]
-        public async Task<ActionResult> AddCollege([FromForm]string Name)
+        public async Task<ActionResult> College([FromForm]string Name)
         {
-
-            var college = new College();
-            college.Name = Name;
-            await _context.Colleges.AddAsync(college);
-            var success = await _context.SaveChangesAsync() > 0;
-
+            var success = await _institution.AddCollege(Name);
             if (success) return Ok(new { Response = "Success" });
 
             throw new Exception("Problem saving changes");
@@ -55,14 +53,9 @@ namespace Excel_Accounts_Backend.Controllers
 
         //To add a School
         [HttpPost("school")]
-        public async Task<ActionResult> AddSchool([FromForm]string Name)
+        public async Task<ActionResult> School([FromForm]string Name)
         {
-
-            var newschool = new School();
-            newschool.Name = Name;
-            await _context.Schools.AddAsync(newschool);
-            var success = await _context.SaveChangesAsync() > 0;
-
+            var success = await _institution.AddSchool(Name);
             if (success) return Ok(new { Response = "Success" });
 
             throw new Exception("Problem saving changes");
