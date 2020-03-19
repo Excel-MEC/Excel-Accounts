@@ -9,6 +9,7 @@ using Excel_Accounts_Backend.Data.AuthRepository;
 using Excel_Accounts_Backend.Data.CloudStorage;
 using Excel_Accounts_Backend.Data.ProfileRepository;
 using Excel_Accounts_Backend.Data.QRCodeCreation;
+using Excel_Accounts_Backend.Data.InstitutionRepository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -62,6 +63,9 @@ namespace Excel_Accounts_Backend
 
             //Adding QRCode Creation to the service
             services.AddScoped<IQRCodeGeneration, QRCodeGeneration>();
+
+            //Adding InstitutionRepository to the service
+            services.AddScoped<IInstitutionRepository, InstitutionRepository>();
 
             // Add Jwt Authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
