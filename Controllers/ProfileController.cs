@@ -26,17 +26,16 @@ namespace Excel_Accounts_Backend.Controllers
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
-            if(user==null) return Ok(user);
-            throw new Exception("Problem in retrieving user");
+            return Ok( new { Response = user});
         }
 
-        [HttpPost("profile/update")]
+        [HttpPost("update")]
         public async Task<ActionResult> UpdateProfile([FromForm]DataForProfileUpdateDto data)
         {
-            int id = int.Parse(this.User.Claims.First(i => i.Type == "Id").Value);
-            User user = await _repo.GetUser(id);  
+            int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
+            var user = await _repo.GetUser(id);
             var success = await _repo.UpdateProfile(user,data);
-            if(success) return Ok( new {Response = "Success"});
+            if(success)    return Ok( new {Response = "Success"});
             throw new Exception("Problem saving changes");
         }
     }
