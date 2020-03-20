@@ -1,11 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Excel_Accounts_Backend.Data.ProfileRepository;
+using Excel_Accounts_Backend.Dtos.Profile;
+using Excel_Accounts_Backend.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 
 namespace Excel_Accounts_Backend.Controllers
@@ -20,13 +20,23 @@ namespace Excel_Accounts_Backend.Controllers
         {
             _repo = repo;
         }
-        // POST api/values
+        //GET api/profile
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
-            return Ok(user);
+            return Ok( new { Response = user});
+        }
+
+        [HttpPost("update")]
+        public async Task<ActionResult> UpdateProfile([FromForm]DataForProfileUpdateDto data)
+        {
+            int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
+            var user = await _repo.GetUser(id);
+            var success = await _repo.UpdateProfile(user,data);
+            if(success)    return Ok( new {Response = "Success"});
+            throw new Exception("Problem saving changes");
         }
     }
 }
