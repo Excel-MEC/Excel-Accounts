@@ -11,5 +11,9 @@ build:
   script:
     - docker build -t $DOCKER_IMAGE_NAME:latest -f $DOCKER_FILE_PATH .
   tags:
-    - docker 
-
+    - docker
+test:
+  stage: test
+  script:
+    - docker build -t tests -f $DOCKER_TEST_FILE_PATH .
+    - docker run tests
