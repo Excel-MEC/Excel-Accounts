@@ -8,6 +8,9 @@
 # Secret Keys
 /Keys
 
+# Env
+.env
+
 # User-specific files
 *.suo
 *.user
