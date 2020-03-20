@@ -1,7 +1,9 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1
-WORKDIR /api
+WORKDIR /app
 RUN apt-get update && apt-get install -y libgdiplus
-COPY ./*.csproj ./
+COPY ./API/*.csproj ./API/
+COPY ./Tests/*.csproj ./Tests/
+COPY ./*.sln ./
 RUN dotnet restore --disable-parallel
 COPY . .
-ENTRYPOINT [ "dotnet", "watch", "run", "--urls", "http://0.0.0.0:5000" ]
+ENTRYPOINT ["dotnet", "test", "Tests"]
