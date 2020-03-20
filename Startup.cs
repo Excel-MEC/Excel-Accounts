@@ -45,7 +45,11 @@ namespace Excel_Accounts_Backend
             // Add Database to the Services
             services.AddDbContext<DataContext>(options =>
             {
-                options.UseNpgsql(Configuration.GetSection("DatabaseConfig")["PostgresDb"]);
+                string connectionString = Environment.GetEnvironmentVariable("POSTGRES_DB");
+                if (connectionString == null)
+                    options.UseNpgsql(Configuration.GetSection("DatabaseConfig")["PostgresDb"]);
+                else
+                    options.UseNpgsql(connectionString);
             });
 
             // Add Automapper to map objects of different types
