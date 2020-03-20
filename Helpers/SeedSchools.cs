@@ -18,7 +18,7 @@ namespace Excel_Accounts_Backend.Helpers
         {
             if (!context.Schools.Any())
             {
-                string jsonStirng = File.ReadAllText("Schoollist.json");
+                string jsonStirng = File.ReadAllText("./Helpers/Schoollist.json");
                 var root = Newtonsoft.Json.JsonConvert.DeserializeObject<RootObj>(jsonStirng);
                 foreach (var item in root.Schools)
                 {
