@@ -4,16 +4,17 @@ services:
 before_script:
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
 stages:
+  - test
   - build
   - development
+test:
+  stage: test
+  script:
+    - docker build -t tests -f $DOCKER_TEST_FILE_PATH .
+    - docker run tests
 build:
   stage: build
   script:
     - docker build -t $DOCKER_IMAGE_NAME:latest -f $DOCKER_FILE_PATH .
   tags:
     - docker
-test:
-  stage: test
-  script:
-    - docker build -t tests -f $DOCKER_TEST_FILE_PATH .
-    - docker run tests
