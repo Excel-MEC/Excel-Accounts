@@ -18,7 +18,7 @@ namespace API.Helpers
         {
             if (!context.Schools.Any())
             {
-                string jsonStirng = File.ReadAllText("./Helpers/Schoollist.json");
+                string jsonStirng = File.ReadAllText("./API/Assets/Schoollist.json");
                 var root = Newtonsoft.Json.JsonConvert.DeserializeObject<RootObj>(jsonStirng);
                 foreach (var item in root.Schools)
                 {
