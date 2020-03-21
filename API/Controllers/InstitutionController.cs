@@ -29,7 +29,7 @@ namespace API.Controllers
         }
 
         //To add a college
-        [HttpPost("college")]
+        [HttpPost("college/add")]
         public async Task<ActionResult> AddCollege([FromForm]string Name)
         {
             var success = await _institution.AddCollege(Name);
@@ -48,7 +48,7 @@ namespace API.Controllers
         }
 
         //To add a School
-        [HttpPost("school")]
+        [HttpPost("school/add")]
         public async Task<ActionResult> AddSchool([FromForm]string Name)
         {
             var success = await _institution.AddSchool(Name);
