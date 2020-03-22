@@ -30,7 +30,7 @@ namespace API.Controllers
         }
 
         [HttpPost("update")]
-        public async Task<ActionResult> UpdateProfile([FromForm]DataForProfileUpdateDto data)
+        public async Task<ActionResult> UpdateProfile(DataForProfileUpdateDto data)
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
