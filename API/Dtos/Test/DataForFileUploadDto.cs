@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Http;
 
-namespace API.Dtos.Values
+namespace API.Dtos.Test
 {
     public class DataForFileUploadDto
     {
