@@ -14,13 +14,13 @@ namespace API.Controllers
     [Authorize]
     [Route("[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class TestController : ControllerBase
     {
         private readonly ICloudStorage _cloudStorage;
         private readonly IConfiguration _configuration;
         private readonly IAuthRepository _authRepository;
         private readonly IQRCodeGeneration _qRCodeGeneration;
-        public ValuesController(ICloudStorage cloudStorage, IConfiguration configuration, IAuthRepository authRepository, IQRCodeGeneration qRCodeGeneration)
+        public TestController(ICloudStorage cloudStorage, IConfiguration configuration, IAuthRepository authRepository, IQRCodeGeneration qRCodeGeneration)
         {
             _qRCodeGeneration = qRCodeGeneration;
             _authRepository = authRepository;
