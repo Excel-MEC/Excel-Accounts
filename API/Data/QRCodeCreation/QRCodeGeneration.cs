@@ -1,16 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using API.Data.CloudStorage;
 using API.Dtos.Test;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Drawing;
-using System.Drawing.Imaging;
 using QRCoder;
 using Microsoft.AspNetCore.Http;
 

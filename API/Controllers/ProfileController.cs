@@ -22,7 +22,7 @@ namespace API.Controllers
         }
         //GET api/profile
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<ActionResult<User>> Get()
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
