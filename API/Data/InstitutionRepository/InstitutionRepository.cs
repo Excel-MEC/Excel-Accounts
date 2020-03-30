@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.Models;
@@ -13,22 +14,24 @@ namespace API.Data.InstitutionRepository
             this._context = context;
         }
 
-        public async Task<bool> AddCollege(string Name)
+        public async Task<int> AddCollege(string Name)
         {
             var college = new College();
             college.Name = Name;    
             await _context.Colleges.AddAsync(college);
             var success = await _context.SaveChangesAsync() > 0;
-            return success;
+            if(success) return college.Id;
+            throw new Exception("Problem saving changes");
         }
 
-        public async Task<bool> AddSchool(string Name)
+        public async Task<int> AddSchool(string Name)
         {
-            var newschool = new School();
-            newschool.Name = Name;
-            await _context.Schools.AddAsync(newschool);
+            var school = new School();
+            school.Name = Name;
+            await _context.Schools.AddAsync(school);
             var success = await _context.SaveChangesAsync() > 0;
-            return success;
+            if(success) return school.Id;
+            throw new Exception("Problem saving changes");
         }
 
         public async Task<List<College>> CollegeList()

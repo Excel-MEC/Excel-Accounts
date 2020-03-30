@@ -33,10 +33,8 @@ namespace API.Controllers
         [HttpPost("college/add")]
         public async Task<ActionResult> AddCollege(DataForAddingCollegeDto data)
         {
-            var success = await _institution.AddCollege(data.Name);
-            if (success) return Ok(new { Response = "Success" });
-
-            throw new Exception("Problem saving changes");
+            await _institution.AddCollege(data.Name);
+            return Ok(new { Response = "Success" });
         }
 
         //To retrieve the list of schools
@@ -52,10 +50,8 @@ namespace API.Controllers
         [HttpPost("school/add")]
         public async Task<ActionResult> AddSchool(DataForAddingSchoolDto data)
         {
-            var success = await _institution.AddSchool(data.Name);
-            if (success) return Ok(new { Response = "Success" });
-
-            throw new Exception("Problem saving changes");
+            await _institution.AddSchool(data.Name);
+            return Ok(new { Response = "Success" });
         }
     }
 }
