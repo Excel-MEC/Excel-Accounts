@@ -33,7 +33,7 @@ namespace API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult> Login(TokenForLoginDto tokenForLogin)
+        public async Task<ActionResult<JwtForClientDto>> Login(TokenForLoginDto tokenForLogin)
         {
             var httpClient = new HttpClient();
             var url = new Uri("http://ajeshkumar.eu.auth0.com/userinfo");

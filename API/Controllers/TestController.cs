@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using API.Data.CloudStorage;
 using API.Data.QRCodeCreation;
-using API.Dtos.Values;
+using API.Dtos.Test;
 using API.Data.AuthRepository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,13 +14,13 @@ namespace API.Controllers
     [Authorize]
     [Route("[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class TestController : ControllerBase
     {
         private readonly ICloudStorage _cloudStorage;
         private readonly IConfiguration _configuration;
         private readonly IAuthRepository _authRepository;
         private readonly IQRCodeGeneration _qRCodeGeneration;
-        public ValuesController(ICloudStorage cloudStorage, IConfiguration configuration, IAuthRepository authRepository, IQRCodeGeneration qRCodeGeneration)
+        public TestController(ICloudStorage cloudStorage, IConfiguration configuration, IAuthRepository authRepository, IQRCodeGeneration qRCodeGeneration)
         {
             _qRCodeGeneration = qRCodeGeneration;
             _authRepository = authRepository;

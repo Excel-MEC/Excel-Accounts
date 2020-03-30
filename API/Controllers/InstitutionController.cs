@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.Data.InstitutionRepository;
+using API.Dtos.Institution;
 using API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -29,10 +30,10 @@ namespace API.Controllers
         }
 
         //To add a college
-        [HttpPost("college")]
-        public async Task<ActionResult> AddCollege([FromForm]string Name)
+        [HttpPost("college/add")]
+        public async Task<ActionResult> AddCollege(DataForAddingCollegeDto data)
         {
-            var success = await _institution.AddCollege(Name);
+            var success = await _institution.AddCollege(data.Name);
             if (success) return Ok(new { Response = "Success" });
 
             throw new Exception("Problem saving changes");
@@ -48,10 +49,10 @@ namespace API.Controllers
         }
 
         //To add a School
-        [HttpPost("school")]
-        public async Task<ActionResult> AddSchool([FromForm]string Name)
+        [HttpPost("school/add")]
+        public async Task<ActionResult> AddSchool(DataForAddingSchoolDto data)
         {
-            var success = await _institution.AddSchool(Name);
+            var success = await _institution.AddSchool(data.Name);
             if (success) return Ok(new { Response = "Success" });
 
             throw new Exception("Problem saving changes");

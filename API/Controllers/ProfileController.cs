@@ -22,7 +22,7 @@ namespace API.Controllers
         }
         //GET api/profile
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<ActionResult<User>> Get()
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
@@ -30,7 +30,7 @@ namespace API.Controllers
         }
 
         [HttpPost("update")]
-        public async Task<ActionResult> UpdateProfile([FromForm]DataForProfileUpdateDto data)
+        public async Task<ActionResult> UpdateProfile(DataForProfileUpdateDto data)
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
