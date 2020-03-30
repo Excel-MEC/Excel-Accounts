@@ -6,8 +6,8 @@ namespace API.Data.InstitutionRepository
 {
     public interface IInstitutionRepository
     {
-       Task<bool> AddCollege(string Name); 
-       Task<bool> AddSchool(string Name);
+       Task<int> AddCollege(string Name); 
+       Task<int> AddSchool(string Name);
        Task<List<College>> CollegeList();
        Task<List<School>> SchoolList();
 
