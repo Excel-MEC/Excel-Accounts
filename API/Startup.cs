@@ -1,12 +1,6 @@
 using System.Text;
 using AutoMapper;
 using API.Data;
-using API.Data.AuthRepository;
-using API.Data.CloudStorage;
-using API.Data.ProfileRepository;
-using API.Data.QRCodeCreation;
-using API.Data.CipherRepository;
-using API.Data.InstitutionRepository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -17,6 +11,12 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
+using API.Helpers;
+using API.Services;
+using API.Services.Interfaces;
+using API.Data.Interfaces;
+using System.IO;
+using System.Reflection;
 
 namespace API
 {
@@ -49,7 +49,10 @@ namespace API
             });
 
             // Add Automapper to map objects of different types
-            services.AddAutoMapper();
+            services.AddAutoMapper(opt =>
+            {
+                opt.AddProfile(new AutoMapperProfiles());
+            });
 
             // Add Authrepository
             services.AddScoped<IAuthRepository, AuthRepository>();
@@ -57,17 +60,23 @@ namespace API
             // Add Profile
             services.AddScoped<IProfileRepository, ProfileRepository>();
 
-            // Add Google Cloud Storage
-            services.AddScoped<ICloudStorage, GoogleCloudStorage>();
-
-            //Adding QRCode Creation to the service
-            services.AddScoped<IQRCodeGeneration, QRCodeGeneration>();
-
             //Adding InstitutionRepository to the service
             services.AddScoped<IInstitutionRepository, InstitutionRepository>();
 
+            // Add Services For Authentication
+            services.AddScoped<IAuthService, AuthService>();
+
+            // Add Services For Profile
+            services.AddScoped<IProfileService, ProfileService>();
+
+            // Add Google Cloud Storage
+            services.AddSingleton<ICloudStorage, GoogleCloudStorage>();
+
+            //Adding QRCode Creation to the service
+            services.AddSingleton<IQRCodeGeneration, QRCodeGeneration>();
+
             //Adding CipherRepository to the service
-            services.AddScoped<ICipherRepository, CipherRepository>();
+            services.AddSingleton<ICipherService, CipherService>();
 
             // Add Jwt Authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
@@ -85,7 +94,9 @@ namespace API
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Excel Accounts", Version = "v 2.1" });
+                c.DocumentFilter<SwaggerPathPrefix>("api");
+                c.EnableAnnotations();
             });
         }
 
@@ -109,7 +120,7 @@ namespace API
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "API");
+                c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "Excel Accounts");
             });
 
             // Automatic database update

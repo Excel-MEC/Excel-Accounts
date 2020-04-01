@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace API.Data.CloudStorage
+namespace API.Services.Interfaces
 {
     public interface ICloudStorage
     {

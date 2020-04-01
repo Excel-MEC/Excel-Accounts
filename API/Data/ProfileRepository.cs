@@ -1,14 +1,14 @@
 using System.Threading.Tasks;
 using API.Dtos.Profile;
 using API.Dtos.Test;
-using API.Data.InstitutionRepository;
 using API.Models;
-using API.Data.CloudStorage;
 using System.IO;
 using System;
 using Microsoft.Extensions.Configuration;
+using API.Services.Interfaces;
+using API.Data.Interfaces;
 
-namespace API.Data.ProfileRepository
+namespace API.Data
 {
     public class ProfileRepository : IProfileRepository
     {
@@ -28,8 +28,9 @@ namespace API.Data.ProfileRepository
             return await _context.Users.FindAsync(userid);
         }
 
-        public async Task<bool> UpdateProfile(User user, DataForProfileUpdateDto data)
+        public async Task<bool> UpdateProfile(int id, UserForProfileUpdateDto data)
         {
+            User user = await _context.Users.FindAsync(id);
             user.Name = data.Name;
             user.Gender = data.Gender;
             user.MobileNumber = data.MobileNumber;
@@ -41,45 +42,29 @@ namespace API.Data.ProfileRepository
                     var college = await _institution.AddCollege(data.InstitutionName);
                     user.InstitutionId = college.Id;
                 }
-                else if( data.Category == "school")
-                {    
+                else if (data.Category == "school")
+                {
                     var school = await _institution.AddSchool(data.InstitutionName);
                     user.InstitutionId = school.Id;
                 }
             }
             else
             {
-                user.InstitutionId = data.InstitutionId;   
+                user.InstitutionId = data.InstitutionId;
             }
-               
-            var success = await _context.SaveChangesAsync() > 0;
-            return success;
-        } 
-        
-
-        public async Task<bool> UpdateProfileImage(User user, DataForFileUploadDto data)
-        {
-            await UploadFile(data);
-            string ImageUrl = _configuration.GetValue<string>("CloudStorageUrl") + data.ImageStorageName;
-            user.Picture = ImageUrl;
 
             var success = await _context.SaveChangesAsync() > 0;
             return success;
         }
 
-        private async Task UploadFile(DataForFileUploadDto dataForFileUpload)
+
+        public async Task<bool> UpdateProfileImage(int id, string imageUrl)
         {
-            string fileNameForStorage = "accounts/qr-code/" + FormFileName(dataForFileUpload.Name, dataForFileUpload.Image.FileName);
-            dataForFileUpload.ImageUrl = await _cloudStorage.UploadFileAsync(dataForFileUpload.Image, fileNameForStorage);
-            dataForFileUpload.ImageStorageName = fileNameForStorage;
+            var user = await _context.Users.FindAsync(id);
+            user.Picture = imageUrl;
+            var success = await _context.SaveChangesAsync() > 0;
+            return success;
         }
 
-        private static string FormFileName(string title, string fileName)
-        {
-            var fileExtension = Path.GetExtension(fileName);
-            var fileNameForStorage = $"{title}-{DateTime.Now.ToString("yyyyMMddHHmmss")}{fileExtension}";
-            return fileNameForStorage;
-
-        }
     }
 }

@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using API.Data.Interfaces;
 using API.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.Data.InstitutionRepository
+namespace API.Data
 {
     public class InstitutionRepository : IInstitutionRepository
     {
@@ -17,10 +18,10 @@ namespace API.Data.InstitutionRepository
         public async Task<College> AddCollege(string Name)
         {
             var college = new College();
-            college.Name = Name;    
+            college.Name = Name;
             await _context.Colleges.AddAsync(college);
             var success = await _context.SaveChangesAsync() > 0;
-            if(success) return college;
+            if (success) return college;
             throw new Exception("Problem saving changes");
         }
 
@@ -30,7 +31,7 @@ namespace API.Data.InstitutionRepository
             school.Name = Name;
             await _context.Schools.AddAsync(school);
             var success = await _context.SaveChangesAsync() > 0;
-            if(success) return school;
+            if (success) return school;
             throw new Exception("Problem saving changes");
         }
 
@@ -42,17 +43,17 @@ namespace API.Data.InstitutionRepository
 
         public async Task<string> FindName(string category, int id)
         {
-            var name="";
+            var name = "";
             if (category == "college")
-                {
-                    var college = await _context.Colleges.FindAsync(id);
-                    name = college.Name;
-                }
-            else if( category == "school")
-                {    
-                    var school = await _context.Schools.FindAsync(id);
-                    name = school.Name;
-                }
+            {
+                var college = await _context.Colleges.FindAsync(id);
+                name = college.Name;
+            }
+            else if (category == "school")
+            {
+                var school = await _context.Schools.FindAsync(id);
+                name = school.Name;
+            }
             return name;
         }
 

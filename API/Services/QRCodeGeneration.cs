@@ -1,15 +1,15 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using API.Data.CloudStorage;
 using API.Dtos.Test;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System.Drawing;
 using QRCoder;
 using Microsoft.AspNetCore.Http;
+using API.Services.Interfaces;
 
-namespace API.Data.QRCodeCreation
+namespace API.Services
 {
     public class QRCodeGeneration : IQRCodeGeneration
     {

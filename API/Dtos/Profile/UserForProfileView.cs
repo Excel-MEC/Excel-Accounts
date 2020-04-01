@@ -1,6 +1,6 @@
 namespace API.Dtos.Profile
 {
-    public class DataForProfileViewDto
+    public class UserForProfileViewDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -10,6 +10,6 @@ namespace API.Dtos.Profile
         public string InstitutionName { get; set; }
         public string Gender { get; set; }
         public string MobileNumber { get; set; }
-        public string Category{ get; set; }
+        public string Category { get; set; }
     }
 }
