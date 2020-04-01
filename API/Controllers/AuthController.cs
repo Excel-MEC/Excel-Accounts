@@ -1,96 +1,35 @@
 using System;
 using System.IdentityModel.Tokens.Jwt;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using API.Data.AuthRepository;
 using API.Dtos.Auth;
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
+using API.Services.Interfaces;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace API.Controllers
 {
+    [SwaggerTag("The Routes under this controller do not need authorization.")]
     [Route("[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IMapper _mapper;
-        private readonly IConfiguration _config;
-        private readonly IAuthRepository _repo;
-
-        public AuthController(IMapper mapper, IAuthRepository repo, IConfiguration config)
+        private readonly IAuthService _authService;
+        public AuthController(IAuthService authService)
         {
-            _mapper = mapper;
-            _repo = repo;
-            _config = config;
+            _authService = authService;
         }
 
+        [SwaggerOperation(Description = "For login, Pass the access token recieved from auth0. Store the jwt recieved in return. Pass it as the authorization header value in the format \"Bearer jwt\" to access the endpoints that need authorization")]
         [HttpPost("login")]
         public async Task<ActionResult<JwtForClientDto>> Login(TokenForLoginDto tokenForLogin)
         {
-            var httpClient = new HttpClient();
-            var url = new Uri("http://ajeshkumar.eu.auth0.com/userinfo");
-            httpClient.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue("Bearer", tokenForLogin.auth_token);
-            var response = await httpClient.GetAsync(url);
-
-            if (response.StatusCode == HttpStatusCode.Unauthorized)
-            {
-                // Authorization header has been set, but the server reports that it is missing.
-                // It was probably stripped out due to a redirect.
-
-                var finalRequestUri =
-                    response.RequestMessage.RequestUri; // contains the final location after following the redirect.
-
-                if (finalRequestUri != url) // detect that a redirect actually did occur.
-                {
-                    // If this is public facing, add tests here to determine if Url should be trusted
-                    response = await httpClient.GetAsync(finalRequestUri);
-
-                    if (response.StatusCode == HttpStatusCode.Unauthorized)
-                    {
-                        return Unauthorized();
-                    }
-                }
-            }
-
-            var responseInJson = response.Content.ReadAsStringAsync().Result;
-            // var decoded = JObject.Parse(response_in_json);
-            var userFromAuth0 = JsonConvert.DeserializeObject<UserFromAuth0Dto>(responseInJson);
-            if (!await _repo.UserExists(userFromAuth0.email))
-            {
-                var newUser = _mapper.Map<User>(userFromAuth0);
-                await _repo.Register(newUser);
-            }
-            User user = await _repo.GetUser(userFromAuth0.email);
-            var claims = new[] {
-                new Claim("user_id", user.Id.ToString()),
-                new Claim("name", user.Name),
-                new Claim("email", user.Email),
-                new Claim("profile_picture", user.Picture)
-            };
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
-
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
-
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddDays(30),
-                SigningCredentials = creds,
-                Issuer = _config.GetSection("AppSettings:Issuer").Value
-            };
-
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return Ok(new { token = tokenHandler.WriteToken(token) });
+            var responseInJson = await _authService.FetchUserFromAuth0(tokenForLogin.auth_token);
+            var token = await _authService.CreateJwtForClient(responseInJson);
+            return Ok(new { token = token });
         }
     }
 }

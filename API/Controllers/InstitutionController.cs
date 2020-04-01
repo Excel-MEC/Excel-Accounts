@@ -1,13 +1,15 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using API.Data.InstitutionRepository;
+using API.Data.Interfaces;
 using API.Dtos.Institution;
 using API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace API.Controllers
 {
+    [SwaggerTag("All the routes under this controller needs Authorization header.")]
     [Authorize]
     [Route("[controller]")]
     [ApiController]

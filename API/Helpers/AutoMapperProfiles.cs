@@ -11,7 +11,8 @@ namespace API.Helpers
         {
             AllowNullDestinationValues = true;
             CreateMap<UserFromAuth0Dto, User>();
-            CreateMap<User, DataForProfileViewDto>();
+            CreateMap<User, UserForProfileViewDto>();
+            CreateMap<ImageFromUserDto, DataForProfilePicUpdateDto>();
         }
     }
 }

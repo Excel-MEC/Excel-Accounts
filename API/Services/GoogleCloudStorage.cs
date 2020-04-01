@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using API.Services.Interfaces;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Storage.v1.Data;
 using Google.Cloud.Storage.V1;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 
-namespace API.Data.CloudStorage
+namespace API.Services
 {
     public class GoogleCloudStorage : ICloudStorage
     {

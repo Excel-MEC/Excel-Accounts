@@ -1,9 +1,10 @@
 using System.Threading.Tasks;
 using API.Models;
 using Microsoft.EntityFrameworkCore;
-using API.Data.QRCodeCreation;
+using API.Services.Interfaces;
+using API.Data.Interfaces;
 
-namespace API.Data.AuthRepository
+namespace API.Data
 {
     public class AuthRepository : IAuthRepository
     {

@@ -1,11 +1,9 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using API.Data.CloudStorage;
-using API.Data.QRCodeCreation;
-using API.Data.CipherRepository;
+using API.Data.Interfaces;
 using API.Dtos.Test;
-using API.Data.AuthRepository;
+using API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -21,8 +19,8 @@ namespace API.Controllers
         private readonly IConfiguration _configuration;
         private readonly IAuthRepository _authRepository;
         private readonly IQRCodeGeneration _qRCodeGeneration;
-        private readonly ICipherRepository _cipher;
-        public TestController(ICloudStorage cloudStorage, IConfiguration configuration, IAuthRepository authRepository, IQRCodeGeneration qRCodeGeneration, ICipherRepository cipher)
+        private readonly ICipherService _cipher;
+        public TestController(ICloudStorage cloudStorage, IConfiguration configuration, IAuthRepository authRepository, IQRCodeGeneration qRCodeGeneration, ICipherService cipher)
         {
             _cipher = cipher;
             _qRCodeGeneration = qRCodeGeneration;
