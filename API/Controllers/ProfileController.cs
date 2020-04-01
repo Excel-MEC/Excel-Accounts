@@ -36,8 +36,8 @@ namespace API.Controllers
         }
 
         //Edit profile 
-        [HttpPut("update")]
-        public async Task<ActionResult> UpdateProfile([FromForm]DataForProfileUpdateDto data)
+        [HttpPost("update")]
+        public async Task<ActionResult> UpdateProfile(DataForProfileUpdateDto data)
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
@@ -47,7 +47,7 @@ namespace API.Controllers
         }
 
         //Edit profile image
-        [HttpPut("update/image")]
+        [HttpPost("update/image")]
         public async Task<ActionResult> UpdateProfileImage([FromForm]DataForFileUploadDto data)
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
@@ -63,9 +63,9 @@ namespace API.Controllers
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
-            var newUser = _mapper.Map<DataForProfileViewDto>(user);
-            newUser.InstitutionName = await _institution.FindName(newUser.Category, user.InstitutionId);
-            return Ok(new { Response = newUser });
+            var userForView = _mapper.Map<DataForProfileViewDto>(user);
+            userForView.InstitutionName = await _institution.FindName(userForView.Category, user.InstitutionId);
+            return Ok(new { Response = userForView });
         }
 
 

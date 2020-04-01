@@ -30,7 +30,7 @@ namespace API.Controllers
 
         //To add a college
         [HttpPost("college/add")]
-        public async Task<ActionResult> AddCollege([FromForm]DataForAddingCollegeDto data)
+        public async Task<ActionResult> AddCollege(DataForAddingCollegeDto data)
         {
             var college = await _institution.AddCollege(data.Name);
             return Ok(new { Response = college });
@@ -47,10 +47,10 @@ namespace API.Controllers
 
         //To add a School
         [HttpPost("school/add")]
-        public async Task<ActionResult> AddSchool([FromForm]DataForAddingSchoolDto data)
+        public async Task<ActionResult> AddSchool(DataForAddingSchoolDto data)
         {
             var school = await _institution.AddSchool(data.Name);
-            return Ok(new { Response = school});
+            return Ok(new { Response = school });
         }
     }
 }

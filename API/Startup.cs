@@ -17,6 +17,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
+using API.Helpers;
 
 namespace API
 {
@@ -49,7 +50,10 @@ namespace API
             });
 
             // Add Automapper to map objects of different types
-            services.AddAutoMapper();
+            services.AddAutoMapper(opt =>
+            {
+                opt.AddProfile(new AutoMapperProfiles());
+            });
 
             // Add Authrepository
             services.AddScoped<IAuthRepository, AuthRepository>();
@@ -86,6 +90,7 @@ namespace API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+                c.DocumentFilter<SwaggerPathPrefix>("api");
             });
         }
 
