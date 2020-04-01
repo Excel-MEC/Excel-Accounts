@@ -5,6 +5,7 @@ using API.Data.AuthRepository;
 using API.Data.CloudStorage;
 using API.Data.ProfileRepository;
 using API.Data.QRCodeCreation;
+using API.Data.CipherRepository;
 using API.Data.InstitutionRepository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -64,6 +65,9 @@ namespace API
 
             //Adding InstitutionRepository to the service
             services.AddScoped<IInstitutionRepository, InstitutionRepository>();
+
+            //Adding CipherRepository to the service
+            services.AddScoped<ICipherRepository, CipherRepository>();
 
             // Add Jwt Authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>

@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using API.Dtos.Profile;
+using API.Dtos.Test;
 using API.Models;
-using Microsoft.AspNetCore.Mvc;
 
 namespace API.Data.ProfileRepository
 {
@@ -9,5 +9,7 @@ namespace API.Data.ProfileRepository
     {   
         Task<User> GetUser(int id);
         Task<bool> UpdateProfile(User user, DataForProfileUpdateDto data);
+        Task<bool> UpdateProfileImage(User user, DataForFileUploadDto data);
+
     }
 }
