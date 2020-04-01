@@ -6,11 +6,11 @@ namespace API.Data.InstitutionRepository
 {
     public interface IInstitutionRepository
     {
-       Task<int> AddCollege(string Name); 
-       Task<int> AddSchool(string Name);
+       Task<College> AddCollege(string Name); 
+       Task<School> AddSchool(string Name);
        Task<List<College>> CollegeList();
        Task<List<School>> SchoolList();
-
-
+       Task<string> FindName(string category, int id);
+       
     }
 }

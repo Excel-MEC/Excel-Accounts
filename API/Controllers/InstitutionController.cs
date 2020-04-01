@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.Data.InstitutionRepository;
@@ -31,10 +30,10 @@ namespace API.Controllers
 
         //To add a college
         [HttpPost("college/add")]
-        public async Task<ActionResult> AddCollege(DataForAddingCollegeDto data)
+        public async Task<ActionResult> AddCollege([FromForm]DataForAddingCollegeDto data)
         {
-            await _institution.AddCollege(data.Name);
-            return Ok(new { Response = "Success" });
+            var college = await _institution.AddCollege(data.Name);
+            return Ok(new { Response = college });
         }
 
         //To retrieve the list of schools
@@ -48,10 +47,10 @@ namespace API.Controllers
 
         //To add a School
         [HttpPost("school/add")]
-        public async Task<ActionResult> AddSchool(DataForAddingSchoolDto data)
+        public async Task<ActionResult> AddSchool([FromForm]DataForAddingSchoolDto data)
         {
-            await _institution.AddSchool(data.Name);
-            return Ok(new { Response = "Success" });
+            var school = await _institution.AddSchool(data.Name);
+            return Ok(new { Response = school});
         }
     }
 }
