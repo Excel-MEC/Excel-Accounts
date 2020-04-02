@@ -61,6 +61,10 @@ namespace API.Data
         public async Task<bool> UpdateProfileImage(int id, string imageUrl)
         {
             var user = await _context.Users.FindAsync(id);
+            if (user.Picture.Equals(imageUrl))
+            {
+                return true;
+            }
             user.Picture = imageUrl;
             var success = await _context.SaveChangesAsync() > 0;
             return success;
