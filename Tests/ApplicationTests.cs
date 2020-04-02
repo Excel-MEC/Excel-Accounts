@@ -3,10 +3,10 @@ using Xunit;
 
 namespace Tests
 {
-    public class UnitTest1
+    public class ApplicationTests
     {
         [Fact]
-        public void Test1()
+        public void AlwaysPassTest()
         {
             bool Value = true;
             Assert.True(Value, "Value Should be True");
