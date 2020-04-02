@@ -15,8 +15,9 @@ using API.Helpers;
 using API.Services;
 using API.Services.Interfaces;
 using API.Data.Interfaces;
-using System.IO;
-using System.Reflection;
+using Microsoft.AspNetCore.Diagnostics;
+using System.Text.Json;
+using Microsoft.AspNetCore.Http;
 
 namespace API
 {
@@ -107,6 +108,20 @@ namespace API
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseExceptionHandler(builder =>
+                builder.Run(async context =>
+                {
+                    var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
+                    var exception = exceptionHandlerPathFeature.Error;
+                    if (exception is UnauthorizedAccessException)
+                    {
+                        var result = JsonSerializer.Serialize(new { error = exception.Message.ToString() });
+                        context.Response.ContentType = "application/json";
+                        context.Response.StatusCode = 401;
+                        await context.Response.WriteAsync(result);
+                    }
+                })
+            );
             // Uncomment following line when having https
             // app.UseHttpsRedirection();
 
