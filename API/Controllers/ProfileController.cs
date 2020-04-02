@@ -51,7 +51,7 @@ namespace API.Controllers
             throw new Exception("No changes were made");
         }
 
-        [SwaggerOperation(Description = "This route is for Changing the user's Profile Pic")]
+        [SwaggerOperation(Description = "This route is for Changing the user's Profile Picture")]
         [HttpPost("update/image")]
         public async Task<ActionResult> UpdateProfileImage([FromForm]ImageFromUserDto imageFromUser)
         {
