@@ -18,6 +18,7 @@ using API.Data.Interfaces;
 using Microsoft.AspNetCore.Diagnostics;
 using System.Text.Json;
 using Microsoft.AspNetCore.Http;
+using API.Helpers.Extensions;
 
 namespace API
 {
@@ -98,8 +99,6 @@ namespace API
             });
         }
 
-
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DataContext dataContext)
         {
@@ -108,21 +107,9 @@ namespace API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseExceptionHandler(builder =>
-                builder.Run(async context =>
-                {
-                    var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
-                    var exception = exceptionHandlerPathFeature.Error;
-                    if (exception is UnauthorizedAccessException)
-                    {
-                        var result = JsonSerializer.Serialize(new { error = exception.Message.ToString() });
-                        context.Response.ContentType = "application/json";
-                        context.Response.StatusCode = 401;
-                        await context.Response.WriteAsync(result);
-                    }
-                })
-            );
-            // Uncomment following line when having https
+            // Custom Exception Handler
+            app.ConfigureExceptionHandler();
+
             // app.UseHttpsRedirection();
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
