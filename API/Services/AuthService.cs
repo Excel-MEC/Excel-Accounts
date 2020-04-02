@@ -22,12 +22,14 @@ namespace API.Services
         private readonly IMapper _mapper;
         private readonly IConfiguration _config;
         private readonly IAuthRepository _repo;
+        private readonly HttpClient _httpClient;
 
-        public AuthService(IMapper mapper, IConfiguration config, IAuthRepository repo)
+        public AuthService(IMapper mapper, IConfiguration config, IAuthRepository repo, HttpClient httpClient)
         {
             _mapper = mapper;
             _config = config;
             _repo = repo;
+            _httpClient = httpClient;
         }
 
         public async Task<string> CreateJwtForClient(string responseString)
@@ -62,11 +64,10 @@ namespace API.Services
 
         public async Task<string> FetchUserFromAuth0(string auth_token)
         {
-            var httpClient = new HttpClient();
             var url = new Uri(_config.GetSection("AppSettings:Auth0Server").Value);
-            httpClient.DefaultRequestHeaders.Authorization =
+            _httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", auth_token);
-            var response = await httpClient.GetAsync(url);
+            var response = await _httpClient.GetAsync(url);
 
             if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
@@ -79,7 +80,7 @@ namespace API.Services
                 if (finalRequestUri != url) // detect that a redirect actually did occur.
                 {
                     // If this is public facing, add tests here to determine if Url should be trusted
-                    response = await httpClient.GetAsync(finalRequestUri);
+                    response = await _httpClient.GetAsync(finalRequestUri);
 
                     if (response.StatusCode == HttpStatusCode.Unauthorized)
                     {

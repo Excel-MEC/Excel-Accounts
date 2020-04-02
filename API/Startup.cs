@@ -35,8 +35,8 @@ namespace API
             // Adding Controller as service
             services.AddControllers();
 
-            // Adding HttpClient service for fetching external Apis
-            services.AddHttpClient();
+            // Adding Authservice along with HttpClient Service
+            services.AddHttpClient<IAuthService, AuthService>();
 
             // Add Database to the Services
             services.AddDbContext<DataContext>(options =>
@@ -62,9 +62,6 @@ namespace API
 
             //Adding InstitutionRepository to the service
             services.AddScoped<IInstitutionRepository, InstitutionRepository>();
-
-            // Add Services For Authentication
-            services.AddScoped<IAuthService, AuthService>();
 
             // Add Services For Profile
             services.AddScoped<IProfileService, ProfileService>();
