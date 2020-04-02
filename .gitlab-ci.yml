@@ -1,6 +1,6 @@
 image: docker:git
 variables:
-  upstream: master@excel-mec/excel-accounts/Excel-Accounts-Backend
+  - upstream: master@excel-mec/excel-accounts/Excel-Accounts-Backend
 services:
   - docker:dind
 before_script:
