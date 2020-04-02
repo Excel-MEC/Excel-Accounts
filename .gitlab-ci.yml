@@ -1,8 +1,12 @@
 image: docker:git
+variables:
+  upstream: master@excel-mec/excel-accounts/Excel-Accounts-Backend
 services:
   - docker:dind
 before_script:
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  only:
+    - upstream
 stages:
   - test
   - build
@@ -20,3 +24,5 @@ build:
     - docker build -t excel-platform/api:latest -f Development.Dockerfile .
   tags:
     - docker
+  only:
+    - upstream
