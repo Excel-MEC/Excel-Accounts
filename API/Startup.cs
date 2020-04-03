@@ -15,9 +15,6 @@ using API.Helpers;
 using API.Services;
 using API.Services.Interfaces;
 using API.Data.Interfaces;
-using Microsoft.AspNetCore.Diagnostics;
-using System.Text.Json;
-using Microsoft.AspNetCore.Http;
 using API.Helpers.Extensions;
 
 namespace API
