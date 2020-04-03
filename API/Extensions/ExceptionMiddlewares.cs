@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 
-namespace API.Helpers.Extensions
+namespace API.Extensions
 {
-    public static class ExceptionMiddlewareExtensions
+    public static class ExceptionMiddlewares
     {
-        public static void ConfigureExceptionHandler(this IApplicationBuilder app)
+        public static void ConfigureExceptionHandlerMiddleware(this IApplicationBuilder app)
         {
             app.UseExceptionHandler(appError =>
             {
