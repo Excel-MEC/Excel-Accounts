@@ -17,7 +17,7 @@ test:
 build:
   stage: build
   script:
-    - docker build -t excel-platform/api:latest -f Development.Dockerfile .
+    - docker build -t excel-platform/api:latest -f Production.Dockerfile .
   tags:
     - docker
   only:

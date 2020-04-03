@@ -15,8 +15,7 @@ using API.Helpers;
 using API.Services;
 using API.Services.Interfaces;
 using API.Data.Interfaces;
-using System.IO;
-using System.Reflection;
+using API.Helpers.Extensions;
 
 namespace API
 {
@@ -97,8 +96,6 @@ namespace API
             });
         }
 
-
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DataContext dataContext)
         {
@@ -107,7 +104,9 @@ namespace API
                 app.UseDeveloperExceptionPage();
             }
 
-            // Uncomment following line when having https
+            // Custom Exception Handler
+            app.ConfigureExceptionHandler();
+
             // app.UseHttpsRedirection();
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
