@@ -12,10 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 using API.Helpers;
-using API.Services;
-using API.Services.Interfaces;
-using API.Data.Interfaces;
-using API.Helpers.Extensions;
+using API.Extensions;
 
 namespace API
 {
@@ -34,9 +31,6 @@ namespace API
             // Adding Controller as service
             services.AddControllers();
 
-            // Adding Authservice along with HttpClient Service
-            services.AddHttpClient<IAuthService, AuthService>();
-
             // Add Database to the Services
             services.AddDbContext<DataContext>(options =>
             {
@@ -47,32 +41,17 @@ namespace API
                     options.UseNpgsql(connectionString);
             });
 
+            // Add Custom Services (Business layer)
+            services.AddCustomServices();
+
+            // Add Data Repositories (Repository layer)
+            services.AddRepositoryServices();
+
             // Add Automapper to map objects of different types
             services.AddAutoMapper(opt =>
             {
                 opt.AddProfile(new AutoMapperProfiles());
             });
-
-            // Add Authrepository
-            services.AddScoped<IAuthRepository, AuthRepository>();
-
-            // Add Profile
-            services.AddScoped<IProfileRepository, ProfileRepository>();
-
-            //Adding InstitutionRepository to the service
-            services.AddScoped<IInstitutionRepository, InstitutionRepository>();
-
-            // Add Services For Profile
-            services.AddScoped<IProfileService, ProfileService>();
-
-            // Add Google Cloud Storage
-            services.AddSingleton<ICloudStorage, GoogleCloudStorage>();
-
-            //Adding QRCode Creation to the service
-            services.AddSingleton<IQRCodeGeneration, QRCodeGeneration>();
-
-            //Adding CipherRepository to the service
-            services.AddSingleton<ICipherService, CipherService>();
 
             // Add Jwt Authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
@@ -105,7 +84,7 @@ namespace API
             }
 
             // Custom Exception Handler
-            app.ConfigureExceptionHandler();
+            app.ConfigureExceptionHandlerMiddleware();
 
             // app.UseHttpsRedirection();
 
