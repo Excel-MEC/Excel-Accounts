@@ -1,19 +1,15 @@
 using System.Threading.Tasks;
 using API.Models;
 using Microsoft.EntityFrameworkCore;
-using API.Services.Interfaces;
 using API.Data.Interfaces;
 
 namespace API.Data
 {
     public class AuthRepository : IAuthRepository
     {
-        private readonly DataContext _context;
-        private readonly IQRCodeGeneration _qRCodeGeneration;
-
-        public AuthRepository(DataContext context, IQRCodeGeneration qRCodeGeneration)
+        private readonly DataContext _context; 
+        public AuthRepository(DataContext context)
         {
-            _qRCodeGeneration = qRCodeGeneration;
             _context = context;
         }
 
@@ -25,7 +21,6 @@ namespace API.Data
 
         public async Task<User> Register(User user)
         {
-            user.QRCodeUrl = await _qRCodeGeneration.CreateQrCode(user.Id.ToString());
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
             return user;

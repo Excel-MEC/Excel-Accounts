@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using API.Data.Interfaces;
 using API.Dtos.Test;
@@ -66,15 +67,14 @@ namespace API.Controllers
 
         }
 
-        //To encrypte a text
-        [HttpPost("encrypt")]
-        public string Encryption(string ExcelId)
+        //To encrypt a text
+        [HttpPost("cipher")]
+        public string Cipher(string ExcelId)
         {
-            string cipherText = _cipher.Encryption("Super Secret Key   ", ExcelId.ToString());
-            // string id = _cipher.Decryption("SuperSecretKey", cipherText);
-            // return cipherText + "\t" + id;
-            return cipherText;
+            string secretkey = _configuration.GetSection("AppSettings:Encryption:Qrcode").Value;
+            string cipherText = _cipher.Encryption(secretkey, ExcelId);
+            string id = _cipher.Decryption(secretkey, cipherText);
+            return secretkey + "\t" + cipherText + "\t" + id;
         }
-
-    }
+    }   
 }
