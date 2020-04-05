@@ -1,6 +1,5 @@
 using System.Threading.Tasks;
 using API.Dtos.Profile;
-using API.Dtos.Test;
 
 namespace API.Services.Interfaces
 {

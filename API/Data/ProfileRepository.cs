@@ -1,9 +1,6 @@
 using System.Threading.Tasks;
 using API.Dtos.Profile;
-using API.Dtos.Test;
 using API.Models;
-using System.IO;
-using System;
 using Microsoft.Extensions.Configuration;
 using API.Services.Interfaces;
 using API.Data.Interfaces;
@@ -18,8 +15,8 @@ namespace API.Data
         private readonly IConfiguration _configuration;
         public ProfileRepository(DataContext context, IInstitutionRepository institution, ICloudStorage cloudStorage, IConfiguration configuration)
         {
-            this._configuration = configuration;
-            this._cloudStorage = cloudStorage;
+            _configuration = configuration;
+            _cloudStorage = cloudStorage;
             _institution = institution;
             _context = context;
         }

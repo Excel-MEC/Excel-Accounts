@@ -14,10 +14,10 @@ namespace API.Data
                 .HasIdentityOptions(startValue: 12246);
             modelBuilder.Entity<College>()
                 .Property(college => college.Id)
-                .HasIdentityOptions(startValue: 208);
+                .HasIdentityOptions(startValue: 440);
             modelBuilder.Entity<School>()
                 .Property(school => school.Id)
-                .HasIdentityOptions(startValue:2207);
+                .HasIdentityOptions(startValue:2364);
         }
         public DbSet<User> Users { get; set; }
         public DbSet<College> Colleges { get; set; }

@@ -1,8 +1,6 @@
-using System;
 using System.IO;
 using System.Threading.Tasks;
-using API.Dtos.Test;
-using Microsoft.AspNetCore.Mvc;
+using API.Dtos.QRCodeGeneration;
 using Microsoft.Extensions.Configuration;
 using System.Drawing;
 using QRCoder;
@@ -15,41 +13,45 @@ namespace API.Services
     {
         private readonly ICloudStorage _cloudStorage;
         private readonly IConfiguration _configuration;
-        public QRCodeGeneration(ICloudStorage cloudStorage, IConfiguration configuration)
+        private readonly ICipherService _cipher;
+        public QRCodeGeneration(ICloudStorage cloudStorage, IConfiguration configuration, ICipherService cipher)
         {
+            _cipher = cipher;
             _configuration = configuration;
             _cloudStorage = cloudStorage;
         }
 
-        public async Task<string> CreateQrCode([FromForm]string ExcelId)
+        public async Task<string> CreateQrCode(string Id)
         {
-            DataForFileUploadDto qrCodeDto = new DataForFileUploadDto();
-            qrCodeDto.Name = ExcelId;
-            Bitmap qrCodeImage = GenerateQrCode(qrCodeDto);
-            BitmapToImageFile(qrCodeImage, qrCodeDto);
-
-            await UploadFile(qrCodeDto);
-            string ImageUrl = _configuration.GetValue<string>("CloudStorageUrl") + qrCodeDto.ImageStorageName;
-            return ImageUrl;
+            string secretkey = _configuration.GetSection("AppSettings:Encryption:Qrcode").Value;
+            var encryptedId = _cipher.Encryption(secretkey, Id);
+            Bitmap qrCodeImage = GenerateQrCode(encryptedId);
+            var dataForFileUpload = BitmapToImageFile(qrCodeImage, Id);
+            string qRCodeUrl = await UploadFile(dataForFileUpload);   
+            return qRCodeUrl;
         }
 
-        // Generates Bitmap image of the string
-        private static Bitmap GenerateQrCode(DataForFileUploadDto qrCodeDto)
+        // Generates Bitmap image of the encrypted excelid
+        private static Bitmap GenerateQrCode(string id)
         {
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrCodeDto.Name, QRCodeGenerator.ECCLevel.Q);
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(id, QRCodeGenerator.ECCLevel.Q);
             QRCode qrCode = new QRCode(qrCodeData);
             Bitmap qrCodeImage = qrCode.GetGraphic(20);
             return qrCodeImage;
         }
 
         // Converts the Bitmap Image to a PNG File
-        private static void BitmapToImageFile(Bitmap qrCodeImage, DataForFileUploadDto qrCodeDto)
+        private DataForQRCodeUploadDto BitmapToImageFile(Bitmap qrCodeImage, string id)
         {
+            string secretkey = _configuration.GetSection("AppSettings:Encryption:Filename").Value;
+            DataForQRCodeUploadDto data = new DataForQRCodeUploadDto();
+            data.Name  = _cipher.Encryption(secretkey, id);    
             byte[] bitmapBytes = BitmapToBytes(qrCodeImage);
             var stream = new MemoryStream(bitmapBytes);
-            IFormFile Image = new FormFile(stream, 0, bitmapBytes.Length, qrCodeDto.Name, qrCodeDto.Name + ".png");
-            qrCodeDto.Image = Image;
+            IFormFile Image = new FormFile(stream, 0, bitmapBytes.Length, data.Name, data.Name + ".png");
+            data.Image = Image;
+            return data;
         }
 
         // Converts the Bitmap to byte array
@@ -62,19 +64,14 @@ namespace API.Services
             }
         }
 
-        private async Task UploadFile(DataForFileUploadDto dataForFileUpload)
+        private async Task<string> UploadFile(DataForQRCodeUploadDto data)
         {
-            string fileNameForStorage = "accounts/qr-code/" + FormFileName(dataForFileUpload.Name, dataForFileUpload.Image.FileName);
-            dataForFileUpload.ImageUrl = await _cloudStorage.UploadFileAsync(dataForFileUpload.Image, fileNameForStorage);
-            dataForFileUpload.ImageStorageName = fileNameForStorage;
+            var fileExtension = Path.GetExtension(data.Name);
+            string fileNameForStorage = "accounts/qr-code/"+data.Name+fileExtension;
+            await _cloudStorage.UploadFileAsync(data.Image, fileNameForStorage);
+            string qRCodeUrl = _configuration.GetValue<string>("CloudStorageUrl") + fileNameForStorage;
+            return qRCodeUrl;
         }
-
-        private static string FormFileName(string title, string fileName)
-        {
-            var fileExtension = Path.GetExtension(fileName);
-            var fileNameForStorage = $"{title}-{DateTime.Now.ToString("yyyyMMddHHmmss")}{fileExtension}";
-            return fileNameForStorage;
-        }
-
     }
+
 }

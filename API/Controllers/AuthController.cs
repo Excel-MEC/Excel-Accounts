@@ -1,11 +1,5 @@
-using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 using System.Threading.Tasks;
-using AutoMapper;
 using API.Dtos.Auth;
-using API.Models;
 using Microsoft.AspNetCore.Mvc;
 using API.Services.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;

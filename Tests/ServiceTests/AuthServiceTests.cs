@@ -20,13 +20,15 @@ namespace Tests.ServiceTests
         private readonly Mock<IConfiguration> _config;
         private readonly Mock<IAuthRepository> _repo;
         private readonly Mock<HttpClient> _httpClient;
+        private readonly Mock<IQRCodeGeneration>  _qRCodeGeneration;
         public AuthServiceTests()
         {
             _mapper = new Mock<IMapper>();
             _config = new Mock<IConfiguration>();
             _repo = new Mock<IAuthRepository>();
             _httpClient = new Mock<HttpClient>();
-            _authService = new AuthService(_mapper.Object, _config.Object, _repo.Object, _httpClient.Object);
+            _qRCodeGeneration = new Mock<IQRCodeGeneration>();
+            _authService = new AuthService(_mapper.Object, _config.Object, _repo.Object, _httpClient.Object,  _qRCodeGeneration.Object);
         }
 
         [Fact]

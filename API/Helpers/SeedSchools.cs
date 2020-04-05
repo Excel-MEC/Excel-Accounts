@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using API.Data;
 using API.Models;
+using System.Text.Json;
 
 namespace API.Helpers
 {
@@ -19,7 +20,7 @@ namespace API.Helpers
             if (!context.Schools.Any())
             {
                 string jsonStirng = File.ReadAllText("./Assets/Schoollist.json");
-                var root = Newtonsoft.Json.JsonConvert.DeserializeObject<RootObj>(jsonStirng);
+                var root = JsonSerializer.Deserialize<RootObj>(jsonStirng);
                 foreach (var item in root.Schools)
                 {
                     var school = new School();
