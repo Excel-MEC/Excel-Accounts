@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using API.Data.Interfaces;
 using API.Services.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;
+using API.Models.Custom;
 
 namespace API.Controllers
 {
@@ -36,7 +37,7 @@ namespace API.Controllers
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
-            return Ok(new { Response = user });
+            return Ok(user);
         }
 
         [SwaggerOperation(
@@ -47,7 +48,7 @@ namespace API.Controllers
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var success = await _repo.UpdateProfile(id, data);
-            if (success) return Ok(new { Response = "Success" });
+            if (success) return Ok(new OkResponse { Response = "Success" });
             throw new Exception("No changes were made");
         }
 
@@ -61,7 +62,7 @@ namespace API.Controllers
             dataForProfileUpdate.Name = name;
             string updatedProfilePicUrl = await _profileService.UploadProfileImage(dataForProfileUpdate);
             bool success = await _repo.UpdateProfileImage(id, updatedProfilePicUrl);
-            if (success) return Ok(new { Response = "Success" });
+            if (success) return Ok(new OkResponse { Response = "Success" });
             throw new Exception("Problem saving changes");
         }
 
@@ -73,7 +74,7 @@ namespace API.Controllers
             var user = await _repo.GetUser(id);
             var userForView = _mapper.Map<UserForProfileViewDto>(user);
             userForView.InstitutionName = await _institution.FindName(userForView.Category, user.InstitutionId);
-            return Ok(new { Response = userForView });
+            return Ok(userForView);
         }
     }
 }
