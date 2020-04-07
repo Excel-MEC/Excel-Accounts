@@ -28,7 +28,7 @@ namespace API.Controllers
         public async Task<ActionResult<List<College>>> CollegeList()
         {
             var colleges = await _institution.CollegeList();
-            return Ok(new { Response = colleges });
+            return Ok(colleges);
         }
 
         [SwaggerOperation(Description = "This route is to add a new college. The name is set to the new college name.")]
@@ -36,7 +36,7 @@ namespace API.Controllers
         public async Task<ActionResult> AddCollege(DataForAddingCollegeDto data)
         {
             var college = await _institution.AddCollege(data.Name);
-            return Ok(new { Response = college });
+            return Ok(college);
         }
 
         [SwaggerOperation(Description = "Raw School data stored in the database. This route is for school listing.")]
@@ -44,7 +44,7 @@ namespace API.Controllers
         public async Task<ActionResult<List<School>>> SchoolList()
         {
             var schools = await _institution.SchoolList();
-            return Ok(new { Response = schools });
+            return Ok(schools);
         }
 
         [SwaggerOperation(Description = "This route is to add a new school. The name is set to the new school name.")]
@@ -52,7 +52,7 @@ namespace API.Controllers
         public async Task<ActionResult> AddSchool(DataForAddingSchoolDto data)
         {
             var school = await _institution.AddSchool(data.Name);
-            return Ok(new { Response = school });
+            return Ok(school);
         }
     }
 }
