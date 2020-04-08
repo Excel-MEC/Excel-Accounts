@@ -10,6 +10,7 @@ using API.Services.Interfaces;
 using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using Moq;
+using Tests.Helpers;
 using Xunit;
 
 namespace Tests.ServiceTests

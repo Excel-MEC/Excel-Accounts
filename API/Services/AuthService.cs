@@ -40,8 +40,8 @@ namespace API.Services
             if (!await _repo.UserExists(userFromAuth0.email))
             {
                 var newUser = _mapper.Map<User>(userFromAuth0);
-                await _repo.Register(newUser);
                 newUser.QRCodeUrl = await _qRCodeGeneration.CreateQrCode(newUser.Id.ToString());
+                await _repo.Register(newUser);
             }
             User user = await _repo.GetUser(userFromAuth0.email);
             var claims = new[] {

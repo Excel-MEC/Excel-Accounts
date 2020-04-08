@@ -9,13 +9,11 @@ namespace API.Services
 {
     public class ProfileService : IProfileService
     {
-        private readonly IInstitutionRepository _institution;
         private readonly ICloudStorage _cloudStorage;
         private readonly IConfiguration _configuration;
 
-        public ProfileService(IInstitutionRepository institution, ICloudStorage cloudStorage, IConfiguration configuration)
+        public ProfileService(ICloudStorage cloudStorage, IConfiguration configuration)
         {
-            _institution = institution;
             _cloudStorage = cloudStorage;
             _configuration = configuration;
         }
@@ -24,7 +22,7 @@ namespace API.Services
         {
             string fileNameForStorage = "accounts/profile/" + data.Name + Path.GetExtension(data.Image.FileName);
             await _cloudStorage.UploadFileAsync(data.Image, fileNameForStorage);
-            string imageUrl = _configuration.GetValue<string>("CloudStorageUrl") + fileNameForStorage;
+            string imageUrl = _configuration.GetSection("CloudStorageUrl").Value + fileNameForStorage;
             return imageUrl;
         }
     }

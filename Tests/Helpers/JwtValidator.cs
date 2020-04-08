@@ -6,7 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Tests.ServiceTests
+namespace Tests.Helpers
 {
     public class JwtValidator
     {
