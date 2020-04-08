@@ -16,18 +16,17 @@ namespace API.Controllers
     [Produces("application/json")]
     public class InstitutionController : ControllerBase
     {
-        private readonly IInstitutionRepository _institution;
-        public InstitutionController(IInstitutionRepository institution)
+        private readonly IInstitutionRepository _repo;
+        public InstitutionController(IInstitutionRepository repo)
         {
-            _institution = institution;
+            _repo = repo;
         }
 
         [SwaggerOperation(Description = "Raw College data stored in the database. This route is for college listing.    ")]
         [HttpGet("college/list")]
-
         public async Task<ActionResult<List<College>>> CollegeList()
         {
-            var colleges = await _institution.CollegeList();
+            var colleges = await _repo.CollegeList();
             return Ok(colleges);
         }
 
@@ -35,7 +34,7 @@ namespace API.Controllers
         [HttpPost("college/add")]
         public async Task<ActionResult> AddCollege(DataForAddingCollegeDto data)
         {
-            var college = await _institution.AddCollege(data.Name);
+            var college = await _repo.AddCollege(data.Name);
             return Ok(college);
         }
 
@@ -43,7 +42,7 @@ namespace API.Controllers
         [HttpGet("school/list")]
         public async Task<ActionResult<List<School>>> SchoolList()
         {
-            var schools = await _institution.SchoolList();
+            var schools = await _repo.SchoolList();
             return Ok(schools);
         }
 
@@ -51,7 +50,7 @@ namespace API.Controllers
         [HttpPost("school/add")]
         public async Task<ActionResult> AddSchool(DataForAddingSchoolDto data)
         {
-            var school = await _institution.AddSchool(data.Name);
+            var school = await _repo.AddSchool(data.Name);
             return Ok(school);
         }
     }
