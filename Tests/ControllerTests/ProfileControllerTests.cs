@@ -34,6 +34,7 @@ namespace Tests.ControllerTests
             _user = Mock.Of<User>();
             _user.Id = 123;
             _user.Email = "a@b.com";
+            _user.InstitutionId = 1;
             var principalUser = new ClaimsPrincipal(new ClaimsIdentity(new Claim[]
             {
                 new Claim("user_id", _user.Id.ToString()),
@@ -49,6 +50,7 @@ namespace Tests.ControllerTests
         [Fact]
         public async Task Get_GivenNoArgeuments_ReturnCurrentUserAsync()
         {
+            //Given
             //When
             _repo.Setup(x => x.GetUser(_user.Id)).ReturnsAsync(_user);
 
@@ -70,6 +72,46 @@ namespace Tests.ControllerTests
             Assert.NotNull(okObjectResult);
             var okResponse = okObjectResult.Value as OkResponse;
             Assert.Equal("Success", okResponse.Response.ToString());
+        }
+
+        [Fact]
+        public async Task UpdateProfileImage_GivenImage_ReturnsSuccessAsync()
+        {
+            //Given
+            ImageFromUserDto imageFromUser = Mock.Of<ImageFromUserDto>();
+            DataForProfilePicUpdateDto dataForProfileUpdate = Mock.Of<DataForProfilePicUpdateDto>();
+            string newProfilePicUrl = "new url";
+            //When
+            _mapper.Setup(x => x.Map<DataForProfilePicUpdateDto>(imageFromUser)).Returns(dataForProfileUpdate);
+            _profileService.Setup(x => x.UploadProfileImage(dataForProfileUpdate)).ReturnsAsync(newProfilePicUrl);
+            _repo.Setup(x => x.UpdateProfileImage(_user.Id, newProfilePicUrl)).ReturnsAsync(true);
+            //Then
+            ActionResult response = await _profileController.UpdateProfileImage(imageFromUser);
+            OkObjectResult okObjectResult = response as OkObjectResult;
+            Assert.NotNull(okObjectResult);
+            OkResponse okResponse = okObjectResult.Value as OkResponse;
+            Assert.Equal("Success", okResponse.Response.ToString());
+        }
+
+        [Fact]
+        public async Task View_GivenNothing_ReturnsUserForProfileViewAsyncleViewAsync()
+        {
+            //Given
+            UserForProfileViewDto userForProfileView = Mock.Of<UserForProfileViewDto>();
+            userForProfileView.Id = _user.Id;
+            userForProfileView.Category = "any";
+            string institutionName = "Existing Institution";
+            //When
+            _repo.Setup(x => x.GetUser(_user.Id)).ReturnsAsync(_user);
+            _mapper.Setup(x => x.Map<UserForProfileViewDto>(_user)).Returns(userForProfileView);
+            _institution.Setup(x => x.FindName(userForProfileView.Category, _user.InstitutionId)).ReturnsAsync(institutionName);
+            //Then
+            var response = await _profileController.View();
+            OkObjectResult okObjectResult = response.Result as OkObjectResult;
+            var responseData = okObjectResult.Value as UserForProfileViewDto;
+            UserForProfileViewDto userFromController = Assert.IsAssignableFrom<UserForProfileViewDto>(responseData);
+            Assert.Equal(_user.Id, userFromController.Id);
+            Assert.Equal(institutionName, userFromController.InstitutionName);
         }
     }
 }
