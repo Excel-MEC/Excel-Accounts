@@ -1,0 +1,46 @@
+[
+  {
+    "Name": "Jojo Rabit",
+    "Email": "jojo@gmail.com",
+    "Picture": "jojo.png",
+    "QRCodeUrl": "qrcode1Url.png"
+  },
+  {
+    "Name": "John Doe",
+    "Email": "john@gmail.com",
+    "Picture": "john.png",
+    "QRCodeUrl": "qrcode2Url.png",
+    "InstitutionId": 3,
+    "Gender": "male",
+    "MobileNumber": "1234567890",
+    "Category": "college"
+  },
+  {
+    "Name": "Mathew H",
+    "Email": "mathew@gmail.com",
+    "Picture": "mathew.png",
+    "QRCodeUrl": "qrcode2Url.png"
+  },
+  {
+    "Name": "Kate Ray",
+    "Email": "kate@gmail.com",
+    "Picture": "kate.png",
+    "QRCodeUrl": "qrcode3Url.png",
+    "InstitutionId": 6,
+    "Gender": "male",
+    "MobileNumber": "9876543210",
+    "Category": "school"
+  },
+  {
+    "Name": "Robin Roy",
+    "Email": "robin@gmail.com",
+    "Picture": "robin.png",
+    "QRCodeUrl": "qrcode4Url.png"
+  },
+  {
+    "Name": "Charles William",
+    "Email": "charles@gmail.com",
+    "Picture": "charles.png",
+    "QRCodeUrl": "qrcode5Url.png"
+  }
+]
