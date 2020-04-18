@@ -24,7 +24,6 @@ namespace API.Controllers
 
         [SwaggerOperation(Description = "Raw College data stored in the database. This route is for college listing.    ")]
         [HttpGet("college/list")]
-
         public async Task<ActionResult<List<College>>> CollegeList()
         {
             var colleges = await _institution.CollegeList();
