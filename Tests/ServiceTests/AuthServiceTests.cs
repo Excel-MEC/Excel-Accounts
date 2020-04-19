@@ -1,3 +1,4 @@
+using System;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ using API.Services.Interfaces;
 using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using Moq;
+using Tests.Helpers;
 using Xunit;
 
 namespace Tests.ServiceTests
@@ -19,16 +21,16 @@ namespace Tests.ServiceTests
         private readonly Mock<IMapper> _mapper;
         private readonly Mock<IConfiguration> _config;
         private readonly Mock<IAuthRepository> _repo;
-        private readonly Mock<HttpClient> _httpClient;
-        private readonly Mock<IQRCodeGeneration>  _qRCodeGeneration;
+        private readonly HttpClient _httpClient;
+        private readonly Mock<IQRCodeGeneration> _qRCodeGeneration;
         public AuthServiceTests()
         {
             _mapper = new Mock<IMapper>();
             _config = new Mock<IConfiguration>();
             _repo = new Mock<IAuthRepository>();
-            _httpClient = new Mock<HttpClient>();
+            _httpClient = new HttpClient();
             _qRCodeGeneration = new Mock<IQRCodeGeneration>();
-            _authService = new AuthService(_mapper.Object, _config.Object, _repo.Object, _httpClient.Object,  _qRCodeGeneration.Object);
+            _authService = new AuthService(_mapper.Object, _config.Object, _repo.Object, _httpClient, _qRCodeGeneration.Object);
         }
 
         [Fact]
@@ -51,6 +53,16 @@ namespace Tests.ServiceTests
             var validatedEmail = JwtValidator.Validate(jwt, key, issuer);
             Assert.IsType<string>(jwt);
             Assert.Equal(email, validatedEmail);
+        }
+
+        [Fact]
+        public async Task FetchUserFromAuth0_GivenInvalidToken_ThrowsUnauthorizedAccessException()
+        {
+            string access_token = "access_token";
+            string auth0Server = "http://ajeshkumar.eu.auth0.com/userinfo";
+            string auth0Endpoint = "AppSettings:Auth0Server";
+            _config.Setup(x => x.GetSection(auth0Endpoint).Value).Returns(auth0Server);
+            await Assert.ThrowsAsync<UnauthorizedAccessException>(() => _authService.FetchUserFromAuth0(access_token));
         }
     }
 }

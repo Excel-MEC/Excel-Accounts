@@ -23,7 +23,7 @@ namespace API.Controllers
         {
             var responseInJson = await _authService.FetchUserFromAuth0(tokenForLogin.auth_token);
             var token = await _authService.CreateJwtForClient(responseInJson);
-            return Ok(new { token = token });
+            return Ok(new JwtForClientDto { Token = token });
         }
     }
 }
