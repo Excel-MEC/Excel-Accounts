@@ -10,6 +10,7 @@ using API.Data.Interfaces;
 using API.Services.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;
 using API.Models.Custom;
+using API.Dtos.Ambassador;
 
 namespace API.Controllers
 {
@@ -77,5 +78,6 @@ namespace API.Controllers
                 userForView.InstitutionName = await _institution.FindName(userForView.Category, user.InstitutionId);
             return Ok(userForView);
         }
+
     }
 }

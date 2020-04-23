@@ -11,5 +11,7 @@ namespace API.Dtos.Profile
         public string Gender { get; set; }
         public string MobileNumber { get; set; }
         public string Category { get; set; }
+        public int AmbassadorRef { get; set; }
+        public int IsPaid { get; set; }
     }
 }

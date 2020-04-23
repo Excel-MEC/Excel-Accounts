@@ -2,6 +2,7 @@ using AutoMapper;
 using API.Dtos.Auth;
 using API.Models;
 using API.Dtos.Profile;
+using API.Dtos.Ambassador;
 
 namespace API.Helpers
 {
@@ -13,6 +14,9 @@ namespace API.Helpers
             CreateMap<UserFromAuth0Dto, User>();
             CreateMap<User, UserForProfileViewDto>();
             CreateMap<ImageFromUserDto, DataForProfilePicUpdateDto>();
+            CreateMap<User, AmbassadorListViewDto>();
+            CreateMap<User, AmbassadorProfileDto>();
+            CreateMap<User, UserViewDto>();
         }
     }
 }
