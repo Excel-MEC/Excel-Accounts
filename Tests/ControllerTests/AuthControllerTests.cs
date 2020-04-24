@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using API.Controllers;
 using API.Dtos.Auth;

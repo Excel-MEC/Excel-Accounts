@@ -13,7 +13,7 @@ namespace API
     {
         public static void Main(string[] args)
         {
-            // Seed college details when the College table is emtpy
+            // The empty database is populated with a list of colleges and schools at the startup of the program.
             var host = CreateHostBuilder(args).Build();
             using (var scope = host.Services.CreateScope())
             {

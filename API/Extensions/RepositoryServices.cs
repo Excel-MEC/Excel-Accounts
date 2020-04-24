@@ -17,6 +17,8 @@ namespace API.Extensions
             //Adding InstitutionRepository to the service
             services.AddScoped<IInstitutionRepository, InstitutionRepository>();
 
+            //Adding AmbassadorRepository to the service
+            services.AddScoped<IAmbassadorRepository, AmbassadorRepository>();
         }
     }
 }

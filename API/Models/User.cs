@@ -15,5 +15,9 @@ namespace API.Models
         public string Gender { get; set; }
         public string MobileNumber { get; set; }
         public string Category{ get; set; }
+        public Ambassador  Ambassador { get; set; }
+        public int? ReferrerAmbassadorId { get; set; }
+        public Ambassador Referrer { get; set; }
+        public bool IsPaid { get; set; }
     }
 }
