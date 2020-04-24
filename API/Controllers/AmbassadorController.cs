@@ -38,7 +38,7 @@ namespace API.Controllers
 
         [SwaggerOperation(Description = "Ambassador Profile view")]
         [HttpGet]
-        public async Task<ActionResult> View()
+        public async Task<ActionResult<AmbassadorProfileDto>> View()
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var ambassador = await _repo.GetAmbassador(id);
@@ -56,7 +56,7 @@ namespace API.Controllers
 
         [SwaggerOperation(Description = "Apply ReferralCode")]
         [HttpPost("referral")]
-        public async Task<ActionResult<AmbassadorListViewDto>> ApplyReferralCode(DataForApplyingReferralCodeDto data)
+        public async Task<ActionResult> ApplyReferralCode(DataForApplyingReferralCodeDto data)
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var success = await _repo.ApplyReferralCode(id, data.referralCode);    
@@ -66,7 +66,7 @@ namespace API.Controllers
 
         [SwaggerOperation(Description = "List of Referred Users")]
         [HttpGet("userlist")]
-        public async Task<ActionResult<AmbassadorListViewDto>> ListOfReferredUsers()
+        public async Task<ActionResult<UserViewDto>> ListOfReferredUsers()
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var referredUsers = await _repo.ListOfReferredUsers(id);    

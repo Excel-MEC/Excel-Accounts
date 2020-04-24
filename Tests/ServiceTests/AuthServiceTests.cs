@@ -23,6 +23,8 @@ namespace Tests.ServiceTests
         private readonly Mock<IAuthRepository> _repo;
         private readonly HttpClient _httpClient;
         private readonly Mock<IQRCodeGeneration> _qRCodeGeneration;
+        private readonly Mock<IAmbassadorRepository> _ambRepo;
+
         public AuthServiceTests()
         {
             _mapper = new Mock<IMapper>();
@@ -30,7 +32,8 @@ namespace Tests.ServiceTests
             _repo = new Mock<IAuthRepository>();
             _httpClient = new HttpClient();
             _qRCodeGeneration = new Mock<IQRCodeGeneration>();
-            _authService = new AuthService(_mapper.Object, _config.Object, _repo.Object, _httpClient, _qRCodeGeneration.Object);
+            _ambRepo = new Mock<IAmbassadorRepository>();
+            _authService = new AuthService(_mapper.Object, _config.Object, _repo.Object, _httpClient, _qRCodeGeneration.Object, _ambRepo.Object);
         }
 
         [Fact]
@@ -49,7 +52,7 @@ namespace Tests.ServiceTests
             _repo.Setup(x => x.GetUser(email)).ReturnsAsync(user);
             _config.Setup(x => x.GetSection(tokenSource).Value).Returns(key);
             _config.Setup(x => x.GetSection(issuerSource).Value).Returns(issuer);
-            var jwt = await _authService.CreateJwtForClient(responseFromAuth0);
+            var jwt = await _authService.CreateJwtForClient(responseFromAuth0,null);
             var validatedEmail = JwtValidator.Validate(jwt, key, issuer);
             Assert.IsType<string>(jwt);
             Assert.Equal(email, validatedEmail);
