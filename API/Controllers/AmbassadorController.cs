@@ -8,6 +8,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Collections.Generic;
 
 namespace API.Controllers
 {
@@ -48,7 +49,7 @@ namespace API.Controllers
 
         [SwaggerOperation(Description = "List of Ambassadors")]
         [HttpGet("list")]
-        public async Task<ActionResult<AmbassadorListViewDto>> ListOfAmbassadors()
+        public async Task<ActionResult<List<AmbassadorListViewDto>>> ListOfAmbassadors()
         {
             var ambassadors = await _repo.ListOfAmbassadors();    
             return Ok(ambassadors);
@@ -66,11 +67,12 @@ namespace API.Controllers
 
         [SwaggerOperation(Description = "List of Referred Users")]
         [HttpGet("userlist")]
-        public async Task<ActionResult<UserViewDto>> ListOfReferredUsers()
+        public async Task<ActionResult<List<UserViewDto>>> ListOfReferredUsers()
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var referredUsers = await _repo.ListOfReferredUsers(id);    
             return Ok(referredUsers);
         }
+
     }
 }
