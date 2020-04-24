@@ -8,6 +8,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Collections.Generic;
 
 namespace API.Controllers
 {
@@ -72,6 +73,6 @@ namespace API.Controllers
             var referredUsers = await _repo.ListOfReferredUsers(id);    
             return Ok(referredUsers);
         }
-        
+
     }
 }
