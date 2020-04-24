@@ -23,7 +23,7 @@ namespace Tests.ControllerTests
         {
             string response = "response";
             _authService.Setup(x => x.FetchUserFromAuth0(It.IsAny<string>())).ReturnsAsync(response);
-            _authService.Setup(x => x.CreateJwtForClient(It.IsAny<string>())).ReturnsAsync(response);
+            _authService.Setup(x => x.CreateJwtForClient(It.IsAny<string>(), It.IsAny<int>())).ReturnsAsync(response);
             var tokenForLogin = Mock.Of<TokenForLoginDto>();
             var result = await _controller.Login(tokenForLogin);
             Assert.IsType<ActionResult<JwtForClientDto>>(result);

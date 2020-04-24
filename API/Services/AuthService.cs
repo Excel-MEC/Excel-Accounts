@@ -24,9 +24,11 @@ namespace API.Services
         private readonly IAuthRepository _repo;
         private readonly HttpClient _httpClient;
         private readonly IQRCodeGeneration _qRCodeGeneration;
+        private readonly IAmbassadorRepository _ambRepo;
 
-        public AuthService(IMapper mapper, IConfiguration config, IAuthRepository repo, HttpClient httpClient, IQRCodeGeneration qRCodeGeneration)
+        public AuthService(IMapper mapper, IConfiguration config, IAuthRepository repo, HttpClient httpClient, IQRCodeGeneration qRCodeGeneration, IAmbassadorRepository ambRepo)
         {
+            _ambRepo = ambRepo;
             _qRCodeGeneration = qRCodeGeneration;
             _mapper = mapper;
             _config = config;
@@ -34,14 +36,20 @@ namespace API.Services
             _httpClient = httpClient;
         }
 
-        public async Task<string> CreateJwtForClient(string responseString)
+        public async Task<string> CreateJwtForClient(string responseString, int? referralCode)
         {
             var userFromAuth0 = JsonConvert.DeserializeObject<UserFromAuth0Dto>(responseString);
             if (!await _repo.UserExists(userFromAuth0.email))
             {
                 var newUser = _mapper.Map<User>(userFromAuth0);
                 newUser.QRCodeUrl = await _qRCodeGeneration.CreateQrCode(newUser.Id.ToString());
-                await _repo.Register(newUser);
+                newUser = await _repo.Register(newUser);
+                int referral = referralCode ?? default(int);
+                if (referralCode != null)
+                {
+                    
+                    await _ambRepo.ApplyReferralCode(newUser.Id, referral);
+                }
             }
             User user = await _repo.GetUser(userFromAuth0.email);
             var claims = new[] {
