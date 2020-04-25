@@ -22,7 +22,7 @@ namespace API.Controllers
         public async Task<ActionResult<JwtForClientDto>> Login(TokenForLoginDto tokenForLogin)
         {
             var responseInJson = await _authService.FetchUserFromAuth0(tokenForLogin.auth_token);
-            var token = await _authService.CreateJwtForClient(responseInJson);
+            var token = await _authService.CreateJwtForClient(responseInJson, tokenForLogin.referralCode);
             return Ok(new JwtForClientDto { Token = token });
         }
     }

@@ -59,7 +59,6 @@ namespace API.Controllers
         }
         //To generate the qrcode
         [HttpPost("qrcode")]
-
         public async Task<string> CreateQrCode(string ExcelId)
         {
             string qRCodeUrl = await _qRCodeGeneration.CreateQrCode(ExcelId);
