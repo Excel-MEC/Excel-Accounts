@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200423191809_Added the Foreign Key from Abassador Table and Removed a Foreign Key in User Table")]
-    partial class AddedtheForeignKeyfromAbassadorTableandRemovedaForeignKeyinUserTable
+    [Migration("20200425122315_Added Ambassador Table an changed User Schema")]
+    partial class AddedAmbassadorTableanchangedUserSchema
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

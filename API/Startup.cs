@@ -98,9 +98,6 @@ namespace API
                 c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "Excel Accounts");
             });
 
-            // // Automatic database update
-            // dataContext.Database.Migrate();
-
             // Allow Cross origin requests
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 

@@ -3,15 +3,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace API.Migrations
 {
-    public partial class CreateTableAmbassadors : Migration
+    public partial class AddedAmbassadorTableanchangedUserSchema : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "AmbassadorRef",
-                table: "Users",
-                nullable: true);
-
             migrationBuilder.AddColumn<bool>(
                 name: "IsPaid",
                 table: "Users",
@@ -98,10 +93,6 @@ namespace API.Migrations
 
             migrationBuilder.DropIndex(
                 name: "IX_Users_ReferrerAmbassadorId",
-                table: "Users");
-
-            migrationBuilder.DropColumn(
-                name: "AmbassadorRef",
                 table: "Users");
 
             migrationBuilder.DropColumn(
