@@ -32,22 +32,25 @@ namespace API.Data
             user.Gender = data.Gender;
             user.MobileNumber = data.MobileNumber;
             user.Category = data.Category;
-            if (data.InstitutionId == 0)
+            int institutionId = data.InstitutionId ?? default(int);
+            string institutionName = data.InstitutionName ?? default(string);
+
+            if (institutionId == 0)
             {
                 if (data.Category == "college")
                 {
-                    var college = await _institution.AddCollege(data.InstitutionName);
+                    var college = await _institution.AddCollege(institutionName);
                     user.InstitutionId = college.Id;
                 }
                 else if (data.Category == "school")
                 {
-                    var school = await _institution.AddSchool(data.InstitutionName);
+                    var school = await _institution.AddSchool(institutionName);
                     user.InstitutionId = school.Id;
                 }
             }
             else
             {
-                user.InstitutionId = data.InstitutionId;
+                user.InstitutionId = institutionId;
             }
 
             var success = await _context.SaveChangesAsync() > 0;

@@ -11,6 +11,7 @@ using API.Services.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;
 using API.Models.Custom;
 using API.Dtos.Ambassador;
+using API.Extensions.CustomExceptions;
 
 namespace API.Controllers
 {
@@ -50,7 +51,7 @@ namespace API.Controllers
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var success = await _repo.UpdateProfile(id, data);
             if (success) return Ok(new OkResponse { Response = "Success" });
-            throw new Exception("No changes were made");
+            throw new InsufficientDataForUpdationException();
         }
 
         [SwaggerOperation(Description = "This route is for Changing the user's Profile Picture")]
@@ -74,8 +75,9 @@ namespace API.Controllers
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
             var userForView = _mapper.Map<UserForProfileViewDto>(user);
+            var institutionId = user.InstitutionId ?? default(int);
             if (user.InstitutionId > 0)
-                userForView.InstitutionName = await _institution.FindName(userForView.Category, user.InstitutionId);
+                userForView.InstitutionName = await _institution.FindName(userForView.Category, institutionId);
             return Ok(userForView);
         }
 
