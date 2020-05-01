@@ -1,5 +1,6 @@
 using System;
 using System.Text.Json;
+using API.Extensions.CustomExceptions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
@@ -21,6 +22,13 @@ namespace API.Extensions
                         var result = JsonSerializer.Serialize(new { error = exception.Message.ToString() });
                         context.Response.ContentType = "application/json";
                         context.Response.StatusCode = 401;
+                        await context.Response.WriteAsync(result);
+                    }
+                    else if (exception is InsufficientDataForUpdationException)
+                    {
+                        var result = JsonSerializer.Serialize(new { error = "Insufficient data" });
+                        context.Response.ContentType = "application/json";
+                        context.Response.StatusCode = 400;
                         await context.Response.WriteAsync(result);
                     }
                 });

@@ -104,7 +104,7 @@ namespace Tests.ControllerTests
             //When
             _repo.Setup(x => x.GetUser(_user.Id)).ReturnsAsync(_user);
             _mapper.Setup(x => x.Map<UserForProfileViewDto>(_user)).Returns(userForProfileView);
-            _institution.Setup(x => x.FindName(userForProfileView.Category, _user.InstitutionId)).ReturnsAsync(institutionName);
+            _institution.Setup(x => x.FindName(userForProfileView.Category, _user.InstitutionId??default(int))).ReturnsAsync(institutionName);
             //Then
             var response = await _controller.View();
             OkObjectResult okObjectResult = response.Result as OkObjectResult;
