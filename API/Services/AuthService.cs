@@ -44,7 +44,7 @@ namespace API.Services
             {
                 var newUser = _mapper.Map<User>(userFromAuth0);
                 newUser.QRCodeUrl = await _qRCodeGeneration.CreateQrCode(newUser.Id.ToString());
-                newUser.Roles = Constants.Roles[0];
+                newUser.Role = Constants.Roles[0];
                 newUser = await _repo.Register(newUser);
                 int referral = referralCode ?? default(int);
                 if (referralCode != null)
@@ -57,7 +57,7 @@ namespace API.Services
             var claims = new[] {
                 new Claim("user_id", user.Id.ToString()),
                 new Claim("email", user.Email),
-                new Claim("Role", user.Roles)
+                new Claim(ClaimTypes.Role, user.Role)
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
 

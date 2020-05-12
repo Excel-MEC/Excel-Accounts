@@ -7,7 +7,7 @@ namespace API.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public string Roles { get; set; }
+        public string Role { get; set; }
         public string Picture { get; set; }
         public string QRCodeUrl { get; set; }
         public int? InstitutionId { get; set; }

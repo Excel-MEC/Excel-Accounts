@@ -2,12 +2,14 @@
   {
     "Name": "Jojo Rabit",
     "Email": "jojo@gmail.com",
+    "Role": "User",
     "Picture": "jojo.png",
     "QRCodeUrl": "qrcode1Url.png"
   },
   {
     "Name": "John Doe",
     "Email": "john@gmail.com",
+    "Role": "User Admin",
     "Picture": "john.png",
     "QRCodeUrl": "qrcode2Url.png",
     "InstitutionId": 3,
@@ -18,12 +20,14 @@
   {
     "Name": "Mathew H",
     "Email": "mathew@gmail.com",
+    "Role": "User",
     "Picture": "mathew.png",
     "QRCodeUrl": "qrcode2Url.png"
   },
   {
     "Name": "Kate Ray",
     "Email": "kate@gmail.com",
+    "Role": "User Admin",
     "Picture": "kate.png",
     "QRCodeUrl": "qrcode3Url.png",
     "InstitutionId": 6,
@@ -34,12 +38,14 @@
   {
     "Name": "Robin Roy",
     "Email": "robin@gmail.com",
+    "Role": "User",
     "Picture": "robin.png",
     "QRCodeUrl": "qrcode4Url.png"
   },
   {
     "Name": "Charles William",
     "Email": "charles@gmail.com",
+    "Role": "User",
     "Picture": "charles.png",
     "QRCodeUrl": "qrcode5Url.png"
   }

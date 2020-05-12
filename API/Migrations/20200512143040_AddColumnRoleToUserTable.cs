@@ -2,7 +2,7 @@
 
 namespace API.Migrations
 {
-    public partial class AddedColumnRolesToUserTable : Migration
+    public partial class AddColumnRoleToUserTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,7 @@ namespace API.Migrations
                 oldType: "text");
 
             migrationBuilder.AddColumn<string>(
-                name: "Roles",
+                name: "Role",
                 table: "Users",
                 nullable: false,
                 defaultValue: "User");
@@ -33,7 +33,7 @@ namespace API.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "Roles",
+                name: "Role",
                 table: "Users");
 
             migrationBuilder.AlterColumn<string>(

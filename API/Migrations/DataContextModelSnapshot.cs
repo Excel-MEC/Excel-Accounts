@@ -116,7 +116,7 @@ namespace API.Migrations
                         .HasColumnType("integer")
                         .HasDefaultValue(null);
 
-                    b.Property<string>("Roles")
+                    b.Property<string>("Role")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")

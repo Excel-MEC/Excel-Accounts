@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200512133831_AddedColumnRolesToUserTable")]
-    partial class AddedColumnRolesToUserTable
+    [Migration("20200512143040_AddColumnRoleToUserTable")]
+    partial class AddColumnRoleToUserTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -118,7 +118,7 @@ namespace API.Migrations
                         .HasColumnType("integer")
                         .HasDefaultValue(null);
 
-                    b.Property<string>("Roles")
+                    b.Property<string>("Role")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")

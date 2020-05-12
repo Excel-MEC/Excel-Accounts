@@ -23,7 +23,7 @@ namespace API.Data
                 .IsUnique();
 
             modelBuilder.Entity<User>()
-                .Property(user => user.Roles)
+                .Property(user => user.Role)
                 .HasDefaultValue(Constants.Roles[0])
                 .IsRequired();
 
