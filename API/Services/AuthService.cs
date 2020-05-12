@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using API.Data.Interfaces;
 using API.Dtos.Auth;
 using API.Models;
+using API.Models.Custom;
 using API.Services.Interfaces;
 using AutoMapper;
 using Microsoft.Extensions.Configuration;
@@ -43,11 +44,12 @@ namespace API.Services
             {
                 var newUser = _mapper.Map<User>(userFromAuth0);
                 newUser.QRCodeUrl = await _qRCodeGeneration.CreateQrCode(newUser.Id.ToString());
+                newUser.Role = Constants.Roles[0];
                 newUser = await _repo.Register(newUser);
                 int referral = referralCode ?? default(int);
                 if (referralCode != null)
                 {
-                    
+
                     await _ambRepo.ApplyReferralCode(newUser.Id, referral);
                 }
             }
@@ -55,6 +57,7 @@ namespace API.Services
             var claims = new[] {
                 new Claim("user_id", user.Id.ToString()),
                 new Claim("email", user.Email),
+                new Claim(ClaimTypes.Role, user.Role)
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
 
@@ -63,7 +66,7 @@ namespace API.Services
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddDays(30),
+                Expires = DateTime.Now.AddDays(365),
                 SigningCredentials = creds,
                 Issuer = _config.GetSection("AppSettings:Issuer").Value
             };

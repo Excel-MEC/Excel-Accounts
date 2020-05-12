@@ -1,4 +1,5 @@
 using API.Models;
+using API.Models.Custom;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
@@ -13,21 +14,34 @@ namespace API.Data
                 .Property(user => user.Id)
                 .HasIdentityOptions(startValue: 12246);
 
+            modelBuilder.Entity<User>()
+                .Property(user => user.Name)
+                .IsRequired();
+
+            modelBuilder.Entity<User>()
+                .HasIndex(user => user.Email)
+                .IsUnique();
+
+            modelBuilder.Entity<User>()
+                .Property(user => user.Role)
+                .HasDefaultValue(Constants.Roles[0])
+                .IsRequired();
+
             modelBuilder.Entity<College>()
                 .Property(college => college.Id)
                 .HasIdentityOptions(startValue: 440);
 
             modelBuilder.Entity<School>()
                 .Property(school => school.Id)
-                .HasIdentityOptions(startValue:2364);
-            
+                .HasIdentityOptions(startValue: 2364);
+
             modelBuilder.Entity<User>()
                 .Property(a => a.ReferrerAmbassadorId)
-                .HasDefaultValue(value:null);
+                .HasDefaultValue(value: null);
 
             modelBuilder.Entity<Ambassador>()
                 .Property(a => a.Id)
-                .HasIdentityOptions(startValue:502274, incrementBy: 27);
+                .HasIdentityOptions(startValue: 502274, incrementBy: 27);
 
             modelBuilder.Entity<Ambassador>()
                 .Property(a => a.UserId)
@@ -38,13 +52,13 @@ namespace API.Data
                 .WithOne(a => a.User)
                 .HasForeignKey<Ambassador>(a => a.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
-                
+
             modelBuilder.Entity<User>()
                 .HasOne<Ambassador>(user => user.Referrer)
                 .WithMany(a => a.ReferredUsers)
                 .HasForeignKey(a => a.ReferrerAmbassadorId)
-                .OnDelete(DeleteBehavior.SetNull);   
-            
+                .OnDelete(DeleteBehavior.SetNull);
+
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Ambassador> Ambassadors { get; set; }

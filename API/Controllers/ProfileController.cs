@@ -56,7 +56,7 @@ namespace API.Controllers
 
         [SwaggerOperation(Description = "This route is for Changing the user's Profile Picture")]
         [HttpPost("update/image")]
-        public async Task<ActionResult> UpdateProfileImage([FromForm]ImageFromUserDto imageFromUser)
+        public async Task<ActionResult> UpdateProfileImage([FromForm] ImageFromUserDto imageFromUser)
         {
             string name = this.User.Claims.First(i => i.Type == "user_id").Value;
             int id = int.Parse(name);
