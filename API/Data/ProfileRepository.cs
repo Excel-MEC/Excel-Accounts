@@ -4,6 +4,7 @@ using API.Models;
 using Microsoft.Extensions.Configuration;
 using API.Services.Interfaces;
 using API.Data.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
 {
@@ -22,7 +23,9 @@ namespace API.Data
         }
         public async Task<User> GetUser(int userid)
         {
-            return await _context.Users.FindAsync(userid);
+            return await _context.Users
+            .Include(user => user.Ambassador)
+                                            .FirstOrDefaultAsync(user => user.Id == userid);
         }
 
         public async Task<bool> UpdateProfile(int id, UserForProfileUpdateDto data)

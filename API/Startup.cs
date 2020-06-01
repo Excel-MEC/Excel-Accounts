@@ -29,7 +29,8 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             // Adding Controller as service
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(AppDomainManagerInitializationOptions =>
+            AppDomainManagerInitializationOptions.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             // Add Database to the Services
             services.AddDbContext<DataContext>(options =>
