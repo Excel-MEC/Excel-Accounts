@@ -3,6 +3,7 @@ using API.Dtos.Auth;
 using API.Models;
 using API.Dtos.Profile;
 using API.Dtos.Ambassador;
+using Google.Apis.Auth;
 
 namespace API.Helpers
 {
@@ -17,6 +18,7 @@ namespace API.Helpers
             CreateMap<User, AmbassadorListViewDto>();
             CreateMap<User, AmbassadorProfileDto>();
             CreateMap<User, UserViewDto>();
+            CreateMap<GoogleJsonWebSignature.Payload, User>();         
         }
     }
 }
