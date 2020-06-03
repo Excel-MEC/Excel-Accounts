@@ -8,7 +8,7 @@ namespace API.Extensions
     {
         public static void AddCustomServices(this IServiceCollection services)
         {
-            // Adding Authservice along with HttpClient Service
+            // Adding AuthService2 along with HttpClient Service
             services.AddHttpClient<IAuthService, AuthService>();
 
             // Add Services For Profile
@@ -22,6 +22,9 @@ namespace API.Extensions
 
             //Adding CipherRepository to the service
             services.AddSingleton<ICipherService, CipherService>();
+
+            // Adding AuthService23 along with HttpClient Service
+            services.AddHttpClient<IAuthService2, AuthService2>();
         }
     }
 }

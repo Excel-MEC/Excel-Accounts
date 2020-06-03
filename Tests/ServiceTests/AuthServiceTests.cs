@@ -16,9 +16,9 @@ using Xunit;
 
 namespace Tests.ServiceTests
 {
-    public class AuthServiceTests
+    public class AuthService2Tests
     {
-        private readonly IAuthService _authService;
+        private readonly IAuthService2 _AuthService2;
         private readonly Mock<IMapper> _mapper;
         private readonly Mock<IConfiguration> _config;
         private readonly Mock<IAuthRepository> _repo;
@@ -26,7 +26,7 @@ namespace Tests.ServiceTests
         private readonly Mock<IQRCodeGeneration> _qRCodeGeneration;
         private readonly Mock<IAmbassadorRepository> _ambRepo;
 
-        public AuthServiceTests()
+        public AuthService2Tests()
         {
             _mapper = new Mock<IMapper>();
             _config = new Mock<IConfiguration>();
@@ -34,7 +34,7 @@ namespace Tests.ServiceTests
             _httpClient = new HttpClient();
             _qRCodeGeneration = new Mock<IQRCodeGeneration>();
             _ambRepo = new Mock<IAmbassadorRepository>();
-            _authService = new AuthService(_mapper.Object, _config.Object, _repo.Object, _httpClient, _qRCodeGeneration.Object, _ambRepo.Object);
+            _AuthService2 = new AuthService2(_mapper.Object, _config.Object, _repo.Object, _httpClient, _qRCodeGeneration.Object, _ambRepo.Object);
         }
 
         [Fact]
@@ -54,7 +54,7 @@ namespace Tests.ServiceTests
             _repo.Setup(x => x.GetUser(email)).ReturnsAsync(user);
             _config.Setup(x => x.GetSection(tokenSource).Value).Returns(key);
             _config.Setup(x => x.GetSection(issuerSource).Value).Returns(issuer);
-            var jwt = await _authService.CreateJwtForClient(responseFromAuth0, null);
+            var jwt = await _AuthService2.CreateJwtForClient(responseFromAuth0, null);
             var validatedEmail = JwtValidator.Validate(jwt, key, issuer);
             Assert.IsType<string>(jwt);
             Assert.Equal(email, validatedEmail);
@@ -67,7 +67,7 @@ namespace Tests.ServiceTests
             string auth0Server = "http://ajeshkumar.eu.auth0.com/userinfo";
             string auth0Endpoint = "AppSettings:Auth0Server";
             _config.Setup(x => x.GetSection(auth0Endpoint).Value).Returns(auth0Server);
-            await Assert.ThrowsAsync<UnauthorizedAccessException>(() => _authService.FetchUserFromAuth0(access_token));
+            await Assert.ThrowsAsync<UnauthorizedAccessException>(() => _AuthService2.FetchUserFromAuth0(access_token));
         }
     }
 }
