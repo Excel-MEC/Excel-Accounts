@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using API.Data.Interfaces;
 using API.Dtos.Test;
@@ -70,7 +69,7 @@ namespace API.Controllers
         [HttpPost("cipher")]
         public string Cipher(string ExcelId)
         {
-            string secretkey = _configuration.GetSection("AppSettings:Encryption:Qrcode").Value;
+            string secretkey = Environment.GetEnvironmentVariable("ENCRYPTION_QRCODE");
             string cipherText = _cipher.Encryption(secretkey, ExcelId);
             string id = _cipher.Decryption(secretkey, cipherText);
             return secretkey + "\t" + cipherText + "\t" + id;

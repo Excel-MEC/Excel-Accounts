@@ -56,7 +56,7 @@ namespace API.Services
                 new Claim("email", user.Email),
                 new Claim(ClaimTypes.Role, user.Role)
             };
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("TOKEN")));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
@@ -65,7 +65,7 @@ namespace API.Services
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.Now.AddDays(365),
                 SigningCredentials = creds,
-                Issuer = _config.GetSection("AppSettings:Issuer").Value 
+                Issuer = Environment.GetEnvironmentVariable("ISSUER") 
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();

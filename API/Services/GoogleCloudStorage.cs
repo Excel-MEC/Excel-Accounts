@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -18,9 +19,9 @@ namespace API.Services
 
         public GoogleCloudStorage(IConfiguration configuration)
         {
-            googleCredential = GoogleCredential.FromFile(configuration.GetValue<string>("GoogleCredentialFile"));
+            googleCredential = GoogleCredential.FromFile(Environment.GetEnvironmentVariable("GOOGLE_CREDENTIAL_FILE"));
             storageClient = StorageClient.Create(googleCredential);
-            bucketName = configuration.GetValue<string>("GoogleCloudStorageBucket");
+            bucketName = Environment.GetEnvironmentVariable("GOOGLE_CLOUD_STORAGE_BUCKET");
         }
 
         public async Task<string> UploadFileAsync(IFormFile imageFile, string fileNameForStorage)
