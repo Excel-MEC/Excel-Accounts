@@ -59,7 +59,12 @@ namespace API.Services
                 new Claim("email", user.Email),
                 new Claim(ClaimTypes.Role, user.Role)
             };
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("TOKEN")));
+            string secret_Token = Environment.GetEnvironmentVariable("TOKEN");
+            var key = (secret_Token == null) ? new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value)) 
+                                      :new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret_Token));
+
+            string s =Environment.GetEnvironmentVariable("ISSUER");
+            string issuer = (s == null) ? _config.GetSection("AppSettings:Issuer").Value : s;
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
@@ -68,7 +73,7 @@ namespace API.Services
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.Now.AddDays(365),
                 SigningCredentials = creds,
-                Issuer = Environment.GetEnvironmentVariable("ISSUER")
+                Issuer = issuer
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -78,7 +83,10 @@ namespace API.Services
 
         public async Task<string> FetchUserFromAuth0(string auth_token)
         {
-            var url = new Uri(Environment.GetEnvironmentVariable("AUTH0SERVER"));
+            
+            string auth0Server = Environment.GetEnvironmentVariable("AUTH0SERVER");
+            var url = (auth0Server == null) ? new Uri(_config.GetSection("AppSettings:Auth0Server").Value) : new Uri(auth0Server);
+
             _httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", auth_token);
             var response = await _httpClient.GetAsync(url);
