@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using API.Data.Interfaces;
@@ -22,7 +23,7 @@ namespace API.Services
         {
             string fileNameForStorage = "accounts/profile/" + data.Name + Path.GetExtension(data.Image.FileName);
             await _cloudStorage.UploadFileAsync(data.Image, fileNameForStorage);
-            string imageUrl = _configuration.GetSection("CloudStorageUrl").Value + fileNameForStorage;
+            string imageUrl = Environment.GetEnvironmentVariable("CLOUD_STORAGE_URL") + fileNameForStorage;
             return imageUrl;
         }
     }

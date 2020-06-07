@@ -24,7 +24,7 @@ namespace API.Services
 
         public async Task<string> CreateQrCode(string Id)
         {
-            string secretkey = _configuration.GetSection("AppSettings:Encryption:Qrcode").Value;
+            string secretkey = Environment.GetEnvironmentVariable("ENCRYPTION_QRCODE");
             var encryptedId = _cipher.Encryption(secretkey, Id);
             Bitmap qrCodeImage = GenerateQrCode(encryptedId);
             string qRCodeUrl = await UploadFileAsync(qrCodeImage, Id);
@@ -44,7 +44,7 @@ namespace API.Services
         // Converts the Bitmap Image to a PNG File
         private async Task<string> UploadFileAsync(Bitmap qrCodeImage, string id)
         {
-            string secretkey = _configuration.GetSection("AppSettings:Encryption:Filename").Value;
+            string secretkey = Environment.GetEnvironmentVariable("ENCRYPTION_FILENAME");
             DataForQRCodeUploadDto data = new DataForQRCodeUploadDto();
             data.Name = _cipher.Encryption(secretkey, id) + ".png";
             byte[] bitmapBytes = BitmapToBytes(qrCodeImage);
@@ -55,7 +55,7 @@ namespace API.Services
                 var fileExtension = Path.GetExtension(data.Name);
                 string fileNameForStorage = "accounts/qr-code/" + data.Name;
                 await _cloudStorage.UploadFileAsync(data.Image, fileNameForStorage);
-                string qRCodeUrl = _configuration.GetValue<string>("CloudStorageUrl") + fileNameForStorage;
+                string qRCodeUrl = Environment.GetEnvironmentVariable("CLOUD_STORAGE_URL") + fileNameForStorage;
                 return qRCodeUrl;
             }
         }

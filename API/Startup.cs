@@ -60,9 +60,9 @@ namespace API
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("TOKEN"))),
                     ValidateIssuer = true,
-                    ValidIssuer = Configuration.GetSection("AppSettings:Issuer").Value,
+                    ValidIssuer = Environment.GetEnvironmentVariable("ISSUER"),
                     ValidateAudience = false
                 };
             });
