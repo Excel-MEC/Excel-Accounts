@@ -30,7 +30,7 @@ namespace Tests.ServiceTests
             var mockImage = new Mock<IFormFile>();
             mockImage.Setup(x => x.FileName).Returns("mockfile.png");
             data.Image = mockImage.Object;
-            var returnUrl = "urlaccounts/profile/imageName.png";
+            var returnUrl = "accounts/profile/imageName.png";
             //When
             _configuration.Setup(x => x.GetSection("CloudStorageUrl").Value).Returns("url");
             //Then
