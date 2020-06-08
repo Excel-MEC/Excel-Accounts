@@ -26,7 +26,7 @@ namespace Tests.ControllerTests
             string response = "response";
             _AuthService2.Setup(x => x.FetchUserFromAuth0(It.IsAny<string>())).ReturnsAsync(response);
             _AuthService2.Setup(x => x.CreateJwtForClient(It.IsAny<string>(), It.IsAny<int>())).ReturnsAsync(response);
-            var tokenForLogin = Mock.Of<TokenForLoginDto>();
+            var tokenForLogin = Mock.Of<TokenForLogin2Dto>();
             var result = await _controller.Login2(tokenForLogin);
             Assert.IsType<ActionResult<JwtForClientDto>>(result);
         }

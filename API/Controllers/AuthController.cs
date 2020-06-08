@@ -22,16 +22,16 @@ namespace API.Controllers
 
         [SwaggerOperation(Description = "For login, Pass the access token recieved from auth0. Store the jwt recieved in return. Pass it as the authorization header value in the format \"Bearer jwt\" to access the endpoints that need authorization")]
         [HttpPost("login2")]
-        public async Task<ActionResult<JwtForClientDto>> Login2(TokenForLoginDto tokenForLogin)
+        public async Task<ActionResult<JwtForClientDto>> Login2(TokenForLogin2Dto tokenForLogin)
         {
             var responseInJson = await _AuthService2.FetchUserFromAuth0(tokenForLogin.auth_token);
             var token = await _AuthService2.CreateJwtForClient(responseInJson, tokenForLogin.referralCode);
             return Ok(new JwtForClientDto { Token = token });
         }
 
-        [SwaggerOperation(Description = "For login, Pass the access token recieved from GoogleOAuth2.0 API. Store the jwt recieved in return. Pass it as the authorization header value in the format \"Bearer jwt\" to access the endpoints that need authorization")]
+        [SwaggerOperation(Description = "For login, Pass the tokenId recieved from GoogleOAuth2.0 API. Store the jwt recieved in return. Pass it as the authorization header value in the format \"Bearer jwt\" to access the endpoints that need authorization")]
         [HttpPost("login")]
-        public async Task<ActionResult<JwtForClientDto>> Login(TokenForLogin2Dto tokenForLogin)
+        public async Task<ActionResult<JwtForClientDto>> Login(TokenForLoginDto tokenForLogin)
         {
             var payload = GoogleJsonWebSignature.ValidateAsync(tokenForLogin.tokenId, new GoogleJsonWebSignature.ValidationSettings()).Result;
             var token = await _AuthService.CreateJwtForClient(payload, tokenForLogin.referralCode);
