@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
-using Google.Apis.Auth;
 
 namespace API.Services.Interfaces
 {
     public interface IAuthService
     {
-        Task<string> CreateJwtForClient(GoogleJsonWebSignature.Payload payload, int? referralCode);
+        Task<string> CreateJwtForClient(string responseInJson, int? referralCode);
+        Task<string> FetchUserGoogle0Auth(string access_token);
     }
 }

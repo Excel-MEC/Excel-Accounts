@@ -33,8 +33,10 @@ namespace API.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<JwtForClientDto>> Login(TokenForLoginDto tokenForLogin)
         {
-            var payload = GoogleJsonWebSignature.ValidateAsync(tokenForLogin.tokenId, new GoogleJsonWebSignature.ValidationSettings()).Result;
-            var token = await _AuthService.CreateJwtForClient(payload, tokenForLogin.referralCode);
+            
+            // var payload = GoogleJsonWebSignature.ValidateAsync(tokenForLogin.tokenId, new GoogleJsonWebSignature.ValidationSettings()).Result;
+            var responseInJson = await _AuthService.FetchUserGoogle0Auth(tokenForLogin.accessToken);
+            var token = await _AuthService.CreateJwtForClient(responseInJson, tokenForLogin.referralCode);
             return Ok(new JwtForClientDto { Token = token });
         }
     }
