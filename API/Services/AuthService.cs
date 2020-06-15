@@ -1,5 +1,7 @@
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net;
+using System.Net.Http.Headers;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Text;
@@ -10,8 +12,11 @@ using API.Models.Custom;
 using API.Services.Interfaces;
 using AutoMapper;
 using Google.Apis.Auth;
+using API.Dtos.Auth;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
+
 
 namespace API.Services
 {
@@ -34,9 +39,10 @@ namespace API.Services
             _httpClient = httpClient;
         }
 
-        public async Task<string> CreateJwtForClient(GoogleJsonWebSignature.Payload payload, int? referralCode)
+        public async Task<string> CreateJwtForClient(string responseString, int? referralCode)
         {
-            var userFromGoogle0Auth = _mapper.Map<User>(payload);
+            var userFrom0Auth = JsonConvert.DeserializeObject<UserFromAuth0Dto>(responseString);   
+            var userFromGoogle0Auth = _mapper.Map<User>(userFrom0Auth);
             if (!await _repo.UserExists(userFromGoogle0Auth.Email))
             {
                 var newUser = userFromGoogle0Auth;
@@ -65,12 +71,41 @@ namespace API.Services
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.Now.AddDays(365),
                 SigningCredentials = creds,
-                Issuer = Environment.GetEnvironmentVariable("ISSUER") 
+                Issuer = Environment.GetEnvironmentVariable("ISSUER")
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
+        }
+
+        public async Task<string> FetchUserGoogle0Auth(string accessToken)
+        {
+            string googleapi = Environment.GetEnvironmentVariable("GOOGLEAPI");
+            Console.WriteLine("vdgsvdgvg:"+googleapi);
+            var url = new Uri(googleapi);
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            var response = await _httpClient.GetAsync(url);
+           
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                // Authorization header has been set, but the server reports that it is missing.
+                // It was probably stripped out due to a redirect.
+
+                var finalRequestUri = response.RequestMessage.RequestUri; // contains the final location after following the redirect.                
+
+                if (finalRequestUri != url) // detect that a redirect actually did occur.
+                {
+                    // If this is public facing, add tests here to determine if Url should be trusted
+                    response = await _httpClient.GetAsync(finalRequestUri);
+
+                    if (response.StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        throw new UnauthorizedAccessException();
+                    }
+                }    
+            }   
+            return response.Content.ReadAsStringAsync().Result;
         }
     }
 }
