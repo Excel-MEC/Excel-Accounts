@@ -6,7 +6,7 @@ before_script:
 stages:
   - test
   - build
-  - development
+  - deploy
 test:
   stage: test
   script:
