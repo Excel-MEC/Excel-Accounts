@@ -18,7 +18,6 @@ build:
   stage: build
   script:
     - docker login -u excelmec -p $DOCKER_HUB_PASSWORD
-    - cd Excel-Accounts-Backend
     - docker build -t excelmec/accounts-api:staging -f Production.Dockerfile .
     - docker push excelmec/accounts-api:staging
   tags:
