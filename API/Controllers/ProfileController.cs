@@ -78,7 +78,6 @@ namespace API.Controllers
             var institutionId = user.InstitutionId ?? default(int);
             if (user.InstitutionId > 0)
                 userForView.InstitutionName = await _institution.FindName(userForView.Category, institutionId);
-            System.Console.WriteLine(await _institution.FindName(userForView.Category, institutionId));
             return Ok(userForView);
         }
 
