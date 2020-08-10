@@ -13,11 +13,13 @@ namespace API.Data
         private readonly IProfileRepository _repo;
         private readonly IMapper _mapper;
         private readonly DataContext _context;
-        public AmbassadorRepository(IProfileRepository repo, IMapper mapper, DataContext context)
+        private readonly IInstitutionRepository _institution;
+        public AmbassadorRepository(IProfileRepository repo, IMapper mapper, DataContext context, IInstitutionRepository institution)
         {
             this._context = context;
             this._mapper = mapper;
             this._repo = repo;
+            this._institution = institution;
         }
 
         public async Task<bool> ApplyReferralCode(int id, int referralCode)
@@ -44,7 +46,9 @@ namespace API.Data
         {
             var user = await _context.Users.Include(user => user.Ambassador).FirstOrDefaultAsync(user => user.Id == id);
             var ambassadorForView = _mapper.Map<AmbassadorProfileDto>(user);
-            ambassadorForView.AmbassadorId = user.Ambassador.Id;
+            var institutionId = user.InstitutionId ?? default(int);
+            ambassadorForView.InstitutionName = await _institution.FindName(user.Category, institutionId);
+            ambassadorForView.AmbassadorId = user.Ambassador.Id;            
             ambassadorForView.FreeMembership = user.Ambassador.FreeMembership;
             ambassadorForView.PaidMembership = user.Ambassador.PaidMembership;
             return ambassadorForView;
