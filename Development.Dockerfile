@@ -4,4 +4,3 @@ RUN apt-get update && apt-get install -y libgdiplus
 COPY ./API/*.csproj ./
 RUN dotnet restore --disable-parallel
 COPY ./API/. .
-ENTRYPOINT [ "dotnet", "watch", "run", "--urls", "http://0.0.0.0:5000" ]

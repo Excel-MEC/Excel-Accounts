@@ -43,18 +43,20 @@ namespace API.Data
 
         public async Task<string> FindName(string category, int id)
         {
-            var name = "";
             if (category == "college")
             {
                 var college = await _context.Colleges.FindAsync(id);
-                name = college.Name;
+                return college.Name;
             }
             else if (category == "school")
             {
                 var school = await _context.Schools.FindAsync(id);
-                name = school.Name;
+                return school.Name;
             }
-            return name;
+            else
+            {
+                throw new Exception("Invalid Category!!");
+            }
         }
 
         public async Task<List<School>> SchoolList()
