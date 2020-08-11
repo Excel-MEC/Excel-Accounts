@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Collections.Generic;
+using API.Extensions.CustomExceptions;
 
 namespace API.Controllers
 {
@@ -33,8 +34,9 @@ namespace API.Controllers
         {
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var success = await _repo.SignUpForAmbassador(id);
-            if (success) return Ok(new OkResponse { Response = "Success" });
-            throw new Exception("Problem saving changes");
+            if (!success) throw new Exception("Problem saving changes");
+            return Ok(new OkResponse { Response = "Success" });
+            
         }
 
         [SwaggerOperation(Description = "Ambassador Profile view")]

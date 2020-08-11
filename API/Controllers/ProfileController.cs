@@ -51,7 +51,7 @@ namespace API.Controllers
             int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
             var success = await _repo.UpdateProfile(id, data);
             if (success) return Ok(new OkResponse { Response = "Success" });
-            throw new InsufficientDataForUpdationException();
+            throw new InsufficientDataForUpdationException(" Insufficient data for updating profile ");
         }
 
         [SwaggerOperation(Description = "This route is for Changing the user's Profile Picture")]

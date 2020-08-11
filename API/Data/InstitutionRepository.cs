@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.Data.Interfaces;
+using API.Extensions.CustomExceptions;
 using API.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -55,7 +56,7 @@ namespace API.Data
             }
             else
             {
-                throw new Exception("Invalid Category!!");
+                throw new DataInvalidException("Invalid Category.");
             }
         }
 

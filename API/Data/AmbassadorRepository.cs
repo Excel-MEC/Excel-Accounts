@@ -6,6 +6,7 @@ using API.Models;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using System;
+using API.Extensions.CustomExceptions;
 
 namespace API.Data
 {
@@ -25,21 +26,14 @@ namespace API.Data
 
         public async Task<bool> ApplyReferralCode(int id, int referralCode)
         {
-            var success = false;
             var user = await _context.Users.Include(user => user.Referrer).FirstOrDefaultAsync(user => user.Id == id);
-            if(user.Referrer == null)
-            {
-                var ambassador = await _context.Ambassadors.Include(a => a.ReferredUsers).FirstOrDefaultAsync(a => a.Id == referralCode);
-                user.Referrer = ambassador;
-                ambassador.ReferredUsers.Add(user);
-                ambassador.FreeMembership +=1;
-                success = await _context.SaveChangesAsync() > 0; 
-            }
-            else
-            {
-                throw new System.Exception(" Only one referral code can be applied once!!");
-            }   
-            
+            if (user.Referrer != null) throw new AlreadyExistException("A referral code has been already applied ");
+            var ambassador = await _context.Ambassadors.Include(a => a.ReferredUsers).FirstOrDefaultAsync(a => a.Id == referralCode);
+            if(ambassador == null) throw new CodeNotFoundException("This referral code doesn't exist ");
+            user.Referrer = ambassador;
+            ambassador.ReferredUsers.Add(user);
+            ambassador.FreeMembership +=1;
+            var success = await _context.SaveChangesAsync() > 0;
             return success;
         }
 
@@ -90,7 +84,7 @@ namespace API.Data
         {
             User user = await _context.Users.Include(user => user.Ambassador)
                                             .FirstOrDefaultAsync(user => user.Id == id);
-            if(user.Ambassador != null)  throw new Exception("You have already signed up!!");                       
+            if(user.Ambassador != null)  throw new AlreadyExistException(" This email address is already registered ");                       
             Ambassador ambassador = new Ambassador();
             user.Ambassador = ambassador;
             await _context.Ambassadors.AddAsync(ambassador);
