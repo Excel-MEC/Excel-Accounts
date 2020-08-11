@@ -89,6 +89,7 @@ namespace API.Data
         {
             User user = await _context.Users.Include(user => user.Ambassador)
                                             .FirstOrDefaultAsync(user => user.Id == id);
+            if(user.Ambassador != null)  throw new Exception("You have already signed up!!");                       
             Ambassador ambassador = new Ambassador();
             user.Ambassador = ambassador;
             await _context.Ambassadors.AddAsync(ambassador);
