@@ -5,6 +5,7 @@ using API.Dtos.Ambassador;
 using API.Models;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace API.Data
 {
