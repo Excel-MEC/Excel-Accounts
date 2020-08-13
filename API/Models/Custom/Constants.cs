@@ -7,13 +7,15 @@ namespace API.Models.Custom
         public static string[] Roles => new string[] {
             "User",
             "Admin",
-            "Volunteers"
+            "Volunteers",
+            "Core",
+            "Staff"
         };
 
         public static string[] Category = {
             "college",
             "school",            
-            "professional"
+            "others"
         };
     }
 }
