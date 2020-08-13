@@ -31,13 +31,6 @@ namespace API.Extensions
                         context.Response.StatusCode = 400;
                         await context.Response.WriteAsync(result);
                     }
-                    else if (exception is AlreadyExistException)
-                    {
-                        var result = JsonSerializer.Serialize(new { error = exception.Message.ToString() });
-                        context.Response.ContentType = "application/json";
-                        context.Response.StatusCode = 409;
-                        await context.Response.WriteAsync(result);
-                    }
                     else if (exception is OneTimeUseException)
                     {
                         var result = JsonSerializer.Serialize(new { error = exception.Message.ToString() });

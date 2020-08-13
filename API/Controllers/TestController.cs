@@ -1,11 +1,15 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
+using API.Data;
 using API.Data.Interfaces;
 using API.Dtos.Test;
+using API.Models.Custom;
 using API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace API.Controllers
@@ -20,8 +24,10 @@ namespace API.Controllers
         private readonly IAuthRepository _authRepository;
         private readonly IQRCodeGeneration _qRCodeGeneration;
         private readonly ICipherService _cipher;
-        public TestController(ICloudStorage cloudStorage, IConfiguration configuration, IAuthRepository authRepository, IQRCodeGeneration qRCodeGeneration, ICipherService cipher)
+        private readonly DataContext _context;
+        public TestController(ICloudStorage cloudStorage, IConfiguration configuration, IAuthRepository authRepository, IQRCodeGeneration qRCodeGeneration, ICipherService cipher, DataContext context)
         {
+            _context = context;
             _cipher = cipher;
             _qRCodeGeneration = qRCodeGeneration;
             _authRepository = authRepository;
@@ -74,5 +80,18 @@ namespace API.Controllers
             string id = _cipher.Decryption(secretkey, cipherText);
             return secretkey + "\t" + cipherText + "\t" + id;
         }
-    }   
+
+        [HttpDelete("referral")]
+        public async Task<IActionResult> RemoveReferral()
+        {
+            var excelId = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
+            var user = await _context.Users.Where(User => User.Id == excelId).SingleAsync();
+            user.ReferrerAmbassadorId = null;
+            var sucess = await _context.SaveChangesAsync() > 0;
+            if(!sucess) throw new Exception("Problem Saving Changes!!");
+            return Ok(new OkResponse { Response = "Success" });
+        }
+
+
+    }
 }

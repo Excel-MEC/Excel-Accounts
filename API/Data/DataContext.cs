@@ -27,6 +27,14 @@ namespace API.Data
                 .HasDefaultValue(Constants.Roles[0])
                 .IsRequired();
 
+            modelBuilder.Entity<User>()
+                .Property(user => user.CategoryId)
+                .HasDefaultValue(value: null);
+            
+            modelBuilder.Entity<User>()
+                .Property(user => user.InstitutionId)
+                .HasDefaultValue(value: 456);
+
             modelBuilder.Entity<College>()
                 .Property(college => college.Id)
                 .HasIdentityOptions(startValue: 440);

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace API.Models.Custom
 {
     public static class Constants
@@ -6,6 +8,12 @@ namespace API.Models.Custom
             "User",
             "Admin",
             "Volunteers"
+        };
+
+        public static string[] Category = {
+            "college",
+            "school",            
+            "professional"
         };
     }
 }
