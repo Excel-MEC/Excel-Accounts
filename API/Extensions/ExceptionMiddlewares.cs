@@ -26,9 +26,30 @@ namespace API.Extensions
                     }
                     else if (exception is InsufficientDataForUpdationException)
                     {
-                        var result = JsonSerializer.Serialize(new { error = "Insufficient data" });
+                        var result = JsonSerializer.Serialize(new { error = exception.Message.ToString() });
                         context.Response.ContentType = "application/json";
                         context.Response.StatusCode = 400;
+                        await context.Response.WriteAsync(result);
+                    }
+                    else if (exception is OneTimeUseException)
+                    {
+                        var result = JsonSerializer.Serialize(new { error = exception.Message.ToString() });
+                        context.Response.ContentType = "application/json";
+                        context.Response.StatusCode = 409;
+                        await context.Response.WriteAsync(result);
+                    }
+                    else if (exception is CodeNotFoundException)
+                    {
+                        var result = JsonSerializer.Serialize(new { error = exception.Message.ToString() });
+                        context.Response.ContentType = "application/json";
+                        context.Response.StatusCode = 404;
+                        await context.Response.WriteAsync(result);
+                    }
+                    else if (exception is DataInvalidException)
+                    {
+                        var result = JsonSerializer.Serialize(new { error = exception.Message.ToString() });
+                        context.Response.ContentType = "application/json";
+                        context.Response.StatusCode = 422;
                         await context.Response.WriteAsync(result);
                     }
                 });

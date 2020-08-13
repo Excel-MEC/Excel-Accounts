@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using API.Models.Custom;
 
 namespace API.Models
 {
@@ -13,7 +14,8 @@ namespace API.Models
         public int? InstitutionId { get; set; }
         public string Gender { get; set; }
         public string MobileNumber { get; set; }
-        public string Category { get; set; }
+        public int CategoryId { get; set; }
+        public string Category => Constants.Category[CategoryId];
         public Ambassador Ambassador { get; set; }
         public int? ReferrerAmbassadorId { get; set; }
         public Ambassador Referrer { get; set; }

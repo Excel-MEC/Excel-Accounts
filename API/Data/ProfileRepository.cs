@@ -4,6 +4,7 @@ using API.Models;
 using Microsoft.Extensions.Configuration;
 using API.Services.Interfaces;
 using API.Data.Interfaces;
+using API.Extensions.CustomExceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
@@ -30,35 +31,37 @@ namespace API.Data
         }
 
         public async Task<bool> UpdateProfile(int id, UserForProfileUpdateDto data)
-        {
+        {            
             User user = await _context.Users.FindAsync(id);
-            user.Name = data.Name;
-            user.Gender = data.Gender;
-            user.MobileNumber = data.MobileNumber;
-            user.Category = data.Category;
-            int institutionId = data.InstitutionId ?? default(int);
-            string institutionName = data.InstitutionName ?? default(string);
-
-            if (institutionId == 0)
+            user.Name = data.Name ?? user.Name;
+            user.Gender = data.Gender ?? user.Gender;
+            user.MobileNumber = data.MobileNumber ?? user.MobileNumber;            
+            var categoryId = data.CategoryId ?? user.CategoryId.ToString();
+            var institutionId = data.InstitutionId ?? user.InstitutionId;
+            user.CategoryId = int.Parse(categoryId);            
+            if(categoryId == "2")
             {
-                if (data.Category == "college")
+                user.InstitutionId = null;
+                return await _context.SaveChangesAsync() > 0;
+            }
+            if (institutionId == 0) //Adds new college or school
+            {
+                if (user.Category == "college")
                 {
-                    var college = await _institution.AddCollege(institutionName);
+                    var college = await _institution.AddCollege(data.InstitutionName);
                     user.InstitutionId = college.Id;
                 }
-                else if (data.Category == "school")
+                else if (user.Category == "school")
                 {
-                    var school = await _institution.AddSchool(institutionName);
+                    var school = await _institution.AddSchool(data.InstitutionName);
                     user.InstitutionId = school.Id;
                 }
             }
-            else
+            else 
             {
                 user.InstitutionId = institutionId;               
             }
-
-            var success = await _context.SaveChangesAsync() > 0;
-            return success;
+            return await _context.SaveChangesAsync() > 0;
         }
 
 

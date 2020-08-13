@@ -9,6 +9,6 @@ namespace API.Dtos.Profile
         public string InstitutionName { get; set; }
         public string Gender { get; set; }
         public string MobileNumber { get; set; }
-        public string Category { get; set; }
+        public string CategoryId { get; set; }
     }
 }
