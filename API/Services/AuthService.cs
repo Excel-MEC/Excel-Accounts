@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http;
@@ -57,11 +59,14 @@ namespace API.Services
                 }
             }
             User user = await _repo.GetUser(userFromGoogle0Auth.Email);
-            var claims = new[] {
+            var claims = new List<Claim>() {
                 new Claim("user_id", user.Id.ToString()),
-                new Claim("email", user.Email),
-                new Claim(ClaimTypes.Role, user.Role)
+                new Claim("email", user.Email)
             };
+            foreach (var role in user.Role.Split(",").Select(x => x.Trim()))
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("TOKEN")));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
