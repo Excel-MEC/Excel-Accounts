@@ -1,9 +1,13 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Threading.Tasks;
 using API.Dtos.Profile;
 using API.Models;
 using Microsoft.Extensions.Configuration;
 using API.Services.Interfaces;
 using API.Data.Interfaces;
+using API.Dtos.Admin;
 using API.Extensions.CustomExceptions;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,6 +32,11 @@ namespace API.Data
             .Include(user => user.Ambassador)
             .Include(user => user.Referrer)
             .FirstOrDefaultAsync(user => user.Id == userid);
+        }
+
+        public async Task<List<User>> GetUserList(List<int> userIds)
+        {
+            return await _context.Users.Where(user => userIds.Contains(user.Id)).ToListAsync();
         }
 
         public async Task<bool> UpdateProfile(int id, UserForProfileUpdateDto data)
@@ -77,5 +86,18 @@ namespace API.Data
             return success;
         }
 
+        public async Task<bool> ChangeRole(DataForChangingRoleDto dataForChangingRoleDto)
+        {
+            var user = await _context.Users.FindAsync(dataForChangingRoleDto.Id);
+            user.Role = dataForChangingRoleDto.Role;
+            var success = await _context.SaveChangesAsync() > 0;
+            return success;
+        }
+
+        public async Task<string> GetRole(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            return user.Role;
+        }
     }
 }

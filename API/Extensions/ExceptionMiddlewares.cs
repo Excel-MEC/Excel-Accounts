@@ -21,7 +21,7 @@ namespace API.Extensions
                     {
                         var result = JsonSerializer.Serialize(new { error = exception.Message.ToString() });
                         context.Response.ContentType = "application/json";
-                        context.Response.StatusCode = 401;
+                        context.Response.StatusCode = 403;
                         await context.Response.WriteAsync(result);
                     }
                     else if (exception is InsufficientDataForUpdationException)
