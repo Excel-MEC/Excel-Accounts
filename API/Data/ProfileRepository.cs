@@ -1,14 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.Xml;
 using System.Threading.Tasks;
 using API.Dtos.Profile;
 using API.Models;
-using Microsoft.Extensions.Configuration;
-using API.Services.Interfaces;
 using API.Data.Interfaces;
 using API.Dtos.Admin;
-using API.Extensions.CustomExceptions;
+using API.Models.Custom;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
@@ -17,15 +15,41 @@ namespace API.Data
     {
         private readonly DataContext _context;
         private readonly IInstitutionRepository _institution;
-        private readonly ICloudStorage _cloudStorage;
-        private readonly IConfiguration _configuration;
-        public ProfileRepository(DataContext context, IInstitutionRepository institution, ICloudStorage cloudStorage, IConfiguration configuration)
+        private readonly IMapper _mapper;
+
+        public ProfileRepository(DataContext context, IInstitutionRepository institution, IMapper mapper)
         {
-            _configuration = configuration;
-            _cloudStorage = cloudStorage;
+            _mapper = mapper;
             _institution = institution;
             _context = context;
         }
+
+        public PagedList<User> GetAllUser(QueryParametersForGetAllUsers parameters)
+        {
+            IQueryable<User> query = _context.Users;
+            if (parameters.Id != null) query = query.Where(user => user.Id == parameters.Id);
+            if(parameters.Name != null) query = query.Where(user => user.Name.ToLower() == parameters.Name.ToLower());
+            if(parameters.Email != null)  query = query.Where(user => user.Email.ToLower() == parameters.Email.ToLower());
+            if(parameters.Gender != null)  query = query.Where(user => user.Gender.ToLower() == parameters.Gender.ToLower());
+            if (parameters.InstitutionId != null) query = query.Where(user => user.Id == parameters.Id);
+            if(parameters.CategoryId != null)  query = query.Where(user => user.CategoryId == parameters.CategoryId);
+            if(parameters.Role != null)  query = query.Where(user => user.Role.ToLower().Contains(parameters.Role.ToLower()));
+            if(parameters.MobileNumber != null)  query = query.Where(user => user.MobileNumber == parameters.MobileNumber);
+            if(parameters.IsPaid != null)  query = query.Where(user => user.IsPaid == parameters.IsPaid);
+            if(parameters.ReferrerAmbassadorId != null)  query = query.Where(user => user.ReferrerAmbassadorId == parameters.ReferrerAmbassadorId);
+            switch (parameters.SortOrder)
+            {
+                case "desc":
+                    query = query.OrderByDescending(on => on.Name);
+                    break;
+                default:
+                    query = query.OrderBy(on => on.Name);
+                    break;
+            }
+            var users =  PagedList<User>.ToPagedList( query, parameters.PageNumber, parameters.PageSize);
+            return users;
+        }
+
         public async Task<User> GetUser(int userid)
         {
             return await _context.Users
@@ -55,15 +79,20 @@ namespace API.Data
             }
             if (institutionId == 0) //Adds new college or school
             {
-                if (user.Category == "college")
+                switch (user.Category)
                 {
-                    var college = await _institution.AddCollege(data.InstitutionName);
-                    user.InstitutionId = college.Id;
-                }
-                else if (user.Category == "school")
-                {
-                    var school = await _institution.AddSchool(data.InstitutionName);
-                    user.InstitutionId = school.Id;
+                    case "college":
+                    {
+                        var college = await _institution.AddCollege(data.InstitutionName);
+                        user.InstitutionId = college.Id;
+                        break;
+                    }
+                    case "school":
+                    {
+                        var school = await _institution.AddSchool(data.InstitutionName);
+                        user.InstitutionId = school.Id;
+                        break;
+                    }
                 }
             }
             else 

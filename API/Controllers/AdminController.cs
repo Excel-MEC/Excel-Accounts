@@ -32,6 +32,25 @@ namespace API.Controllers
             _institutionRepository = institutionRepository;
             _mapper = mapper;
         }
+        
+        [SwaggerOperation(Description =
+            "Full data of all users. Route accessible only to the roles: Admin, Core, Editor, Staff")]
+        [HttpGet("users")]
+        
+        public ActionResult<List<User>> GetAllUsers([FromQuery] QueryParametersForGetAllUsers parameters)
+        {
+            var users = _profileRepository.GetAllUser(parameters);
+            var metadata = new Pagination()
+            {
+                TotalCount = users.TotalCount,
+                PageSize = users.PageSize,
+                CurrentPage = users.CurrentPage,
+                TotalPages = users.TotalPages,
+                HasNext = users.HasNext,
+                HasPrevious = users.HasPrevious
+            };
+            return Ok(new OkResponseWithPagination<User>() {Data = users, Pagination = metadata});
+        }
 
         [SwaggerOperation(Description =
             "Basic user data corresponding to the list of the excelIds posted. Route accessible only to the roles: Admin, Core, Editor, Staff")]
@@ -43,7 +62,7 @@ namespace API.Controllers
         }
 
         [SwaggerOperation(Description =
-            "Basic user data corresponding to the list of the excelIds posted. Route accessible only to the roles: Admin, Core, Editor, Staff")]
+            " Route to change the role. Route accessible only to the roles: Admin, Core, Editor")]
         [Authorize(Roles = "Admin, Core, Editor")]
         [HttpPost("users/permission")]
         public async Task<ActionResult<List<User>>> ChangeRole(DataForChangingRoleDto dataForChangingRoleDto)
@@ -73,7 +92,6 @@ namespace API.Controllers
                     await _institutionRepository.FindName(userForView.Category, institutionId);
             return Ok(userForView);
         }
-        
         private bool CheckPermission(List<string> roles)
         {
             if (roles.Contains(Roles.Admin) || roles.Contains(Roles.Core) || roles.Contains(Roles.Editor))
