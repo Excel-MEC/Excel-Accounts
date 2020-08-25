@@ -1,13 +1,10 @@
-using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Dtos.Profile;
 using API.Models;
 using API.Data.Interfaces;
 using API.Dtos.Admin;
-using API.Extensions;
 using API.Models.Custom;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
@@ -27,11 +24,11 @@ namespace API.Data
             _context = context;
         }
 
-        public PagedList<User> GetAllUser(QueryParameters parameters)
+        public PagedList<User> GetAllUser(QueryParametersForGetAllUsers parameters)
         {
-            var query = from s in _context.Users select s;
+            IQueryable<User> query = _context.Users;
             if (parameters.Id != null) query = query.Where(user => user.Id == parameters.Id);
-            if(parameters.Name != null) query = query.Where(user => user.Name.ToLower()==parameters.Name.ToLower());
+            if(parameters.Name != null) query = query.Where(user => user.Name.ToLower() == parameters.Name.ToLower());
             if(parameters.Email != null)  query = query.Where(user => user.Email.ToLower() == parameters.Email.ToLower());
             if(parameters.Gender != null)  query = query.Where(user => user.Gender.ToLower() == parameters.Gender.ToLower());
             if (parameters.InstitutionId != null) query = query.Where(user => user.Id == parameters.Id);

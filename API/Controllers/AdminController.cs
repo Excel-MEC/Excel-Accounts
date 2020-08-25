@@ -37,7 +37,7 @@ namespace API.Controllers
             "Full data of all users. Route accessible only to the roles: Admin, Core, Editor, Staff")]
         [HttpGet("users")]
         
-        public ActionResult<List<User>> GetAllUsers([FromQuery] QueryParameters parameters)
+        public ActionResult<List<User>> GetAllUsers([FromQuery] QueryParametersForGetAllUsers parameters)
         {
             var users = _profileRepository.GetAllUser(parameters);
             var metadata = new Pagination()
