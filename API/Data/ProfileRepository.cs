@@ -1,14 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.Xml;
 using System.Threading.Tasks;
 using API.Dtos.Profile;
 using API.Models;
-using Microsoft.Extensions.Configuration;
-using API.Services.Interfaces;
 using API.Data.Interfaces;
 using API.Dtos.Admin;
-using API.Extensions.CustomExceptions;
+using API.Models.Custom;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
@@ -17,15 +15,25 @@ namespace API.Data
     {
         private readonly DataContext _context;
         private readonly IInstitutionRepository _institution;
-        private readonly ICloudStorage _cloudStorage;
-        private readonly IConfiguration _configuration;
-        public ProfileRepository(DataContext context, IInstitutionRepository institution, ICloudStorage cloudStorage, IConfiguration configuration)
+        private readonly IMapper _mapper;
+
+        public ProfileRepository(DataContext context, IInstitutionRepository institution, IMapper mapper)
         {
-            _configuration = configuration;
-            _cloudStorage = cloudStorage;
+            _mapper = mapper;
             _institution = institution;
             _context = context;
         }
+
+        public PagedList<User> GetAllUser(PaginationParameters parameters)
+        {
+            var users =  PagedList<User>.ToPagedList( _context.Users
+                    .Include(user => user.Ambassador)
+                    .Include(user => user.Referrer).OrderBy(on => on.Name),
+                parameters.PageNumber,
+                parameters.PageSize);
+            return users;
+        }
+
         public async Task<User> GetUser(int userid)
         {
             return await _context.Users
@@ -55,15 +63,20 @@ namespace API.Data
             }
             if (institutionId == 0) //Adds new college or school
             {
-                if (user.Category == "college")
+                switch (user.Category)
                 {
-                    var college = await _institution.AddCollege(data.InstitutionName);
-                    user.InstitutionId = college.Id;
-                }
-                else if (user.Category == "school")
-                {
-                    var school = await _institution.AddSchool(data.InstitutionName);
-                    user.InstitutionId = school.Id;
+                    case "college":
+                    {
+                        var college = await _institution.AddCollege(data.InstitutionName);
+                        user.InstitutionId = college.Id;
+                        break;
+                    }
+                    case "school":
+                    {
+                        var school = await _institution.AddSchool(data.InstitutionName);
+                        user.InstitutionId = school.Id;
+                        break;
+                    }
                 }
             }
             else 
