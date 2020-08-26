@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Dtos.Profile;
@@ -9,9 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using API.Data.Interfaces;
 using API.Services.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;
-using API.Models.Custom;
-using API.Dtos.Ambassador;
-using API.Extensions.CustomExceptions;
 
 namespace API.Controllers
 {
@@ -69,7 +65,7 @@ namespace API.Controllers
         [HttpGet("view")]
         public async Task<ActionResult<UserForProfileViewDto>> View()
         {
-            int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
+            var id = int.Parse(User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
             var userForView = _mapper.Map<UserForProfileViewDto>(user);
             var institutionId = user.InstitutionId ?? default(int);

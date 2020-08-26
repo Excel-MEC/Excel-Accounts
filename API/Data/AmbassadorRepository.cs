@@ -7,6 +7,7 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using System;
 using API.Extensions.CustomExceptions;
+using API.Models.Custom;
 
 namespace API.Data
 {
@@ -18,13 +19,13 @@ namespace API.Data
         private readonly IInstitutionRepository _institution;
         public AmbassadorRepository(IProfileRepository repo, IMapper mapper, DataContext context, IInstitutionRepository institution)
         {
-            this._context = context;
-            this._mapper = mapper;
-            this._repo = repo;
-            this._institution = institution;
+            _context = context;
+            _mapper = mapper;
+            _repo = repo;
+            _institution = institution;
         }
 
-        public async Task<bool> ApplyReferralCode(int id, int referralCode)
+        public async Task<User> ApplyReferralCode(int id, int referralCode)
         {
             var user = await _context.Users.Include(user => user.Referrer).FirstOrDefaultAsync(user => user.Id == id);
             if (user.Referrer != null) throw new OneTimeUseException("A referral code has been already applied ");
@@ -33,8 +34,8 @@ namespace API.Data
             user.Referrer = ambassador;
             ambassador.ReferredUsers.Add(user);
             ambassador.FreeMembership +=1;
-            var success = await _context.SaveChangesAsync() > 0;
-            return success;
+            if(await _context.SaveChangesAsync() > 0) return user;
+            throw new Exception("Problem saving changes");
         }
 
         public async  Task<AmbassadorProfileDto> GetAmbassador(int id)
@@ -51,9 +52,9 @@ namespace API.Data
 
         public async Task<List<AmbassadorListViewDto>> ListOfAmbassadors()
         {
-            List<Ambassador> ambassadors = await _context.Ambassadors.Include(a => a.User)
+            var ambassadors = await _context.Ambassadors.Include(a => a.User)
                                                                     .ToListAsync();
-            List<AmbassadorListViewDto> newlist = new List<AmbassadorListViewDto>();
+            var newlist = new List<AmbassadorListViewDto>();
             foreach (var ambassador in ambassadors)
             {
                 var user = _mapper.Map<AmbassadorListViewDto>(ambassador.User);
@@ -80,16 +81,16 @@ namespace API.Data
             return newlist;   
         }
 
-        public async Task<bool> SignUpForAmbassador(int id)
+        public async Task<Ambassador> SignUpForAmbassador(int id)
         {
-            User user = await _context.Users.Include(user => user.Ambassador)
+            var user = await _context.Users.Include(user => user.Ambassador)
                                             .FirstOrDefaultAsync(user => user.Id == id);
             if(user.Ambassador != null)  throw new OneTimeUseException(" This email address is already registered ");                       
-            Ambassador ambassador = new Ambassador();
+            var ambassador = new Ambassador();
             user.Ambassador = ambassador;
             await _context.Ambassadors.AddAsync(ambassador);
-            var success = await _context.SaveChangesAsync() > 0;
-            return success;
+            if(await _context.SaveChangesAsync() > 0) return ambassador;
+            throw new Exception("Problem in saving changes");
         }
     }
 }

@@ -16,7 +16,7 @@ namespace API.Models.Custom
         public bool HasPrevious => CurrentPage > 1;
         public bool HasNext => CurrentPage < TotalPages;
 
-        private PagedList(List<T> items, int count, int pageNumber, int pageSize)
+        public PagedList(List<T> items, int count, int pageNumber, int pageSize)
         {
             TotalCount = count;
             if(pageSize == 0)
