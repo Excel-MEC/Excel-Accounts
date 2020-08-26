@@ -26,7 +26,7 @@ namespace API.Data
             _context = context;
         }
 
-        public PagedList<User> GetAllUser(QueryParametersForGetAllUsers parameters)
+        public async Task<PagedList<User>> GetAllUser(QueryParametersForGetAllUsers parameters)
         {
             IQueryable<User> query = _context.Users;
             if (parameters.Id != null) query = query.Where(user => user.Id == parameters.Id);
@@ -48,16 +48,29 @@ namespace API.Data
                     query = query.OrderBy(on => on.Name);
                     break;
             }
-            var users =  PagedList<User>.ToPagedList( query, parameters.PageNumber, parameters.PageSize);
+
+            var users = await PagedList<User>.ToPagedList(query, parameters.PageNumber, parameters.PageSize);
             return users;
         }
 
         public async Task<User> GetUser(int userid)
         {
             return await _context.Users
-            .Include(user => user.Ambassador)
-            .Include(user => user.Referrer)
-            .FirstOrDefaultAsync(user => user.Id == userid);
+                .Include(user => user.Ambassador)
+                .Include(user => user.Referrer)
+                .FirstOrDefaultAsync(user => user.Id == userid);
+        }
+
+        public async Task<List<User>> GetStaffs()
+        {
+            IQueryable<User> query = _context.Users;
+            query = query.Where(
+                user => user.Role.Contains(Roles.Admin) 
+                        || user.Role.Contains(Roles.Core)
+                        || user.Role.Contains(Roles.Editor)
+                        || user.Role.Contains(Roles.Staff)
+                );
+            return await query.ToListAsync();
         }
 
         public async Task<User> RemoveUser(int id)
@@ -73,22 +86,22 @@ namespace API.Data
         {
             return await _context.Users.Where(user => userIds.Contains(user.Id)).ToListAsync();
         }
-
         public async Task<User> UpdateProfile(int id, UserForProfileUpdateDto data)
         {            
             var user = await _context.Users.FindAsync(id);
             user.Name = data.Name ?? user.Name;
             user.Gender = data.Gender ?? user.Gender;
-            user.MobileNumber = data.MobileNumber ?? user.MobileNumber;            
+            user.MobileNumber = data.MobileNumber ?? user.MobileNumber;
             var categoryId = data.CategoryId ?? user.CategoryId.ToString();
             var institutionId = data.InstitutionId ?? user.InstitutionId;
-            user.CategoryId = int.Parse(categoryId);            
-            if(categoryId == "2")
+            user.CategoryId = int.Parse(categoryId);
+            if (categoryId == "2")
             {
                 user.InstitutionId = null;
                 if(await _context.SaveChangesAsync() > 0) return user;
                 throw new DataInvalidException("No changes to update. Please re-check the details");
             }
+
             if (institutionId == 0) //Adds new college or school
             {
                 switch (user.Category)
@@ -107,9 +120,9 @@ namespace API.Data
                     }
                 }
             }
-            else 
+            else
             {
-                user.InstitutionId = institutionId;               
+                user.InstitutionId = institutionId;
             }
             if(await _context.SaveChangesAsync() > 0) return user;
             throw new DataInvalidException("No changes to update. Please re-check the details");
@@ -123,6 +136,7 @@ namespace API.Data
             {
                 return user;
             }
+
             user.Picture = imageUrl;
             if(await _context.SaveChangesAsync() > 0) return user;
             throw new DataInvalidException("No changes to update.");
