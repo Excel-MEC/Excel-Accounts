@@ -37,9 +37,9 @@ namespace API.Controllers
             "Full data of all users. Route accessible only to the roles: Admin, Core, Editor, Staff")]
         [HttpGet("users")]
         
-        public ActionResult<List<User>> GetAllUsers([FromQuery] QueryParametersForGetAllUsers parameters)
+        public async Task<ActionResult<List<User>>> GetAllUsers([FromQuery] QueryParametersForGetAllUsers parameters)
         {
-            var users = _profileRepository.GetAllUser(parameters);
+            var users = await _profileRepository.GetAllUser(parameters);
             var metadata = new Pagination()
             {
                 TotalCount = users.TotalCount,
@@ -50,6 +50,14 @@ namespace API.Controllers
                 HasPrevious = users.HasPrevious
             };
             return Ok(new OkResponseWithPagination<User>() {Data = users, Pagination = metadata});
+        }
+        
+        [SwaggerOperation(Description = "Retrieves the List of staffs")]
+        [HttpGet("staffs")]
+        public async Task<ActionResult<List<User>>> GetStaffs()
+        {
+            var users = await _profileRepository.GetStaffs();
+            return Ok(users);
         }
 
         [SwaggerOperation(Description =
