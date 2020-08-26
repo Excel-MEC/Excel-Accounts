@@ -11,14 +11,13 @@ namespace Tests.ServiceTests
 {
     public class ProfileServiceTests
     {
-        private readonly Mock<ICloudStorage> _cloudStorage;
         private readonly Mock<IConfiguration> _configuration;
         private readonly IProfileService _profileService;
         public ProfileServiceTests()
         {
-            _cloudStorage = new Mock<ICloudStorage>();
+            var cloudStorage = new Mock<ICloudStorage>();
             _configuration = new Mock<IConfiguration>();
-            _profileService = new ProfileService(_cloudStorage.Object, _configuration.Object);
+            _profileService = new ProfileService(cloudStorage.Object, _configuration.Object);
         }
 
         [Fact]
