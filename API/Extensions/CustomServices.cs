@@ -22,6 +22,9 @@ namespace API.Extensions
 
             //Adding CipherRepository to the service
             services.AddSingleton<ICipherService, CipherService>();
+
+            // Adding AuthService along with HttpClient Service
+            services.AddHttpClient<IAuthService2, AuthService2>();
         }
     }
 }
