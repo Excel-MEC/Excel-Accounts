@@ -9,7 +9,8 @@ namespace API.Data.Interfaces
 {
     public interface IProfileRepository
     {
-        PagedList<User> GetAllUser(QueryParametersForGetAllUsers parameters);
+        Task<PagedList<User>> GetAllUser(QueryParametersForGetAllUsers parameters);
+        Task<List<User>> GetStaffs();
         Task<User> GetUser(int id);
         Task<List<User>> GetUserList(List<int> userIds);
         Task<bool> UpdateProfile(int id, UserForProfileUpdateDto data);

@@ -24,19 +24,24 @@ namespace API.Data
             _context = context;
         }
 
-        public PagedList<User> GetAllUser(QueryParametersForGetAllUsers parameters)
+        public async Task<PagedList<User>> GetAllUser(QueryParametersForGetAllUsers parameters)
         {
             IQueryable<User> query = _context.Users;
             if (parameters.Id != null) query = query.Where(user => user.Id == parameters.Id);
-            if(parameters.Name != null) query = query.Where(user => user.Name.ToLower() == parameters.Name.ToLower());
-            if(parameters.Email != null)  query = query.Where(user => user.Email.ToLower() == parameters.Email.ToLower());
-            if(parameters.Gender != null)  query = query.Where(user => user.Gender.ToLower() == parameters.Gender.ToLower());
+            if (parameters.Name != null) query = query.Where(user => user.Name.ToLower() == parameters.Name.ToLower());
+            if (parameters.Email != null)
+                query = query.Where(user => user.Email.ToLower() == parameters.Email.ToLower());
+            if (parameters.Gender != null)
+                query = query.Where(user => user.Gender.ToLower() == parameters.Gender.ToLower());
             if (parameters.InstitutionId != null) query = query.Where(user => user.Id == parameters.Id);
-            if(parameters.CategoryId != null)  query = query.Where(user => user.CategoryId == parameters.CategoryId);
-            if(parameters.Role != null)  query = query.Where(user => user.Role.ToLower().Contains(parameters.Role.ToLower()));
-            if(parameters.MobileNumber != null)  query = query.Where(user => user.MobileNumber == parameters.MobileNumber);
-            if(parameters.IsPaid != null)  query = query.Where(user => user.IsPaid == parameters.IsPaid);
-            if(parameters.ReferrerAmbassadorId != null)  query = query.Where(user => user.ReferrerAmbassadorId == parameters.ReferrerAmbassadorId);
+            if (parameters.CategoryId != null) query = query.Where(user => user.CategoryId == parameters.CategoryId);
+            if (parameters.Role != null)
+                query = query.Where(user => user.Role.ToLower().Contains(parameters.Role.ToLower()));
+            if (parameters.MobileNumber != null)
+                query = query.Where(user => user.MobileNumber == parameters.MobileNumber);
+            if (parameters.IsPaid != null) query = query.Where(user => user.IsPaid == parameters.IsPaid);
+            if (parameters.ReferrerAmbassadorId != null)
+                query = query.Where(user => user.ReferrerAmbassadorId == parameters.ReferrerAmbassadorId);
             switch (parameters.SortOrder)
             {
                 case "desc":
@@ -46,16 +51,29 @@ namespace API.Data
                     query = query.OrderBy(on => on.Name);
                     break;
             }
-            var users =  PagedList<User>.ToPagedList( query, parameters.PageNumber, parameters.PageSize);
+
+            var users = await PagedList<User>.ToPagedList(query, parameters.PageNumber, parameters.PageSize);
             return users;
         }
 
         public async Task<User> GetUser(int userid)
         {
             return await _context.Users
-            .Include(user => user.Ambassador)
-            .Include(user => user.Referrer)
-            .FirstOrDefaultAsync(user => user.Id == userid);
+                .Include(user => user.Ambassador)
+                .Include(user => user.Referrer)
+                .FirstOrDefaultAsync(user => user.Id == userid);
+        }
+
+        public async Task<List<User>> GetStaffs()
+        {
+            IQueryable<User> query = _context.Users;
+            query = query.Where(
+                user => user.Role.Contains(Roles.Admin) 
+                        || user.Role.Contains(Roles.Core)
+                        || user.Role.Contains(Roles.Editor)
+                        || user.Role.Contains(Roles.Staff)
+                );
+            return await query.ToListAsync();
         }
 
         public async Task<List<User>> GetUserList(List<int> userIds)
@@ -64,19 +82,20 @@ namespace API.Data
         }
 
         public async Task<bool> UpdateProfile(int id, UserForProfileUpdateDto data)
-        {            
+        {
             User user = await _context.Users.FindAsync(id);
             user.Name = data.Name ?? user.Name;
             user.Gender = data.Gender ?? user.Gender;
-            user.MobileNumber = data.MobileNumber ?? user.MobileNumber;            
+            user.MobileNumber = data.MobileNumber ?? user.MobileNumber;
             var categoryId = data.CategoryId ?? user.CategoryId.ToString();
             var institutionId = data.InstitutionId ?? user.InstitutionId;
-            user.CategoryId = int.Parse(categoryId);            
-            if(categoryId == "2")
+            user.CategoryId = int.Parse(categoryId);
+            if (categoryId == "2")
             {
                 user.InstitutionId = null;
                 return await _context.SaveChangesAsync() > 0;
             }
+
             if (institutionId == 0) //Adds new college or school
             {
                 switch (user.Category)
@@ -95,10 +114,11 @@ namespace API.Data
                     }
                 }
             }
-            else 
+            else
             {
-                user.InstitutionId = institutionId;               
+                user.InstitutionId = institutionId;
             }
+
             return await _context.SaveChangesAsync() > 0;
         }
 
@@ -110,6 +130,7 @@ namespace API.Data
             {
                 return true;
             }
+
             user.Picture = imageUrl;
             var success = await _context.SaveChangesAsync() > 0;
             return success;
