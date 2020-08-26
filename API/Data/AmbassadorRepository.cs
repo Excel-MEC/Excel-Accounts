@@ -6,8 +6,8 @@ using API.Models;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using API.Extensions.CustomExceptions;
-using API.Models.Custom;
 
 namespace API.Data
 {
@@ -54,31 +54,25 @@ namespace API.Data
         {
             var ambassadors = await _context.Ambassadors.Include(a => a.User)
                                                                     .ToListAsync();
-            var newlist = new List<AmbassadorListViewDto>();
+            var newList = new List<AmbassadorListViewDto>();
             foreach (var ambassador in ambassadors)
             {
                 var user = _mapper.Map<AmbassadorListViewDto>(ambassador.User);
                 user.AmbassadorId = ambassador.Id;
                 user.FreeMembership = ambassador.FreeMembership;
                 user.PaidMembership = ambassador.PaidMembership;
-                newlist.Add(user);
+                newList.Add(user);
             }
-            return newlist;
+            return newList;
         }
 
         public async Task<List<UserViewDto>> ListOfReferredUsers(int id)
         {
-            User user = await _context.Users.Include(user => user.Ambassador)
+            var user = await _context.Users.Include(user => user.Ambassador)
                                             .ThenInclude(a => a.ReferredUsers)
                                             .FirstOrDefaultAsync(user => user.Id == id);
             var referredUsers = user.Ambassador.ReferredUsers;
-            List<UserViewDto> newlist = new List<UserViewDto>();
-            foreach (var referredUser in referredUsers)
-            {
-                var referredUserView = _mapper.Map<UserViewDto>(referredUser);
-                newlist.Add(referredUserView);
-            }
-            return newlist;   
+            return referredUsers.Select(referredUser =>  _mapper.Map<UserViewDto>(referredUser)).ToList();   
         }
 
         public async Task<Ambassador> SignUpForAmbassador(int id)
