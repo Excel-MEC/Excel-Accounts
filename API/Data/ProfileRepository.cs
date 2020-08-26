@@ -5,6 +5,7 @@ using API.Dtos.Profile;
 using API.Models;
 using API.Data.Interfaces;
 using API.Dtos.Admin;
+using API.Extensions.CustomExceptions;
 using API.Models.Custom;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
@@ -56,6 +57,14 @@ namespace API.Data
             .Include(user => user.Ambassador)
             .Include(user => user.Referrer)
             .FirstOrDefaultAsync(user => user.Id == userid);
+        }
+
+        public async Task<bool> RemoveUser(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if(user == null) throw new DataInvalidException("The user does not exist. Please re-check the ID");
+            _context.Remove(user);
+            return await _context.SaveChangesAsync() > 0;
         }
 
         public async Task<List<User>> GetUserList(List<int> userIds)

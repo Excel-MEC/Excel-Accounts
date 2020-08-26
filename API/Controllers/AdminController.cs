@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -81,6 +81,7 @@ namespace API.Controllers
 
         [SwaggerOperation(Description =
             "Full data of the user corresponding to the user Id. Route accessible only to the roles: Admin, Core, Editor, Staff")]
+        [Authorize(Roles = "Admin, Core, Editor,  Staff")]
         [HttpGet("users/{id}")]
         public async Task<ActionResult<UserForProfileViewDto>> GetUserData(int id)
         {
@@ -92,6 +93,18 @@ namespace API.Controllers
                     await _institutionRepository.FindName(userForView.Category, institutionId);
             return Ok(userForView);
         }
+        
+        [SwaggerOperation(Description =
+            "Removes user account. Only admins can access this route.")]
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("users/{id}")]
+        public async Task<ActionResult> RemoveUser(int id)
+        {
+            var success = await _profileRepository.RemoveUser(id);
+            if(!success) throw new Exception("Problem in deleting user account");
+            return Ok(new OkResponse() { Response = "Success"});
+        }
+        
         private bool CheckPermission(List<string> roles)
         {
             if (roles.Contains(Roles.Admin) || roles.Contains(Roles.Core) || roles.Contains(Roles.Editor))

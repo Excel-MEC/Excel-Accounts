@@ -1,4 +1,4 @@
-﻿namespace API.Models.Custom
+namespace API.Models.Custom
 {
     public class PaginationParameters
     {

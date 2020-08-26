@@ -1,4 +1,4 @@
-﻿namespace API.Dtos.Admin
+namespace API.Dtos.Admin
 {
     public class DataForChangingRoleDto
     {
