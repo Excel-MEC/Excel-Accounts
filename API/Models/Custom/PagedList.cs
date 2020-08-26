@@ -14,20 +14,27 @@ namespace API.Models.Custom
         public bool HasPrevious => CurrentPage > 1;
         public bool HasNext => CurrentPage < TotalPages;
 
-        public PagedList(List<T> items, int count, int pageNumber, int pageSize)
+        private PagedList(List<T> items, int count, int pageNumber, int pageSize)
         {
             TotalCount = count;
-            PageSize = pageSize;
+            if(pageSize == 0)
+            {
+                PageSize = count;
+                TotalPages = 1;
+            }
+            else
+            {
+                PageSize = pageSize;
+                TotalPages = (int) Math.Ceiling(count / (double) pageSize);
+            }
             CurrentPage = pageNumber;
-            TotalPages = (int) Math.Ceiling(count / (double) pageSize);
-
             AddRange(items);
         }
 
         public static PagedList<T> ToPagedList(IQueryable<T> source, int pageNumber, int pageSize)
         {
             var count = source.Count();
-            var items = source.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+            var items = pageSize > 0 ? source.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList() : source.ToList();
 
             return new PagedList<T>(items, count, pageNumber, pageSize);
         }

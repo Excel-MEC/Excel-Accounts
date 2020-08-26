@@ -37,7 +37,7 @@ namespace API.Controllers
             "Full data of all users. Route accessible only to the roles: Admin, Core, Editor, Staff")]
         [HttpGet("users")]
         
-        public ActionResult<List<User>> GetAllUsers([FromQuery] QueryParametersForGetAllUsers parameters)
+        public ActionResult<OkResponseWithPagination<User>> GetAllUsers([FromQuery] QueryParametersForGetAllUsers parameters)
         {
             var users = _profileRepository.GetAllUser(parameters);
             var metadata = new Pagination()
@@ -65,18 +65,17 @@ namespace API.Controllers
             " Route to change the role. Route accessible only to the roles: Admin, Core, Editor")]
         [Authorize(Roles = "Admin, Core, Editor")]
         [HttpPost("users/permission")]
-        public async Task<ActionResult<List<User>>> ChangeRole(DataForChangingRoleDto dataForChangingRoleDto)
+        public async Task<ActionResult<User>> ChangeRole(DataForChangingRoleDto dataForChangingRoleDto)
         {
             var newroles = dataForChangingRoleDto.Role.Split(",").Select(x => x.Trim()).ToList();
             var oldRole = await _profileRepository.GetRole(dataForChangingRoleDto.Id);
             var oldRoles = oldRole.Split(",").Select(x => x.Trim()).ToList();
             if (CheckPermission(newroles) && CheckPermission(oldRoles))
             {
-                var success = await _profileRepository.ChangeRole(dataForChangingRoleDto);
-                return Ok(new OkResponse() {Response = "Success"});
+                return Ok(await _profileRepository.ChangeRole(dataForChangingRoleDto));
             }
 
-            throw new UnauthorizedAccessException("You dont have the permission to do that");
+            throw new UnauthorizedAccessException("You don't have the permission to do that");
         }
 
         [SwaggerOperation(Description =
@@ -98,25 +97,23 @@ namespace API.Controllers
             "Removes user account. Only admins can access this route.")]
         [Authorize(Roles = "Admin")]
         [HttpDelete("users/{id}")]
-        public async Task<ActionResult> RemoveUser(int id)
+        public async Task<ActionResult<User>> RemoveUser(int id)
         {
-            var success = await _profileRepository.RemoveUser(id);
-            if(!success) throw new Exception("Problem in deleting user account");
-            return Ok(new OkResponse() { Response = "Success"});
+            return Ok( await _profileRepository.RemoveUser(id));
         }
         
         private bool CheckPermission(List<string> roles)
         {
             if (roles.Contains(Roles.Admin) || roles.Contains(Roles.Core) || roles.Contains(Roles.Editor))
             {
-                if (!this.User.IsInRole(Roles.Admin))
+                if (!User.IsInRole(Roles.Admin))
                     return false;
             }
 
             if (roles.Contains(Roles.Staff))
             {
-                if (!(this.User.IsInRole(Roles.Admin) || this.User.IsInRole(Roles.Core) ||
-                    this.User.IsInRole(Roles.Editor)))
+                if (!(User.IsInRole(Roles.Admin) || User.IsInRole(Roles.Core) ||
+                    User.IsInRole(Roles.Editor)))
                     return false;
             }
 

@@ -48,7 +48,7 @@ namespace Tests.ControllerTests
         }
 
         [Fact]
-        public async Task Get_GivenNoArgeuments_ReturnCurrentUserAsync()
+        public async Task Get_GivenNoArguments_ReturnCurrentUserAsync()
         {
             //Given
             //When
@@ -60,22 +60,19 @@ namespace Tests.ControllerTests
         }
 
         [Fact]
-        public async Task UpdateProfile_GivenUserData_ReturnsSuccessAsync()
+        public async Task UpdateProfile_GivenUserData_ReturnsUpdatedUserProfileAsync()
         {
             //Given
             var data = Mock.Of<UserForProfileUpdateDto>();
             //When
-            _repo.Setup(x => x.UpdateProfile(_user.Id, data)).ReturnsAsync(true);
+            _repo.Setup(x => x.UpdateProfile(_user.Id, data)).ReturnsAsync(_user);
             //Then
             var response = await _controller.UpdateProfile(data);
-            var okObjectResult = response as OkObjectResult;
-            Assert.NotNull(okObjectResult);
-            var okResponse = okObjectResult.Value as OkResponse;
-            Assert.Equal("Success", okResponse.Response.ToString());
+            Assert.IsType<ActionResult<User>>(response);
         }
 
         [Fact]
-        public async Task UpdateProfileImage_GivenImage_ReturnsSuccessAsync()
+        public async Task UpdateProfileImage_GivenImage_ReturnsUpdatedUserProfileAsync()
         {
             //Given
             ImageFromUserDto imageFromUser = Mock.Of<ImageFromUserDto>();
@@ -84,17 +81,14 @@ namespace Tests.ControllerTests
             //When
             _mapper.Setup(x => x.Map<DataForProfilePicUpdateDto>(imageFromUser)).Returns(dataForProfileUpdate);
             _profileService.Setup(x => x.UploadProfileImage(dataForProfileUpdate)).ReturnsAsync(newProfilePicUrl);
-            _repo.Setup(x => x.UpdateProfileImage(_user.Id, newProfilePicUrl)).ReturnsAsync(true);
+            _repo.Setup(x => x.UpdateProfileImage(_user.Id, newProfilePicUrl)).ReturnsAsync(_user);
             //Then
             ActionResult response = await _controller.UpdateProfileImage(imageFromUser);
-            OkObjectResult okObjectResult = response as OkObjectResult;
-            Assert.NotNull(okObjectResult);
-            OkResponse okResponse = okObjectResult.Value as OkResponse;
-            Assert.Equal("Success", okResponse.Response.ToString());
+            Assert.IsType<ActionResult<User>>(response);
         }
 
         [Fact]
-        public async Task View_GivenNothing_ReturnsUserForProfileViewAsyncleViewAsync()
+        public async Task View_GivenNothing_ReturnsUserForProfileViewAsync()
         {
             //Given
             UserForProfileViewDto userForProfileView = Mock.Of<UserForProfileViewDto>();
