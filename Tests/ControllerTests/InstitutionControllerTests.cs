@@ -29,9 +29,11 @@ namespace Tests.ControllerTests
             _repo.Setup(x => x.CollegeList()).ReturnsAsync(collegeList);
             //Then
             var response = await _controller.CollegeList();
-            OkObjectResult okObjectResult = response.Result as OkObjectResult;
-            var responseData = okObjectResult.Value as List<College>;
-            Assert.IsAssignableFrom<List<College>>(responseData);
+            if (response.Result is OkObjectResult okObjectResult)
+            {
+                var responseData = okObjectResult.Value as List<College>;
+                Assert.IsAssignableFrom<List<College>>(responseData);
+            }
         }
 
         [Fact]
