@@ -83,7 +83,7 @@ namespace Tests.ControllerTests
             _profileService.Setup(x => x.UploadProfileImage(dataForProfileUpdate)).ReturnsAsync(newProfilePicUrl);
             _repo.Setup(x => x.UpdateProfileImage(_user.Id, newProfilePicUrl)).ReturnsAsync(_user);
             //Then
-            ActionResult response = await _controller.UpdateProfileImage(imageFromUser);
+            var response = await _controller.UpdateProfileImage(imageFromUser);
             Assert.IsType<ActionResult<User>>(response);
         }
 
