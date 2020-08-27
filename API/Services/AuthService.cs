@@ -31,7 +31,8 @@ namespace API.Services
         private readonly IQRCodeGeneration _qRCodeGeneration;
         private readonly IAmbassadorRepository _ambRepo;
 
-        public AuthService(IMapper mapper, IConfiguration config, IAuthRepository repo, HttpClient httpClient, IQRCodeGeneration qRCodeGeneration, IAmbassadorRepository ambRepo)
+        public AuthService(IMapper mapper, IConfiguration config, IAuthRepository repo, HttpClient httpClient,
+            IQRCodeGeneration qRCodeGeneration, IAmbassadorRepository ambRepo)
         {
             _ambRepo = ambRepo;
             _qRCodeGeneration = qRCodeGeneration;
@@ -41,9 +42,9 @@ namespace API.Services
             _httpClient = httpClient;
         }
 
-        public async Task<string> CreateJwtForClient(string responseString, int? referralCode)
+        public async Task<JwtForClientDto> CreateJwtForClient(string responseString, int? referralCode)
         {
-            var userFrom0Auth = JsonConvert.DeserializeObject<UserFromAuth0Dto>(responseString);   
+            var userFrom0Auth = JsonConvert.DeserializeObject<UserFromAuth0Dto>(responseString);
             var userFromGoogle0Auth = _mapper.Map<User>(userFrom0Auth);
             if (!await _repo.UserExists(userFromGoogle0Auth.Email))
             {
@@ -54,12 +55,16 @@ namespace API.Services
                 int referral = referralCode ?? default(int);
                 if (referralCode != null)
                 {
-
                     await _ambRepo.ApplyReferralCode(newUser.Id, referral);
                 }
             }
+
             User user = await _repo.GetUser(userFromGoogle0Auth.Email);
-            var claims = new List<Claim>() {
+            var jwtForClient = new JwtForClientDto();
+            var jwtKey = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("TOKEN"));
+            jwtForClient.AccessToken = CreateAccessTokenFromUser(user, jwtKey);
+            var claims = new List<Claim>()
+            {
                 new Claim("user_id", user.Id.ToString()),
                 new Claim("email", user.Email)
             };
@@ -67,6 +72,7 @@ namespace API.Services
             {
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
+
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("TOKEN")));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
@@ -74,43 +80,99 @@ namespace API.Services
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddDays(365),
+                Expires = DateTime.Now.AddYears(50),
                 SigningCredentials = creds,
                 Issuer = Environment.GetEnvironmentVariable("ISSUER")
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
+            jwtForClient.RefreshToken = tokenHandler.WriteToken(token);
+            return jwtForClient;
         }
 
         public async Task<string> FetchUserGoogle0Auth(string accessToken)
         {
             string googleapi = Environment.GetEnvironmentVariable("GOOGLEAPI");
-            Console.WriteLine("vdgsvdgvg:"+googleapi);
             var url = new Uri(googleapi);
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
             var response = await _httpClient.GetAsync(url);
-           
             if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
-                // Authorization header has been set, but the server reports that it is missing.
-                // It was probably stripped out due to a redirect.
-
-                var finalRequestUri = response.RequestMessage.RequestUri; // contains the final location after following the redirect.                
-
-                if (finalRequestUri != url) // detect that a redirect actually did occur.
+                var finalRequestUri =
+                    response.RequestMessage
+                        .RequestUri;
+                if (finalRequestUri != url)
                 {
-                    // If this is public facing, add tests here to determine if Url should be trusted
                     response = await _httpClient.GetAsync(finalRequestUri);
-
                     if (response.StatusCode == HttpStatusCode.Unauthorized)
-                    {
                         throw new UnauthorizedAccessException();
-                    }
-                }    
-            }   
+                }
+                else
+                    throw new UnauthorizedAccessException();
+            }
+
             return response.Content.ReadAsStringAsync().Result;
+        }
+
+        public async Task<string> CreateJwtFromRefreshToken(string token)
+        {
+            var refreshKey = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("TOKEN"));
+            var securityToken = ValidateToken(token, refreshKey);
+            var userId = int.Parse(securityToken.Claims.First(i => i.Type == "user_id").Value);
+            var user = await _repo.GetUserById(userId);
+            return CreateAccessTokenFromUser(user, refreshKey);
+        }
+
+        public JwtSecurityToken ValidateToken(string token, byte[] key)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            tokenHandler.ValidateToken(token, new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                ClockSkew = TimeSpan.Zero
+            }, out SecurityToken validatedToken);
+            return (JwtSecurityToken) validatedToken;
+        }
+
+        private string CreateAccessTokenFromUser(User user, byte[] refreshKey)
+        {
+            try
+            {
+                var claims = new List<Claim>()
+                {
+                    new Claim("user_id", user.Id.ToString()),
+                    new Claim("email", user.Email),
+                    new Claim("isPaid", user.IsPaid.ToString()),
+                };
+                foreach (var role in user.Role.Split(",").Select(x => x.Trim()))
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, role));
+                }
+
+                var key = new SymmetricSecurityKey(refreshKey);
+
+                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(claims),
+                    Expires = DateTime.Now.AddSeconds(100),
+                    SigningCredentials = creds,
+                    Issuer = Environment.GetEnvironmentVariable("ISSUER")
+                };
+
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var newToken = tokenHandler.CreateToken(tokenDescriptor);
+                return tokenHandler.WriteToken(newToken);
+            }
+            catch
+            {
+                throw new UnauthorizedAccessException();
+            }
         }
     }
 }

@@ -18,6 +18,11 @@ namespace API.Data
             User user = await _context.Users.FirstOrDefaultAsync(user => user.Email == email);
             return user;
         }
+        
+        public async Task<User> GetUserById(int userId)
+        {
+            return await _context.Users.FirstOrDefaultAsync(x => x.Id ==userId);
+        }
 
         public async Task<User> Register(User user)
         {
