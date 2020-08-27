@@ -55,17 +55,19 @@ namespace API
             });
 
             // Add Jwt Authentication
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("TOKEN"))),
-                    ValidateIssuer = true,
-                    ValidIssuer = Environment.GetEnvironmentVariable("ISSUER"),
-                    ValidateAudience = false
-                };
-            });
+            // services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            // {
+            //     options.TokenValidationParameters = new TokenValidationParameters
+            //     {
+            //         ValidateIssuerSigningKey = true,
+            //         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("TOKEN"))),
+            //         ValidateIssuer = true,
+            //         ValidIssuer = Environment.GetEnvironmentVariable("ISSUER"),
+            //         ClockSkew = TimeSpan.Zero,
+            //         ValidateAudience = false
+            //     };
+            // });
+            services.AddAuthentication("JwtAuthentication").AddScheme<BasicAuthenticationOptions, CustomAuthenticationHandler>("JwtAuthentication", null);
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
