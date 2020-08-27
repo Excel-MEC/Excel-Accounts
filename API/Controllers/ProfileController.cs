@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Dtos.Profile;
@@ -9,9 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using API.Data.Interfaces;
 using API.Services.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;
-using API.Models.Custom;
-using API.Dtos.Ambassador;
-using API.Extensions.CustomExceptions;
 
 namespace API.Controllers
 {
@@ -37,7 +33,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<User>> Get()
         {
-            int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
+            var id = int.Parse(User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
             return Ok(user);
         }
@@ -46,33 +42,30 @@ namespace API.Controllers
             Description = "This route is for Updating User Profile. For category, use (college/school/professional). For the institution id, obtain the list of institution from the backend and send the id of the institution the user select.\n If The user wants to add a new institution, Set the instution id to 0  and set the institution name as the Name of new institution. Institution name and id are not applicable for professional category"
         )]
         [HttpPost("update")]
-        public async Task<ActionResult> UpdateProfile(UserForProfileUpdateDto data)
+        public async Task<ActionResult<User>> UpdateProfile(UserForProfileUpdateDto data)
         {
-            int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
-            var success = await _repo.UpdateProfile(id, data);
-            if (success) return Ok(new OkResponse { Response = "Success" });
-            throw new DataInvalidException("No changes to update. Please re-check the details");
+            var id = int.Parse(User.Claims.First(i => i.Type == "user_id").Value);
+            var user = await _repo.UpdateProfile(id, data);
+            return Ok(user);
         }
 
         [SwaggerOperation(Description = "This route is for Changing the user's Profile Picture")]
         [HttpPost("update/image")]
-        public async Task<ActionResult> UpdateProfileImage([FromForm] ImageFromUserDto imageFromUser)
+        public async Task<ActionResult<User>> UpdateProfileImage([FromForm] ImageFromUserDto imageFromUser)
         {
-            string name = this.User.Claims.First(i => i.Type == "user_id").Value;
-            int id = int.Parse(name);
+            var name = User.Claims.First(i => i.Type == "user_id").Value;
+            var id = int.Parse(name);
             var dataForProfileUpdate = _mapper.Map<DataForProfilePicUpdateDto>(imageFromUser);
             dataForProfileUpdate.Name = name;
-            string updatedProfilePicUrl = await _profileService.UploadProfileImage(dataForProfileUpdate);
-            bool success = await _repo.UpdateProfileImage(id, updatedProfilePicUrl);
-            if (success) return Ok(new OkResponse { Response = "Success" });
-            throw new Exception("Problem saving changes");
+            var updatedProfilePicUrl = await _profileService.UploadProfileImage(dataForProfileUpdate);
+            return Ok(await _repo.UpdateProfileImage(id, updatedProfilePicUrl));
         }
 
         [SwaggerOperation(Description = "Detailed user information. Ideal for displaying Profile info")]
         [HttpGet("view")]
         public async Task<ActionResult<UserForProfileViewDto>> View()
         {
-            int id = int.Parse(this.User.Claims.First(i => i.Type == "user_id").Value);
+            var id = int.Parse(User.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUser(id);
             var userForView = _mapper.Map<UserForProfileViewDto>(user);
             var institutionId = user.InstitutionId ?? default(int);

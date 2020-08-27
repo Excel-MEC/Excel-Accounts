@@ -13,23 +13,21 @@ namespace API.Data
         private readonly DataContext _context;
         public InstitutionRepository(DataContext context)
         {
-            this._context = context;
+            _context = context;
         }
 
-        public async Task<College> AddCollege(string Name)
+        public async Task<College> AddCollege(string name)
         {
-            var college = new College();
-            college.Name = Name;
+            var college = new College {Name = name};
             await _context.Colleges.AddAsync(college);
             var success = await _context.SaveChangesAsync() > 0;
             if (success) return college;
             throw new Exception("Problem saving changes");
         }
 
-        public async Task<School> AddSchool(string Name)
+        public async Task<School> AddSchool(string name)
         {
-            var school = new School();
-            school.Name = Name;
+            var school = new School {Name = name};
             await _context.Schools.AddAsync(school);
             var success = await _context.SaveChangesAsync() > 0;
             if (success) return school;
@@ -44,19 +42,20 @@ namespace API.Data
 
         public async Task<string> FindName(string category, int id)
         {
-            if (category == "college")
+            switch (category)
             {
-                var college = await _context.Colleges.FindAsync(id);
-                return college.Name;
-            }
-            else if (category == "school")
-            {
-                var school = await _context.Schools.FindAsync(id);
-                return school.Name;
-            }
-            else
-            {
-                throw new DataInvalidException("Invalid Category.");
+                case "college":
+                {
+                    var college = await _context.Colleges.FindAsync(id);
+                    return college.Name;
+                }
+                case "school":
+                {
+                    var school = await _context.Schools.FindAsync(id);
+                    return school.Name;
+                }
+                default:
+                    throw new DataInvalidException("Invalid Category.");
             }
         }
 

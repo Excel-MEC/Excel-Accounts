@@ -8,8 +8,8 @@ namespace API.Data.Interfaces
     public interface IAmbassadorRepository
     {
         Task<AmbassadorProfileDto> GetAmbassador(int id);
-        Task<bool> SignUpForAmbassador(int id);
-        Task<bool> ApplyReferralCode(int id, int referralCode);
+        Task<Ambassador> SignUpForAmbassador(int id);
+        Task<User> ApplyReferralCode(int id, int referralCode);
         Task<List<UserViewDto>> ListOfReferredUsers(int id);
         Task<List<AmbassadorListViewDto>> ListOfAmbassadors();
 
