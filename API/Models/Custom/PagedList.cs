@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,17 +19,26 @@ namespace API.Models.Custom
         public PagedList(List<T> items, int count, int pageNumber, int pageSize)
         {
             TotalCount = count;
-            PageSize = pageSize;
+            if(pageSize == 0)
+            {
+                PageSize = count;
+                TotalPages = 1;
+            }
+            else
+            {
+                PageSize = pageSize;
+                TotalPages = (int) Math.Ceiling(count / (double) pageSize);
+            }
             CurrentPage = pageNumber;
-            TotalPages = (int) Math.Ceiling(count / (double) pageSize);
-
             AddRange(items);
         }
 
         public static async Task<PagedList<T>> ToPagedList(IQueryable<T> source, int pageNumber, int pageSize)
         {
             var count = source.Count();
-            var items = await source.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
+            var items = pageSize > 0 
+                ? await source.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync() 
+                : await source.ToListAsync();
 
             return new PagedList<T>(items, count, pageNumber, pageSize);
         }

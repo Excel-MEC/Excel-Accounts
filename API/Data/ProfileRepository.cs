@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -5,6 +6,7 @@ using API.Dtos.Profile;
 using API.Models;
 using API.Data.Interfaces;
 using API.Dtos.Admin;
+using API.Extensions.CustomExceptions;
 using API.Models.Custom;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
@@ -28,20 +30,15 @@ namespace API.Data
         {
             IQueryable<User> query = _context.Users;
             if (parameters.Id != null) query = query.Where(user => user.Id == parameters.Id);
-            if (parameters.Name != null) query = query.Where(user => user.Name.ToLower() == parameters.Name.ToLower());
-            if (parameters.Email != null)
-                query = query.Where(user => user.Email.ToLower() == parameters.Email.ToLower());
-            if (parameters.Gender != null)
-                query = query.Where(user => user.Gender.ToLower() == parameters.Gender.ToLower());
+            if(parameters.Name != null) query = query.Where(user => user.Name.ToLower().Contains(parameters.Name.ToLower()));
+            if(parameters.Email != null)  query = query.Where(user => user.Email.ToLower().Contains(parameters.Email.ToLower()));
+            if(parameters.Gender != null)  query = query.Where(user => user.Gender.ToLower() == parameters.Gender.ToLower());
             if (parameters.InstitutionId != null) query = query.Where(user => user.Id == parameters.Id);
-            if (parameters.CategoryId != null) query = query.Where(user => user.CategoryId == parameters.CategoryId);
-            if (parameters.Role != null)
-                query = query.Where(user => user.Role.ToLower().Contains(parameters.Role.ToLower()));
-            if (parameters.MobileNumber != null)
-                query = query.Where(user => user.MobileNumber == parameters.MobileNumber);
-            if (parameters.IsPaid != null) query = query.Where(user => user.IsPaid == parameters.IsPaid);
-            if (parameters.ReferrerAmbassadorId != null)
-                query = query.Where(user => user.ReferrerAmbassadorId == parameters.ReferrerAmbassadorId);
+            if(parameters.CategoryId != null)  query = query.Where(user => user.CategoryId == parameters.CategoryId);
+            if(parameters.Role != null)  query = query.Where(user => user.Role.ToLower().Contains(parameters.Role.ToLower()));
+            if(parameters.MobileNumber != null)  query = query.Where(user => user.MobileNumber.Contains(parameters.MobileNumber));
+            if(parameters.IsPaid != null)  query = query.Where(user => user.IsPaid == parameters.IsPaid);
+            if(parameters.ReferrerAmbassadorId != null)  query = query.Where(user => user.ReferrerAmbassadorId == parameters.ReferrerAmbassadorId);
             switch (parameters.SortOrder)
             {
                 case "desc":
@@ -76,14 +73,22 @@ namespace API.Data
             return await query.ToListAsync();
         }
 
+        public async Task<User> RemoveUser(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if(user == null) throw new DataInvalidException("The user does not exist. Please re-check the ID");
+            _context.Remove(user);
+            if(await _context.SaveChangesAsync() > 0) return user;
+            throw new Exception("Problem in saving changes");
+        }
+
         public async Task<List<User>> GetUserList(List<int> userIds)
         {
             return await _context.Users.Where(user => userIds.Contains(user.Id)).ToListAsync();
         }
-
-        public async Task<bool> UpdateProfile(int id, UserForProfileUpdateDto data)
-        {
-            User user = await _context.Users.FindAsync(id);
+        public async Task<User> UpdateProfile(int id, UserForProfileUpdateDto data)
+        {            
+            var user = await _context.Users.FindAsync(id);
             user.Name = data.Name ?? user.Name;
             user.Gender = data.Gender ?? user.Gender;
             user.MobileNumber = data.MobileNumber ?? user.MobileNumber;
@@ -93,7 +98,8 @@ namespace API.Data
             if (categoryId == "2")
             {
                 user.InstitutionId = null;
-                return await _context.SaveChangesAsync() > 0;
+                if(await _context.SaveChangesAsync() > 0) return user;
+                throw new DataInvalidException("No changes to update. Please re-check the details");
             }
 
             if (institutionId == 0) //Adds new college or school
@@ -118,30 +124,30 @@ namespace API.Data
             {
                 user.InstitutionId = institutionId;
             }
-
-            return await _context.SaveChangesAsync() > 0;
+            if(await _context.SaveChangesAsync() > 0) return user;
+            throw new DataInvalidException("No changes to update. Please re-check the details");
         }
 
 
-        public async Task<bool> UpdateProfileImage(int id, string imageUrl)
+        public async Task<User> UpdateProfileImage(int id, string imageUrl)
         {
             var user = await _context.Users.FindAsync(id);
             if (user.Picture.Equals(imageUrl))
             {
-                return true;
+                return user;
             }
 
             user.Picture = imageUrl;
-            var success = await _context.SaveChangesAsync() > 0;
-            return success;
+            if(await _context.SaveChangesAsync() > 0) return user;
+            throw new DataInvalidException("No changes to update.");
         }
 
-        public async Task<bool> ChangeRole(DataForChangingRoleDto dataForChangingRoleDto)
+        public async Task<User> ChangeRole(DataForChangingRoleDto dataForChangingRoleDto)
         {
             var user = await _context.Users.FindAsync(dataForChangingRoleDto.Id);
             user.Role = dataForChangingRoleDto.Role;
-            var success = await _context.SaveChangesAsync() > 0;
-            return success;
+            if(await _context.SaveChangesAsync() > 0) return user;
+            throw new Exception("Problem in saving changes");
         }
 
         public async Task<string> GetRole(int id)
