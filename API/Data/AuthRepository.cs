@@ -15,7 +15,7 @@ namespace API.Data
 
         public async Task<User> GetUser(string email)
         {
-            User user = await _context.Users.FirstOrDefaultAsync(user => user.Email == email);
+            var user = await _context.Users.FirstOrDefaultAsync(user => user.Email == email);
             return user;
         }
 
@@ -28,12 +28,7 @@ namespace API.Data
 
         public async Task<bool> UserExists(string email)
         {
-            if (await _context.Users.AnyAsync(user => user.Email == email))
-            {
-                return true;
-            }
-
-            return false;
+            return await _context.Users.AnyAsync(user => user.Email == email);
         }
     }
 }
