@@ -45,24 +45,9 @@ namespace API.Extensions
             {
                 return AuthenticateUser(authorizationHeader);
             }
-            catch (SecurityTokenExpiredException)
+            catch (SecurityTokenExpiredException e)
             {
-                try
-                {
-                    if (!Request.Headers.ContainsKey("refresh-token"))
-                        return AuthenticateResult.Fail("Unauthorized");
-                    var token = Request.Headers["refresh-token"].ToString().Split(" ").Last();
-                    
-                    var jwt = await _authService.CreateJwtFromRefreshToken(token);
-                    var result = AuthenticateUser(jwt);
-                    Request.HttpContext.Response.Cookies.Append("jwt", jwt);
-                    Request.HttpContext.Response.Headers.Add("New-Jwt", jwt);
-                    return result;
-                }
-                catch
-                {
-                    return AuthenticateResult.Fail("Unauthorized");
-                }
+                throw e;
             }
             catch
             {

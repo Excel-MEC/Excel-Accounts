@@ -4,6 +4,7 @@ using API.Extensions.CustomExceptions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
+using Microsoft.IdentityModel.Tokens;
 
 namespace API.Extensions
 {
@@ -22,6 +23,13 @@ namespace API.Extensions
                         var result = JsonSerializer.Serialize(new { error = exception.Message.ToString() });
                         context.Response.ContentType = "application/json";
                         context.Response.StatusCode = 403;
+                        await context.Response.WriteAsync(result);
+                    }
+                    else if (exception is SecurityTokenExpiredException)
+                    {
+                        var result = JsonSerializer.Serialize(new { error = exception.Message.ToString() });
+                        context.Response.ContentType = "application/json";
+                        context.Response.StatusCode = 455;
                         await context.Response.WriteAsync(result);
                     }
                     else if (exception is InsufficientDataForUpdationException)
