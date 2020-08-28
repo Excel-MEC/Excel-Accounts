@@ -80,7 +80,7 @@ namespace API.Services
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddYears(50),
+                Expires = DateTime.Now.AddYears(1),
                 SigningCredentials = creds,
                 Issuer = Environment.GetEnvironmentVariable("ISSUER")
             };
