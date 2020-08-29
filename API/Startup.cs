@@ -30,16 +30,14 @@ namespace API
         {
             // Adding Controller as service
             services.AddControllers().AddNewtonsoftJson(AppDomainManagerInitializationOptions =>
-            AppDomainManagerInitializationOptions.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+                AppDomainManagerInitializationOptions.SerializerSettings.ReferenceLoopHandling =
+                    Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             // Add Database to the Services
             services.AddDbContext<DataContext>(options =>
             {
                 string connectionString = Environment.GetEnvironmentVariable("POSTGRES_DB");
-                if (connectionString == null)
-                    options.UseNpgsql(Configuration.GetSection("DatabaseConfig")["PostgresDb"]);
-                else
-                    options.UseNpgsql(connectionString);
+                options.UseNpgsql(connectionString);
             });
 
             // Add Custom Services (Business layer)
@@ -49,30 +47,15 @@ namespace API
             services.AddRepositoryServices();
 
             // Add Automapper to map objects of different types
-            services.AddAutoMapper(opt =>
-            {
-                opt.AddProfile(new AutoMapperProfiles());
-            });
+            services.AddAutoMapper(opt => { opt.AddProfile(new AutoMapperProfiles()); });
 
-            // Add Jwt Authentication
-            // services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-            // {
-            //     options.TokenValidationParameters = new TokenValidationParameters
-            //     {
-            //         ValidateIssuerSigningKey = true,
-            //         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("TOKEN"))),
-            //         ValidateIssuer = true,
-            //         ValidIssuer = Environment.GetEnvironmentVariable("ISSUER"),
-            //         ClockSkew = TimeSpan.Zero,
-            //         ValidateAudience = false
-            //     };
-            // });
-            services.AddAuthentication("JwtAuthentication").AddScheme<BasicAuthenticationOptions, CustomAuthenticationHandler>("JwtAuthentication", null);
+            services.AddAuthentication("JwtAuthentication")
+                .AddScheme<BasicAuthenticationOptions, CustomAuthenticationHandler>("JwtAuthentication", null);
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Excel Accounts", Version = "v 2.1" });
+                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Excel Accounts", Version = "v 2.1"});
                 c.DocumentFilter<SwaggerPathPrefix>("api");
                 c.EnableAnnotations();
             });
@@ -96,10 +79,7 @@ namespace API
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "Excel Accounts");
-            });
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "Excel Accounts"); });
 
             // Allow Cross origin requests
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
@@ -113,10 +93,7 @@ namespace API
             // User authorization
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }
