@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -63,7 +63,8 @@ namespace API.Extensions
             {
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(key),
-                ValidateIssuer = false,
+                ValidateIssuer = true,
+                ValidIssuer = Environment.GetEnvironmentVariable("ISSUER")
                 ValidateAudience = false,
                 ClockSkew = TimeSpan.Zero
             }, out SecurityToken validatedToken);
@@ -73,7 +74,7 @@ namespace API.Extensions
 
         private AuthenticateResult AuthenticateUser(string token)
         {
-            var key = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("TOKEN"));
+            var key = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("ACCESS_TOKEN"));
             var jwtToken = ValidateToken(token, key);
             var identity = new ClaimsIdentity(jwtToken.Claims, Scheme.Name);
             var role = jwtToken.Claims.Where(x => x.Type == "role").Select(x => x.Value).ToArray();
