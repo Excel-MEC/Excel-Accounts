@@ -128,6 +128,7 @@ namespace API.Services
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(key),
                 ValidateIssuer = true,
+                ValidIssuer = Environment.GetEnvironmentVariable("ISSUER"),
                 ValidateAudience = false,
                 ClockSkew = TimeSpan.Zero
             }, out SecurityToken validatedToken);
