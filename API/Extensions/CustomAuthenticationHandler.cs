@@ -64,7 +64,7 @@ namespace API.Extensions
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(key),
                 ValidateIssuer = true,
-                ValidIssuer = Environment.GetEnvironmentVariable("ISSUER")
+                ValidIssuer = Environment.GetEnvironmentVariable("ISSUER"),
                 ValidateAudience = false,
                 ClockSkew = TimeSpan.Zero
             }, out SecurityToken validatedToken);
