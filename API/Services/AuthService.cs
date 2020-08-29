@@ -117,7 +117,9 @@ namespace API.Services
             var securityToken = ValidateToken(token, refreshKey);
             var userId = int.Parse(securityToken.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUserById(userId);
-            return CreateAccessTokenFromUser(user, refreshKey);
+            
+            var accessKey = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("ACCESS_TOKEN"));
+            return CreateAccessTokenFromUser(user, accessKey);
         }
 
         public JwtSecurityToken ValidateToken(string token, byte[] key)
