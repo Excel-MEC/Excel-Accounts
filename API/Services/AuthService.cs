@@ -76,7 +76,7 @@ namespace API.Services
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddYears(50),
+                Expires = DateTime.Now.AddYears(1),
                 SigningCredentials = creds,
                 Issuer = Environment.GetEnvironmentVariable("ISSUER")
             };
@@ -127,7 +127,7 @@ namespace API.Services
             {
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(key),
-                ValidateIssuer = false,
+                ValidateIssuer = true,
                 ValidateAudience = false,
                 ClockSkew = TimeSpan.Zero
             }, out SecurityToken validatedToken);
