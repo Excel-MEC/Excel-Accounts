@@ -72,7 +72,7 @@ namespace API.Controllers
         [SwaggerOperation(Description =
             " Route to change the role. Route accessible only to the roles: Admin, Core, Editor")]
         [Authorize(Roles = "Admin, Core, Editor")]
-        [HttpPost("users/permission")]
+        [HttpPut("users/permission")]
         public async Task<ActionResult<User>> ChangeRole(DataForChangingRoleDto dataForChangingRoleDto)
         {
             var newroles = dataForChangingRoleDto.Role.Split(",").Select(x => x.Trim()).ToList();
@@ -84,6 +84,15 @@ namespace API.Controllers
             }
 
             throw new UnauthorizedAccessException("You don't have the permission to do that");
+        }
+        
+        [SwaggerOperation(Description =
+            " Route to change the payment status of an user. Route accessible only to the roles: Admin, Core, Editor")]
+        [Authorize(Roles = "Admin, Core, Editor, Accountant")]
+        [HttpPut("users/permission")]
+        public async Task<ActionResult<User>> ChangePaymentStatus(DataForChangingPaymentStatusDto data)
+        {
+            return Ok(await _profileRepository.UpdatePaymentStatus(data));
         }
 
         [SwaggerOperation(Description =

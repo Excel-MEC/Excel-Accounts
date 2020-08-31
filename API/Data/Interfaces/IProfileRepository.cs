@@ -18,5 +18,6 @@ namespace API.Data.Interfaces
         Task<User> UpdateProfileImage(int id, string imageUrl);
         Task<User> ChangeRole(DataForChangingRoleDto dataForChangingRoleDto);
         Task<string> GetRole(int id);
+        Task<User> UpdatePaymentStatus(DataForChangingPaymentStatusDto data);
     }
 }

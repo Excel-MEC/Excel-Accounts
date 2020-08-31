@@ -155,5 +155,13 @@ namespace API.Data
             var user = await _context.Users.FindAsync(id);
             return user.Role;
         }
+
+        public async Task<User> UpdatePaymentStatus(DataForChangingPaymentStatusDto data)
+        {
+            var user = await _context.Users.FindAsync(data.Id);
+            user.IsPaid = data.IsPaid;
+            await _context.SaveChangesAsync();
+            return user;
+        }
     }
 }
