@@ -6,6 +6,7 @@ namespace API.Models.Custom
         public static string Core => "Core";
         public static string Editor => "Editor";
         public static string Staff => "Staff";
+        public static string Accountant => "Accountant";
         public static string User => "User";
     }
 }
