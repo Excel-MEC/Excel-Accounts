@@ -61,26 +61,22 @@ namespace API.Services
 
             User user = await _repo.GetUser(userFromGoogle0Auth.Email);
             var jwtForClient = new JwtForClientDto();
-            var jwtKey = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("TOKEN"));
+            var jwtKey = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("ACCESS_TOKEN"));
             jwtForClient.AccessToken = CreateAccessTokenFromUser(user, jwtKey);
             var claims = new List<Claim>()
             {
                 new Claim("user_id", user.Id.ToString()),
                 new Claim("email", user.Email)
             };
-            foreach (var role in user.Role.Split(",").Select(x => x.Trim()))
-            {
-                claims.Add(new Claim(ClaimTypes.Role, role));
-            }
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("TOKEN")));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("REFRESH_TOKEN")));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddYears(50),
+                Expires = DateTime.Now.AddYears(1),
                 SigningCredentials = creds,
                 Issuer = Environment.GetEnvironmentVariable("ISSUER")
             };
@@ -117,11 +113,13 @@ namespace API.Services
 
         public async Task<string> CreateJwtFromRefreshToken(string token)
         {
-            var refreshKey = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("TOKEN"));
+            var refreshKey = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("REFRESH_TOKEN"));
             var securityToken = ValidateToken(token, refreshKey);
             var userId = int.Parse(securityToken.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUserById(userId);
-            return CreateAccessTokenFromUser(user, refreshKey);
+            
+            var accessKey = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("ACCESS_TOKEN"));
+            return CreateAccessTokenFromUser(user, accessKey);
         }
 
         public JwtSecurityToken ValidateToken(string token, byte[] key)
@@ -131,7 +129,8 @@ namespace API.Services
             {
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(key),
-                ValidateIssuer = false,
+                ValidateIssuer = true,
+                ValidIssuer = Environment.GetEnvironmentVariable("ISSUER"),
                 ValidateAudience = false,
                 ClockSkew = TimeSpan.Zero
             }, out SecurityToken validatedToken);
