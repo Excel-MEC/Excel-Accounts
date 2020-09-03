@@ -89,7 +89,7 @@ namespace API.Controllers
         [SwaggerOperation(Description =
             " Route to change the payment status of an user. Route accessible only to the roles: Admin, Core, Editor")]
         [Authorize(Roles = "Admin, Core, Editor, Accountant")]
-        [HttpPut("users/permission")]
+        [HttpPut("users/payment")]
         public async Task<ActionResult<User>> ChangePaymentStatus(DataForChangingPaymentStatusDto data)
         {
             return Ok(await _profileRepository.UpdatePaymentStatus(data));
