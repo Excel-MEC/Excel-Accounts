@@ -88,7 +88,9 @@ namespace API.Data
         }
         public async Task<User> UpdateProfile(int id, UserForProfileUpdateDto data)
         {            
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users.Include(u => u.Ambassador)
+                .Include(u => u.Referrer)
+                .FirstOrDefaultAsync(u => u.Id == id);
             user.Name = data.Name ?? user.Name;
             user.Gender = data.Gender ?? user.Gender;
             user.MobileNumber = data.MobileNumber ?? user.MobileNumber;
@@ -131,7 +133,9 @@ namespace API.Data
 
         public async Task<User> UpdateProfileImage(int id, string imageUrl)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users.Include(u => u.Ambassador)
+                .Include(u => u.Referrer)
+                .FirstOrDefaultAsync(u => u.Id == id);
             if (user.Picture.Equals(imageUrl))
             {
                 return user;
