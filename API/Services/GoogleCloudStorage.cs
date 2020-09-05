@@ -30,11 +30,13 @@ namespace API.Services
             {
                 await imageFile.CopyToAsync(memoryStream);
                 var dataObject = await storageClient.UploadObjectAsync(bucketName, fileNameForStorage, null, memoryStream);
-                dataObject.Acl = dataObject.Acl ?? new List<ObjectAccessControl>();
+                dataObject.Acl ??= new List<ObjectAccessControl>();
+                dataObject.CacheControl = "no-cache, max-age=0";
                 storageClient.UpdateObject(dataObject, new UpdateObjectOptions
                 {
                     PredefinedAcl = PredefinedObjectAcl.PublicRead
                 });
+                Console.WriteLine(dataObject.CacheControl);
                 return dataObject.MediaLink;
             }
         }
