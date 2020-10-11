@@ -117,7 +117,8 @@ namespace API.Services
             var securityToken = ValidateToken(token, refreshKey);
             var userId = int.Parse(securityToken.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUserById(userId);
-            
+            if(user == null)
+                throw new UnauthorizedAccessException();
             var accessKey = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("ACCESS_TOKEN"));
             return CreateAccessTokenFromUser(user, accessKey);
         }
@@ -144,6 +145,7 @@ namespace API.Services
                 var claims = new List<Claim>()
                 {
                     new Claim("user_id", user.Id.ToString()),
+                    new Claim("name", user.Name),
                     new Claim("email", user.Email),
                     new Claim("isPaid", user.IsPaid.ToString()),
                 };

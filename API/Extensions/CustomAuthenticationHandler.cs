@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -51,7 +51,6 @@ namespace API.Extensions
             }
             catch
             {
-                Console.WriteLine("Why here?");
                 return AuthenticateResult.Fail("Unauthorized");
             }
         }
