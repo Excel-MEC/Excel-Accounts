@@ -15,7 +15,6 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace API.Controllers
 {
     [SwaggerTag("All the routes under this controller require privileges > User.")]
-    [Authorize(Roles = "Admin, Core, Editor, Staff")]
     [Route("[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -36,7 +35,7 @@ namespace API.Controllers
         [SwaggerOperation(Description =
             "Full data of all users. Route accessible only to the roles: Admin, Core, Editor, Staff")]
         [HttpGet("users")]
-        
+        [Authorize(Roles = "Admin, Core, Editor, Staff")]
         public async Task<ActionResult<OkResponseWithPagination<User>>> GetAllUsers([FromQuery] QueryParametersForGetAllUsers parameters)
         {
             var users = await _profileRepository.GetAllUser(parameters);
@@ -54,6 +53,7 @@ namespace API.Controllers
         
         [SwaggerOperation(Description = "Retrieves the List of staffs")]
         [HttpGet("staffs")]
+        [Authorize(Roles = "Admin, Core, Editor, Staff")]
         public async Task<ActionResult<List<User>>> GetStaffs()
         {
             var users = await _profileRepository.GetStaffs();
@@ -62,6 +62,7 @@ namespace API.Controllers
 
         [SwaggerOperation(Description =
             "Basic user data corresponding to the list of the excelIds posted. Route accessible only to the roles: Admin, Core, Editor, Staff")]
+        [Authorize(Policy = "ServiceAccount")]
         [HttpPost("users")]
         public async Task<ActionResult<List<User>>> GetUsers(List<int> excelIds)
         {
