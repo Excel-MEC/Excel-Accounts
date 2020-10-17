@@ -36,6 +36,8 @@ namespace API.Extensions
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
         {
+            if (Request.Headers.ContainsKey("ServiceAuthorization"))
+                return ServiceAuthenticator(Request.Headers["ServiceAuthorization"].ToString());
             if (!Request.Headers.ContainsKey("Authorization"))
                 return AuthenticateResult.NoResult();
             string authorizationHeader = Request.Headers["Authorization"].ToString().Split(" ").Last();
@@ -47,7 +49,7 @@ namespace API.Extensions
             }
             catch (SecurityTokenExpiredException e)
             {
-                throw e;
+                throw;
             }
             catch
             {
@@ -80,6 +82,19 @@ namespace API.Extensions
             var principal = new GenericPrincipal(identity,role);
             var ticket = new AuthenticationTicket(principal, Scheme.Name);
             return AuthenticateResult.Success(ticket);
+        }
+
+        private AuthenticateResult ServiceAuthenticator(string serviceKey)
+        {
+            if (serviceKey != Environment.GetEnvironmentVariable("SERVICE_KEY"))
+            {
+                return AuthenticateResult.Fail("Unauthorized");
+            }
+            var claims = new [] { new Claim("ServiceAccount", "true")};
+            var identity = new ClaimsIdentity(claims, Scheme.Name);
+            var principle = new ClaimsPrincipal(identity);
+            var token = new AuthenticationTicket(principle, Scheme.Name);
+            return AuthenticateResult.Success(token);
         }
 
     }

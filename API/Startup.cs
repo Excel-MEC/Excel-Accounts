@@ -52,6 +52,11 @@ namespace API
             services.AddAuthentication("JwtAuthentication")
                 .AddScheme<BasicAuthenticationOptions, CustomAuthenticationHandler>("JwtAuthentication", null);
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("ServiceAccount", policy => policy.RequireClaim("ServiceAccount"));
+            });
+
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
