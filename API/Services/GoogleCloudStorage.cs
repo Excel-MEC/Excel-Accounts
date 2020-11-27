@@ -13,15 +13,14 @@ namespace API.Services
 {
     public class GoogleCloudStorage : ICloudStorage
     {
-        private readonly GoogleCredential googleCredential;
-        private readonly StorageClient storageClient;
-        private readonly string bucketName;
+        private readonly StorageClient _storageClient;
+        private readonly string _bucketName;
 
-        public GoogleCloudStorage(IConfiguration configuration)
+        public GoogleCloudStorage(IEnvironmentService env)
         {
-            googleCredential = GoogleCredential.FromFile(Environment.GetEnvironmentVariable("GOOGLE_CREDENTIAL_FILE"));
-            storageClient = StorageClient.Create(googleCredential);
-            bucketName = Environment.GetEnvironmentVariable("GOOGLE_CLOUD_STORAGE_BUCKET");
+            var googleCredential = GoogleCredential.FromJson(env.GoogleCredential);
+            _storageClient = StorageClient.Create(googleCredential);
+            _bucketName = env.GoogleCloudStorageBucket;
         }
 
         public async Task<string> UploadFileAsync(IFormFile imageFile, string fileNameForStorage)
@@ -29,10 +28,10 @@ namespace API.Services
             using (var memoryStream = new MemoryStream())
             {
                 await imageFile.CopyToAsync(memoryStream);
-                var dataObject = await storageClient.UploadObjectAsync(bucketName, fileNameForStorage, null, memoryStream);
+                var dataObject = await _storageClient.UploadObjectAsync(_bucketName, fileNameForStorage, null, memoryStream);
                 dataObject.Acl ??= new List<ObjectAccessControl>();
                 dataObject.CacheControl = "no-cache, max-age=0";
-                storageClient.UpdateObject(dataObject, new UpdateObjectOptions
+                _storageClient.UpdateObject(dataObject, new UpdateObjectOptions
                 {
                     PredefinedAcl = PredefinedObjectAcl.PublicRead
                 });
@@ -43,7 +42,7 @@ namespace API.Services
 
         public async Task DeleteFileAsync(string fileNameForStorage)
         {
-            await storageClient.DeleteObjectAsync(bucketName, fileNameForStorage);
+            await _storageClient.DeleteObjectAsync(_bucketName, fileNameForStorage);
         }
     }
 }

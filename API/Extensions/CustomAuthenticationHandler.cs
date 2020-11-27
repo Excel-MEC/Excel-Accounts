@@ -25,13 +25,11 @@ namespace API.Extensions
 
     public class CustomAuthenticationHandler : AuthenticationHandler<BasicAuthenticationOptions>
     {
-        private readonly DataContext _context;
-        private readonly IAuthService _authService;
+        private readonly IEnvironmentService _env;
         public CustomAuthenticationHandler(IOptionsMonitor<BasicAuthenticationOptions> options, ILoggerFactory logger,
-            UrlEncoder encoder, ISystemClock clock, DataContext context, IAuthService authService) : base(options, logger, encoder, clock)
+            UrlEncoder encoder, ISystemClock clock, IEnvironmentService env) : base(options, logger, encoder, clock)
         {
-            _context = context;
-            _authService = authService;
+            _env = env;
         }
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
@@ -47,7 +45,7 @@ namespace API.Extensions
             {
                 return AuthenticateUser(authorizationHeader);
             }
-            catch (SecurityTokenExpiredException e)
+            catch (SecurityTokenExpiredException)
             {
                 throw;
             }
@@ -65,7 +63,7 @@ namespace API.Extensions
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(key),
                 ValidateIssuer = true,
-                ValidIssuer = Environment.GetEnvironmentVariable("ISSUER"),
+                ValidIssuer = _env.Issuer,
                 ValidateAudience = false,
                 ClockSkew = TimeSpan.Zero
             }, out SecurityToken validatedToken);
@@ -75,7 +73,7 @@ namespace API.Extensions
 
         private AuthenticateResult AuthenticateUser(string token)
         {
-            var key = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("ACCESS_TOKEN"));
+            var key = Encoding.ASCII.GetBytes(_env.AccessToken);
             var jwtToken = ValidateToken(token, key);
             var identity = new ClaimsIdentity(jwtToken.Claims, Scheme.Name);
             var role = jwtToken.Claims.Where(x => x.Type == "role").Select(x => x.Value).ToArray();
@@ -86,7 +84,7 @@ namespace API.Extensions
 
         private AuthenticateResult ServiceAuthenticator(string serviceKey)
         {
-            if (serviceKey != Environment.GetEnvironmentVariable("SERVICE_KEY"))
+            if (serviceKey != _env.ServiceKey)
             {
                 return AuthenticateResult.Fail("Unauthorized");
             }

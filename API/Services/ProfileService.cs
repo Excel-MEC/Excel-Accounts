@@ -12,18 +12,20 @@ namespace API.Services
     {
         private readonly ICloudStorage _cloudStorage;
         private readonly IConfiguration _configuration;
+        private readonly IEnvironmentService _env;
 
-        public ProfileService(ICloudStorage cloudStorage, IConfiguration configuration)
+        public ProfileService(ICloudStorage cloudStorage, IConfiguration configuration, IEnvironmentService env)
         {
             _cloudStorage = cloudStorage;
             _configuration = configuration;
+            _env = env;
         }
 
         public async Task<string> UploadProfileImage(DataForProfilePicUpdateDto data)
         {
-            string fileNameForStorage = "accounts/profile/" + data.Name + Path.GetExtension(data.Image.FileName);
+            var fileNameForStorage = "accounts/profile/" + data.Name + Path.GetExtension(data.Image.FileName);
             await _cloudStorage.UploadFileAsync(data.Image, fileNameForStorage);
-            string imageUrl = Environment.GetEnvironmentVariable("CLOUD_STORAGE_URL") + fileNameForStorage;
+            var imageUrl = $"{_env.CloudStorageUrl}{fileNameForStorage}";
             return imageUrl;
         }
     }
