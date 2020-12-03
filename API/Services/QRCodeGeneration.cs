@@ -15,47 +15,49 @@ namespace API.Services
         private readonly ICloudStorage _cloudStorage;
         private readonly IConfiguration _configuration;
         private readonly ICipherService _cipher;
-        public QRCodeGeneration(ICloudStorage cloudStorage, IConfiguration configuration, ICipherService cipher)
+        private readonly IEnvironmentService _env;
+        public QRCodeGeneration(ICloudStorage cloudStorage, IConfiguration configuration, ICipherService cipher, IEnvironmentService env)
         {
             _cipher = cipher;
             _configuration = configuration;
             _cloudStorage = cloudStorage;
+            _env = env;
         }
 
         public async Task<string> CreateQrCode(string Id)
         {
-            string secretkey = Environment.GetEnvironmentVariable("ENCRYPTION_QRCODE");
+            var secretkey = _env.EncryptionQrCode;
             var encryptedId = _cipher.Encryption(secretkey, Id);
-            Bitmap qrCodeImage = GenerateQrCode(encryptedId);
-            string qRCodeUrl = await UploadFileAsync(qrCodeImage, Id);
+            var qrCodeImage = GenerateQrCode(encryptedId);
+            var qRCodeUrl = await UploadFileAsync(qrCodeImage, Id);
             return qRCodeUrl;
         }
 
         // Generates Bitmap image of the encrypted excelid
         private static Bitmap GenerateQrCode(string id)
         {
-            QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            QRCodeData qrCodeData = qrGenerator.CreateQrCode(id, QRCodeGenerator.ECCLevel.Q);
-            QRCode qrCode = new QRCode(qrCodeData);
-            Bitmap qrCodeImage = qrCode.GetGraphic(20);
+            var qrGenerator = new QRCodeGenerator();
+            var qrCodeData = qrGenerator.CreateQrCode(id, QRCodeGenerator.ECCLevel.Q);
+            var qrCode = new QRCode(qrCodeData);
+            var qrCodeImage = qrCode.GetGraphic(20);
             return qrCodeImage;
         }
 
         // Converts the Bitmap Image to a PNG File
         private async Task<string> UploadFileAsync(Bitmap qrCodeImage, string id)
         {
-            string secretkey = Environment.GetEnvironmentVariable("ENCRYPTION_FILENAME");
-            DataForQRCodeUploadDto data = new DataForQRCodeUploadDto();
+            var secretkey = _env.EncryptionFileName;
+            var data = new DataForQRCodeUploadDto();
             data.Name = _cipher.Encryption(secretkey, id) + ".png";
-            byte[] bitmapBytes = BitmapToBytes(qrCodeImage);
-            using (MemoryStream stream = new MemoryStream(bitmapBytes))
+            var bitmapBytes = BitmapToBytes(qrCodeImage);
+            await using (var stream = new MemoryStream(bitmapBytes))
             {
                 IFormFile Image = new FormFile(stream, 0, bitmapBytes.Length, data.Name, data.Name);
                 data.Image = Image;
                 var fileExtension = Path.GetExtension(data.Name);
-                string fileNameForStorage = "accounts/qr-code/" + data.Name;
+                var fileNameForStorage = "accounts/qr-code/" + data.Name;
                 await _cloudStorage.UploadFileAsync(data.Image, fileNameForStorage);
-                string qRCodeUrl = Environment.GetEnvironmentVariable("CLOUD_STORAGE_URL") + fileNameForStorage;
+                var qRCodeUrl = _env.CloudStorageUrl + fileNameForStorage;
                 return qRCodeUrl;
             }
         }

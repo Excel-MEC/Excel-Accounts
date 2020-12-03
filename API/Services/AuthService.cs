@@ -30,9 +30,10 @@ namespace API.Services
         private readonly HttpClient _httpClient;
         private readonly IQRCodeGeneration _qRCodeGeneration;
         private readonly IAmbassadorRepository _ambRepo;
+        private readonly IEnvironmentService _env;
 
         public AuthService(IMapper mapper, IConfiguration config, IAuthRepository repo, HttpClient httpClient,
-            IQRCodeGeneration qRCodeGeneration, IAmbassadorRepository ambRepo)
+            IQRCodeGeneration qRCodeGeneration, IAmbassadorRepository ambRepo, IEnvironmentService env)
         {
             _ambRepo = ambRepo;
             _qRCodeGeneration = qRCodeGeneration;
@@ -40,6 +41,7 @@ namespace API.Services
             _config = config;
             _repo = repo;
             _httpClient = httpClient;
+            _env = env;
         }
 
         public async Task<JwtForClientDto> CreateJwtForClient(string responseString, int? referralCode)
@@ -61,7 +63,7 @@ namespace API.Services
 
             User user = await _repo.GetUser(userFromGoogle0Auth.Email);
             var jwtForClient = new JwtForClientDto();
-            var jwtKey = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("ACCESS_TOKEN"));
+            var jwtKey = Encoding.ASCII.GetBytes(_env.AccessToken);
             jwtForClient.AccessToken = CreateAccessTokenFromUser(user, jwtKey);
             var claims = new List<Claim>()
             {
@@ -69,7 +71,7 @@ namespace API.Services
                 new Claim("email", user.Email)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("REFRESH_TOKEN")));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_env.RefreshToken));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
@@ -78,7 +80,7 @@ namespace API.Services
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.Now.AddYears(1),
                 SigningCredentials = creds,
-                Issuer = Environment.GetEnvironmentVariable("ISSUER")
+                Issuer = _env.Issuer
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -89,8 +91,8 @@ namespace API.Services
 
         public async Task<string> FetchUserGoogle0Auth(string accessToken)
         {
-            string googleapi = Environment.GetEnvironmentVariable("GOOGLEAPI");
-            var url = new Uri(googleapi);
+            string googleApi = _env.GoogleApi;
+            var url = new Uri(googleApi);
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
             var response = await _httpClient.GetAsync(url);
             if (response.StatusCode == HttpStatusCode.Unauthorized)
@@ -113,13 +115,13 @@ namespace API.Services
 
         public async Task<string> CreateJwtFromRefreshToken(string token)
         {
-            var refreshKey = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("REFRESH_TOKEN"));
+            var refreshKey = Encoding.ASCII.GetBytes(_env.RefreshToken);
             var securityToken = ValidateToken(token, refreshKey);
             var userId = int.Parse(securityToken.Claims.First(i => i.Type == "user_id").Value);
             var user = await _repo.GetUserById(userId);
             if(user == null)
                 throw new UnauthorizedAccessException();
-            var accessKey = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("ACCESS_TOKEN"));
+            var accessKey = Encoding.ASCII.GetBytes(_env.AccessToken);
             return CreateAccessTokenFromUser(user, accessKey);
         }
 
@@ -131,7 +133,7 @@ namespace API.Services
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(key),
                 ValidateIssuer = true,
-                ValidIssuer = Environment.GetEnvironmentVariable("ISSUER"),
+                ValidIssuer = _env.Issuer,
                 ValidateAudience = false,
                 ClockSkew = TimeSpan.Zero
             }, out SecurityToken validatedToken);
@@ -163,7 +165,7 @@ namespace API.Services
                     Subject = new ClaimsIdentity(claims),
                     Expires = DateTime.Now.AddMinutes(15),
                     SigningCredentials = creds,
-                    Issuer = Environment.GetEnvironmentVariable("ISSUER")
+                    Issuer = _env.Issuer
                 };
 
                 var tokenHandler = new JwtSecurityTokenHandler();

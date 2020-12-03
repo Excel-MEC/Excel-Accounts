@@ -8,6 +8,9 @@ namespace API.Extensions
     {
         public static void AddCustomServices(this IServiceCollection services)
         {
+            // Adding Environment Service
+            services.AddSingleton<IEnvironmentService, EnvironmentService>();
+            
             // Adding AuthService along with HttpClient Service
             services.AddHttpClient<IAuthService, AuthService>();
 
