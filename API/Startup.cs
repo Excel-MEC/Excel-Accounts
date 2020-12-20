@@ -37,6 +37,8 @@ namespace API
             services.AddDbContext<DataContext>(options =>
             {
                 string connectionString = Environment.GetEnvironmentVariable("POSTGRES_DB");
+                if (string.IsNullOrEmpty(connectionString))
+                    connectionString = "Host=127.0.0.1;Port=5432;Database=ExcelAccounts;User Id=admin;Password=admin;";
                 options.UseNpgsql(connectionString);
             });
 
