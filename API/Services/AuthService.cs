@@ -150,6 +150,7 @@ namespace API.Services
                     new Claim("name", user.Name),
                     new Claim("email", user.Email),
                     new Claim("isPaid", user.IsPaid.ToString()),
+                    new Claim("picture", user.Picture),
                 };
                 foreach (var role in user.Role.Split(",").Select(x => x.Trim()))
                 {
