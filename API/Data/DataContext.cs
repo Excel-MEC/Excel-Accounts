@@ -33,7 +33,7 @@ namespace API.Data
             
             modelBuilder.Entity<User>()
                 .Property(user => user.InstitutionId)
-                .HasDefaultValue(value: 456);
+                .HasDefaultValue(value: null);
 
             modelBuilder.Entity<College>()
                 .Property(college => college.Id)
